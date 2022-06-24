@@ -1,0 +1,30 @@
+@mixin reset-button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+@mixin reset-input {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+}
+
+@mixin reset-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin reset-scroll-bars {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

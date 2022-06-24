@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'NB Architekt R';
+    src: url('./NBArchitektR-Regular.woff2') format('woff2'),
+        url('./NBArchitektR-Regular.woff') format('woff'),
+        url('./NBArchitektR-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NB Architekt R';
+    src: url('./NBArchitektRBold.woff2') format('woff2'),
+        url('./NBArchitektRBold.woff') format('woff'),
+        url('./NBArchitektRBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NB Architekt R';
+    src: url('./NBArchitektR-Light.woff2') format('woff2'),
+        url('./NBArchitektR-Light.woff') format('woff'),
+        url('./NBArchitektR-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

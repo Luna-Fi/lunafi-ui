@@ -1,0 +1,27 @@
+@mixin default-colors {
+    --dark: #14161A;
+    --black: #000;
+    --white: #fff;
+    --grey-100: #F8F9FA;
+    --grey-300: #DEE2E6;
+    --grey-500: #ADB5BD;
+    --grey-600: #8A919E;
+    --grey-800: #343A40;
+    --grey-900: #212529;
+    --grey-1000: #181B20;
+    --grey-1100: #141416;
+    --grey-1200: #0F1114;
+    --color-success: #00F463;
+    --color-danger: #DC2C2C;
+    --color-overlay: #212529;
+    --blue: #00FFF4; 
+}
+
+:root {
+    @include default-colors;
+
+    color: var(--white);
+    background-color: var(--dark);
+
+    font-family: $font-family;
+}

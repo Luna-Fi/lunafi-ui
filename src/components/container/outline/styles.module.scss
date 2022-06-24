@@ -1,0 +1,38 @@
+.container_outline {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &.is_static {
+        border: 1px solid var(--grey-800);
+        border-radius: 8px;
+        background-color: var(--grey-1000);
+    }
+}
+
+.wrapper {
+    position: relative;
+    z-index: 0;
+
+    &:not(.is_static) {
+        opacity: 0;
+    }
+}
+
+.svg { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    .stroke {
+        stroke-width: 1px;
+        stroke: var(--grey-800);
+    }
+    
+    .bg {
+        fill: var(--grey-1000);
+    }
+}

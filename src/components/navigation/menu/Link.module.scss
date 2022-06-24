@@ -1,0 +1,117 @@
+@import '@/styles/base';
+
+.link {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: px-to-rem(49);
+    padding-left: px-to-rem(40);
+    box-sizing: border-box;
+
+    &.adaptive {
+        @include media-md-max {
+            padding-left: px-to-rem(8);
+            justify-content: center;
+        }
+    }
+
+    font-family: $font-family-header;
+    font-style: normal;
+    font-size: px-to-rem(14);
+    line-height: px-to-rem(20);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: var(--white);
+
+    transition: opacity 0.35s, font-weight 0.35s;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--blue);
+        border-radius: 0 px-to-rem(8) px-to-rem(8) 0;
+        transform: translate3d(-105%, 0, 0);
+        transition: transform 0.75s;
+    }
+
+    &::before {
+        opacity: 0.15;
+    }
+
+    &::after {
+        width: px-to-rem(8);
+    }
+
+    &.unactive:not(.hover) {
+        opacity: 0.5;
+    }
+
+    &.active {
+        font-weight: bold;
+    }
+
+    &.hover,
+    &.active {
+        &::before,
+        &::after {
+            transition-delay: .1s;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: px-to-rem(24);
+    height: px-to-rem(24);
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.35s;
+
+        &.img_active {
+            opacity: 0;
+        }
+    }
+
+    &.active {
+        .img_static {
+            opacity: 0;
+        }
+
+        .img_active {
+            opacity: 1;
+        }
+        
+    }
+}
+
+.name {
+    display: inline-block;
+    margin-left: px-to-rem(16);
+
+    &.adaptive {
+        @include media-md-max {
+            display: none;
+        }
+    }
+}

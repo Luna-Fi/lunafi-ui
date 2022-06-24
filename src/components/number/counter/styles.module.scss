@@ -1,0 +1,15 @@
+.number_counter {
+  position: relative;
+  white-space: nowrap;
+}
+
+.static {
+    position: relative;
+    opacity: 0;
+}
+
+.dynamic {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

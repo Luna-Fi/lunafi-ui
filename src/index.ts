@@ -6,6 +6,7 @@ import { ContainerOutline, ContainerOutlineProps } from './components/container/
 import { NavigationMenu, NavigationMenuProps } from './components/navigation/menu';
 import { NavigationMenuLink, NavigationMenuLinkProps } from './components/navigation/menu/Link';
 import { NavigationModal, NavigationModalProps } from './components/navigation/modal';
+import { PreviewDiscount, PreviewDiscountProps } from './components/preview/discount';
 import './styles/index.scss';
 
 export {
@@ -20,4 +21,6 @@ export {
     NumberCounter, NumberCounterProps,
 
     ContainerOutline, ContainerOutlineProps,
+
+    PreviewDiscount, PreviewDiscountProps,
 };

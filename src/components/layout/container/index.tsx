@@ -1,8 +1,10 @@
 import React, {
-    FC, PropsWithChildren, ReactNode, useState,
+    FC, PropsWithChildren, ReactNode, useEffect, useState,
 } from 'react';
 import { Portal } from 'react-portal';
 import { NavigationModal } from 'src/components/navigation/modal';
+import { vevetApp } from 'src/utils/vevet';
+import { ScrollBar } from 'vevet';
 import { NavigationMenu, NavigationMenuProps } from '../../navigation/menu';
 import styles from './styles.module.scss';
 
@@ -31,6 +33,19 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
     ].join(' ');
 
     const [navigationModalShown, setNavigationModalShown] = useState(false);
+
+    // add scrollbar
+    useEffect(() => {
+        if (vevetApp.isMobile) {
+            return undefined;
+        }
+        const scrollbar = new ScrollBar({
+            container: window,
+        });
+        return () => {
+            scrollbar.destroy();
+        };
+    }, []);
 
     return (
         <div className={styles.layout_container}>

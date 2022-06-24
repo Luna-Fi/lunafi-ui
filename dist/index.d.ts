@@ -5,5 +5,6 @@ import { NumberCounter, NumberCounterProps } from './components/number/counter';
 import { ContainerOutline, ContainerOutlineProps } from './components/container/outline';
 import { NavigationMenu, NavigationMenuProps } from './components/navigation/menu';
 import { NavigationMenuLink, NavigationMenuLinkProps } from './components/navigation/menu/Link';
+import { NavigationModal, NavigationModalProps } from './components/navigation/modal';
 import './styles/index.scss';
-export { LayoutCSS, LayoutContainer, LayoutContainerProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, ContainerOutline, ContainerOutlineProps, };
+export { LayoutCSS, LayoutContainer, LayoutContainerProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, ContainerOutline, ContainerOutlineProps, };

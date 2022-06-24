@@ -18,6 +18,7 @@ Props
     show,
     handleCloseClick,
     links,
+    children,
     ...tagProps
 }, ref) => {
     const classNames = [
@@ -52,6 +53,12 @@ Props
                             links={links}
                         />
                     </div>
+
+                    {children && (
+                        <div className={styles.children}>
+                            {children}
+                        </div>
+                    )}
 
                 </div>
             </div>

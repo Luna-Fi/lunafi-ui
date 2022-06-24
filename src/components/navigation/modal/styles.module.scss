@@ -48,11 +48,24 @@
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: calc(100 * var(--vh));
     padding: calc(8.9 * var(--vh)) 0 calc(10 * var(--vh));
+    box-sizing: border-box;
 }
 
 .links {
+    box-sizing: border-box;
     padding-right: px-to-rem(24);
+    width: 100%;
+}
+
+.children {
+    width: 100%;
+    padding: 0 px-to-rem(24) 0 px-to-rem(40);
 }
 
 .close {

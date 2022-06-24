@@ -64,13 +64,14 @@
 }
 
 .children {
+    margin-top: px-to-rem(24);
     width: 100%;
     padding: 0 px-to-rem(24) 0 px-to-rem(40);
     box-sizing: border-box;
 
     > * {
         + * {
-            margin-top: px-to-rem(24);
+            margin-top: px-to-rem(12);
         }
     }
 }

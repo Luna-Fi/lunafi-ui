@@ -25,13 +25,20 @@
         background-size: contain;
         background-image: url('./bg.png');
     }
+
+    @media (max-height: 620px) {
+        display: none;
+    }
 }
 
 .container {
     position: relative;
     overflow: hidden;
     z-index: 0;
-    margin-top: px-to-rem(-54);
+
+    @media (min-height: 621px) {
+        margin-top: px-to-rem(-54);
+    }
 
     border: 1px solid var(--grey-800);
     border-radius: px-to-rem(8);
@@ -41,6 +48,10 @@
 .name {
     position: relative;
     padding: px-to-rem(54) 0 0 0;
+
+    @media (max-height: 620px) {
+        padding-top: 0;
+    }
 
     font-family: $font-family-header;
     font-size: px-to-rem(14);
@@ -79,7 +90,11 @@
 
         @include media-xs {
             border-top: 1px solid var(--grey-800);
-        }  
+
+            @media (max-height: 620px) {
+                border-top: 0;
+            }
+        }
     }
 }
 

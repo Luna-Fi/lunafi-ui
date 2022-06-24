@@ -5,7 +5,12 @@ import { lorem } from '../menu/lorem';
 
 type ComponentType = typeof NavigationModal;
 
-const Template: ComponentStory<ComponentType> = (args) => <NavigationModal {...args} />;
+const Template: ComponentStory<ComponentType> = (args) => (
+    <NavigationModal
+        {...args}
+        links={lorem.links}
+    />
+);
 
 const component: ComponentMeta<ComponentType> = {
     title: 'Navigation/Modal',
@@ -15,6 +20,5 @@ export default component;
 
 export const Default = Template.bind({});
 Default.args = {
-    links: lorem.links,
     show: true,
 };

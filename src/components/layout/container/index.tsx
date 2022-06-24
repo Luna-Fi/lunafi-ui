@@ -121,7 +121,9 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                     show={navigationModalShown}
                     handleCloseClick={() => setNavigationModalShown(false)}
                     className={styles.navigation_modal}
-                />
+                >
+                    {asideChildren}
+                </NavigationModal>
             </Portal>
 
         </div>

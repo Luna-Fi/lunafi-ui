@@ -94,7 +94,12 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                         links={menuLinks}
                     />
                 </div>
-                <div className={styles.aside__content}>
+                <div
+                    className={[
+                        styles.aside__content,
+                        classNames,
+                    ].join(' ')}
+                >
                     {asideChildren}
                 </div>
             </div>

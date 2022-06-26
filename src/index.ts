@@ -11,6 +11,7 @@ import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
 import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
 import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
+import { ButtonSvgOutline } from './components/button/svg-outline';
 
 export {
     LayoutCSS,
@@ -31,4 +32,6 @@ export {
     LinksSocialIcons, LinksSocialIconsProps,
 
     ConnectNetwork, ConnectNetworkProps,
+
+    ButtonSvgOutline,
 };

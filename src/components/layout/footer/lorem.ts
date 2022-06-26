@@ -29,18 +29,22 @@ export const lorem: LayoutFooterProps = {
                 {
                     name: 'Telegram',
                     href: 'https://t.me/LunaFi_Official',
+                    isExternal: true,
                 },
                 {
                     name: 'Twitter',
                     href: 'https://twitter.com/LunaFi_Project',
+                    isExternal: true,
                 },
                 {
                     name: 'Discord',
                     href: 'https://discord.gg/j2wDzZCshq',
+                    isExternal: true,
                 },
                 {
                     name: 'LinkedIn',
                     href: 'https://www.linkedin.com/company/lunafi-project/',
+                    isExternal: true,
                 },
             ],
         },
@@ -50,10 +54,12 @@ export const lorem: LayoutFooterProps = {
                 {
                     name: 'Docs',
                     href: 'https://docs.lunafi.io/lunafi/',
+                    isExternal: true,
                 },
                 {
                     name: 'FAQ\'s',
                     href: 'https://lunafi.io/#home-faq',
+                    isExternal: true,
                 },
             ],
         },

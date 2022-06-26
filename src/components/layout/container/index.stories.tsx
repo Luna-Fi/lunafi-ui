@@ -1,11 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { PreviewDiscount } from 'src/components/preview/discount';
+import { ButtonSvgOutline } from 'src/components/button/svg-outline';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
 import { ConnectNetwork } from '../../connect/network';
 import { lorem as networkLorem } from '../../connect/network/lorem';
+import metamaskSVG from '@/img/general/metamask.svg';
 
 type ComponentType = typeof LayoutContainer;
 
@@ -19,7 +21,10 @@ const Template: ComponentStory<ComponentType> = (args) => {
             asideChildren={(
                 <>
                     <PreviewDiscount {...discountPreviewLorem} />
-                    <div>Add to metamask</div>
+                    <ButtonSvgOutline size="small" fullWidth hasBg={false}>
+                        <img src={metamaskSVG} alt="Metamask" />
+                        <span>Add LFI to Metamask</span>
+                    </ButtonSvgOutline>
                 </>
             )}
             topChildren={(

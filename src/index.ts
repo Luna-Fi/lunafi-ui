@@ -7,11 +7,14 @@ import { NavigationMenu, NavigationMenuProps } from './components/navigation/men
 import { NavigationMenuLink, NavigationMenuLinkProps } from './components/navigation/menu/Link';
 import { NavigationModal, NavigationModalProps } from './components/navigation/modal';
 import { PreviewDiscount, PreviewDiscountProps } from './components/preview/discount';
+import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
+import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
 
 export {
     LayoutCSS,
     LayoutContainer, LayoutContainerProps,
+    LayoutFooter, LayoutFooterProps,
 
     NavigationMenu, NavigationMenuProps,
     NavigationMenuLink, NavigationMenuLinkProps,
@@ -23,4 +26,6 @@ export {
     ContainerOutline, ContainerOutlineProps,
 
     PreviewDiscount, PreviewDiscountProps,
+
+    LinksSocialIcons, LinksSocialIconsProps,
 };

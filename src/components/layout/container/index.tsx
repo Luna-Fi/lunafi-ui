@@ -19,12 +19,14 @@ export interface Props extends LayoutContainerProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     asideChildren?: ReactNode;
+    topChildren?: ReactNode;
 }
 
 export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
     appearAnimation,
     appearAnimationOn,
     asideChildren,
+    topChildren,
     menuLinks,
     pageTitle,
     footer,
@@ -75,9 +77,11 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                     <h1 className={styles.top__title}>
                         {pageTitle}
                     </h1>
-                    <div className={styles.top__wallet}>
-                        Wallet
-                    </div>
+                    {topChildren && (
+                        <div className={styles.top__wallet}>
+                            {topChildren}
+                        </div>
+                    )}
                 </div>
                 <button
                     type="button"
@@ -129,6 +133,7 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                     className={styles.navigation_modal}
                 >
                     {asideChildren}
+                    {topChildren}
                 </NavigationModal>
             </Portal>
 

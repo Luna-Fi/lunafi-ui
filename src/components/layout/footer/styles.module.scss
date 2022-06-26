@@ -126,13 +126,25 @@
 
     &__links {
         @include reset-ul;
+        font-size: 0;
+
+        > * {
+            + * {
+                @include media-sm-min {
+                    margin-top: px-to-rem(12);
+                }
+                @include media-xs {
+                    margin-top: px-to-rem(4);
+                }
+            }
+        }
 
         a,
         button {
             @include reset-button;
 
             display: inline-block;
-            padding: px-to-rem(4) 0;
+            width: max-content;
 
             font-weight: 400;
             font-size: px-to-rem(12);

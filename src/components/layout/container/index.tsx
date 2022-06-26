@@ -6,11 +6,13 @@ import { NavigationModal } from 'src/components/navigation/modal';
 import { vevetApp } from 'src/utils/vevet';
 import { ScrollBar } from 'vevet';
 import { NavigationMenu, NavigationMenuProps } from '../../navigation/menu';
+import { LayoutFooter, LayoutFooterProps } from '../footer';
 import styles from './styles.module.scss';
 
 export interface LayoutContainerProps {
     menuLinks: NavigationMenuProps['links'];
     pageTitle: string;
+    footer: LayoutFooterProps;
 }
 
 export interface Props extends LayoutContainerProps {
@@ -25,6 +27,7 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
     asideChildren,
     menuLinks,
     pageTitle,
+    footer,
     children,
 }) => {
     const classNames = [
@@ -111,7 +114,10 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                     classNames,
                 ].join(' ')}
             >
-                {children}
+                <div className={styles.content__wrapper}>
+                    {children}
+                </div>
+                <LayoutFooter {...footer} />
             </div>
 
             {/* menu */}

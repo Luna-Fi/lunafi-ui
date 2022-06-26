@@ -223,11 +223,16 @@
     position: relative;
     z-index: 0;
     width: 100%;
-    box-sizing: border-box;
 
-    padding: 24px;
-    @include media-xs {
-        padding: 12px;
+    &__wrapper {
+        position: relative;
+        box-sizing: border-box;
+        padding: px-to-rem(24);
+        min-height: calc(100vh - var(--top-height) - var(--footer-height) - 1px);
+
+        @include media-xs {
+            padding: px-to-rem(12);
+        }
     }
 }
 

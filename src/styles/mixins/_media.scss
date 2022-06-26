@@ -55,6 +55,12 @@
     }
 }
 
+@mixin media-lg-min () {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
 @mixin media-lg-max () {
     @include media-xs {
         @content;
@@ -72,6 +78,12 @@
 
 @mixin media-xl () {
     @media (min-width: 1200px) and (max-width: 1499px) {
+        @content;
+    }
+}
+
+@mixin media-xl-min () {
+    @media (min-width: 1200px) {
         @content;
     }
 }

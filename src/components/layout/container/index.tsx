@@ -12,7 +12,7 @@ import styles from './styles.module.scss';
 export interface LayoutContainerProps {
     menuLinks: NavigationMenuProps['links'];
     pageTitle: string;
-    footer: LayoutFooterProps;
+    footer?: LayoutFooterProps;
 }
 
 export interface Props extends LayoutContainerProps {
@@ -117,7 +117,7 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                 <div className={styles.content__wrapper}>
                     {children}
                 </div>
-                <LayoutFooter {...footer} />
+                {footer && <LayoutFooter {...footer} />}
             </div>
 
             {/* menu */}

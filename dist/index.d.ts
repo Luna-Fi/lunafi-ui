@@ -10,4 +10,6 @@ import { PreviewDiscount, PreviewDiscountProps } from './components/preview/disc
 import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
 import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
-export { LayoutCSS, LayoutContainer, LayoutContainerProps, LayoutFooter, LayoutFooterProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, ContainerOutline, ContainerOutlineProps, PreviewDiscount, PreviewDiscountProps, LinksSocialIcons, LinksSocialIconsProps, };
+import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
+import { ButtonSvgOutline } from './components/button/svg-outline';
+export { LayoutCSS, LayoutContainer, LayoutContainerProps, LayoutFooter, LayoutFooterProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, ContainerOutline, ContainerOutlineProps, PreviewDiscount, PreviewDiscountProps, LinksSocialIcons, LinksSocialIconsProps, ConnectNetwork, ConnectNetworkProps, ButtonSvgOutline, };

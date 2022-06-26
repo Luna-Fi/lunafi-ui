@@ -10,6 +10,7 @@ import { PreviewDiscount, PreviewDiscountProps } from './components/preview/disc
 import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
 import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
+import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
 
 export {
     LayoutCSS,
@@ -28,4 +29,6 @@ export {
     PreviewDiscount, PreviewDiscountProps,
 
     LinksSocialIcons, LinksSocialIconsProps,
+
+    ConnectNetwork, ConnectNetworkProps,
 };

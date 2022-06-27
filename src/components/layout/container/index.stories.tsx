@@ -21,7 +21,7 @@ const Template: ComponentStory<ComponentType> = (args) => {
             asideChildren={(
                 <>
                     <PreviewDiscount {...discountPreviewLorem} />
-                    <ButtonSvgOutline size="small" fullWidth hasBg={false}>
+                    <ButtonSvgOutline size="small" fullWidth hasBg={false} spacing="small">
                         <img src={metamaskSVG} alt="Metamask" />
                         <span>Add LFI to Metamask</span>
                     </ButtonSvgOutline>

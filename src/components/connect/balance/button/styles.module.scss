@@ -1,0 +1,61 @@
+@import '@/styles/base';
+
+.connect_balance_button {
+    position: relative;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    position: relative;
+    display: block;
+    width: px-to-rem(32);
+    height: px-to-rem(32);
+    border-radius: 50%;
+    background: var(--black);
+    overflow: hidden;
+    margin-right: px-to-rem(12);
+
+    > * {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        transition: transform 1s;
+        transform: translate(0, 0);
+
+        &.hidden {
+            transform: translate(0, 100%);
+        }
+    }
+
+    svg {
+        width: px-to-rem(26);
+        height: auto;
+    }
+
+}
+
+.arrow {
+    width: px-to-rem(21);
+    height: auto;
+    margin-left: px-to-rem(6);
+    margin-right: px-to-rem(2);
+    margin-top: px-to-rem(2);
+
+    path {
+        fill: var(--grey-500);
+    }
+}

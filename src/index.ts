@@ -16,6 +16,7 @@ import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 import { ConnectGrid } from './components/connect/grid';
 import { ConnectBalance } from './components/connect/balance';
 import { ConnectUser, ConnectUserProps } from './components/connect/user';
+import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
 
 export {
     LayoutCSS,
@@ -34,6 +35,7 @@ export {
     PreviewDiscount, PreviewDiscountProps,
 
     LinksSocialIcons, LinksSocialIconsProps,
+    LinksSocialMenu, LinksSocialMenuProps,
 
     ConnectGrid,
     ConnectBalance,

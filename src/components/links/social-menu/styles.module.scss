@@ -1,0 +1,52 @@
+@import '@/styles/base';
+
+.button {
+    position: relative;
+    padding: 0;
+    height: px-to-rem(44);
+    width: px-to-rem(44);
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: opacity 0.3s;
+    }
+
+    &::before {
+        background-size: px-to-rem(26) auto;
+        background-image: url('./static.svg');
+    }
+
+    &::after {
+        background-size: px-to-rem(18) auto;
+        background-image: url('./close.svg');
+        opacity: 0;
+    }
+
+    @at-root .button:global(.active) {
+        .icon {
+            &::before {
+                opacity: 0;
+            }
+    
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}

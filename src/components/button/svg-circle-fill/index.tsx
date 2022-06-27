@@ -254,9 +254,9 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement, Props>((
             };
         }
         return {
-            staticColor1: '#00FFF4',
+            staticColor1: '#008983',
             staticColor2: '#2A85FF',
-            hoverColor1: hasStaticFill ? '#14161A' : '#00FFF4',
+            hoverColor1: hasStaticFill ? '#14161A' : '#008983',
             hoverColor2: hasStaticFill ? '#14161A' : '#2A85FF',
             contentColor: hasStaticFill ? '#000' : '#fff',
             contentColorHover: hasStaticFill ? '#fff' : '#000',

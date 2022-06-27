@@ -64,4 +64,11 @@ export const lorem: LayoutFooterProps = {
             ],
         },
     ],
+    social: {
+        twitter: 'https://twitter.com/LunaFi_Project',
+        docs: 'https://docs.lunafi.io/',
+        telegram: 'https://t.me/LunaFi_Official',
+        discord: 'https://discord.gg/j2wDzZCshq',
+        linkedin: 'https://www.linkedin.com/company/lunafi-project/',
+    },
 };

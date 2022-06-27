@@ -1,20 +1,15 @@
 import React, { FC } from 'react';
+import { SocialLinks } from '../types';
 import styles from './styles.module.scss';
 
-export interface LinksSocialIconsProps {
-    twitter?: string;
-    docs?: string;
-    telegram?: string;
-    discord?: string;
-    linkedin?: string;
-}
+export interface LinksSocialIconsProps extends SocialLinks { }
 
 export const LinksSocialIcons: FC<LinksSocialIconsProps> = ({
-    twitter = 'https://twitter.com/LunaFi_Project',
-    docs = 'https://docs.lunafi.io/',
-    telegram = 'https://t.me/LunaFi_Official',
-    discord = 'https://discord.gg/j2wDzZCshq',
-    linkedin = 'https://www.linkedin.com/company/lunafi-project/',
+    twitter,
+    docs,
+    telegram,
+    discord,
+    linkedin,
 }) => (
     <ul
         className={styles.links_social_icons}

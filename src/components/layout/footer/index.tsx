@@ -1,18 +1,20 @@
 import React, {
     FC, useCallback, useEffect, useRef,
 } from 'react';
-import { LinksSocialIcons } from 'src/components/links/social-icons';
+import { LinksSocialIcons, LinksSocialIconsProps } from 'src/components/links/social-icons';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
 import { LayoutFooterMenu, LayoutFooterMenuProps } from './Menu';
 import styles from './styles.module.scss';
 
 export interface LayoutFooterProps {
-    menu?: LayoutFooterMenuProps['linkGroups']
+    menu?: LayoutFooterMenuProps['linkGroups'];
+    social?: LinksSocialIconsProps;
 }
 
 export const LayoutFooter: FC<LayoutFooterProps> = ({
     menu,
+    social,
 }) => {
     const parentRef = useRef<HTMLElement>(null);
 
@@ -69,7 +71,9 @@ export const LayoutFooter: FC<LayoutFooterProps> = ({
                     platform for the future of finance.
                     Join us!
                 </div>
-                <LinksSocialIcons />
+                <LinksSocialIcons
+                    {...social}
+                />
             </div>
 
             {menu && (

@@ -7,6 +7,10 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
      */
     size?: 'small' | 'medium' | 'large';
     /**
+     * @default 'medium'
+     */
+    spacing?: 'small' | 'medium' | 'large';
+    /**
      * @defaul false
      */
     fullWidth?: boolean;

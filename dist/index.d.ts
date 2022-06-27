@@ -12,4 +12,7 @@ import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/soci
 import './styles/index.scss';
 import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
 import { ButtonSvgOutline } from './components/button/svg-outline';
-export { LayoutCSS, LayoutContainer, LayoutContainerProps, LayoutFooter, LayoutFooterProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, ContainerOutline, ContainerOutlineProps, PreviewDiscount, PreviewDiscountProps, LinksSocialIcons, LinksSocialIconsProps, ConnectNetwork, ConnectNetworkProps, ButtonSvgOutline, };
+import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
+import { ConnectGrid } from './components/connect/grid';
+import { ConnectBalance } from './components/connect/balance';
+export { LayoutCSS, LayoutContainer, LayoutContainerProps, LayoutFooter, LayoutFooterProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, ContainerOutline, ContainerOutlineProps, PreviewDiscount, PreviewDiscountProps, LinksSocialIcons, LinksSocialIconsProps, ConnectGrid, ConnectBalance, ConnectNetwork, ConnectNetworkProps, ButtonSvgOutline, ButtonSvgCircleFill, };

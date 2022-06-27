@@ -1,9 +1,5 @@
 import { FC } from 'react';
-export interface LinksSocialIconsProps {
-    twitter?: string;
-    docs?: string;
-    telegram?: string;
-    discord?: string;
-    linkedin?: string;
+import { SocialLinks } from '../types';
+export interface LinksSocialIconsProps extends SocialLinks {
 }
 export declare const LinksSocialIcons: FC<LinksSocialIconsProps>;

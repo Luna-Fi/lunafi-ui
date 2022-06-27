@@ -2,6 +2,7 @@ import React, {
     FC, PropsWithChildren, ReactNode, useEffect, useState,
 } from 'react';
 import { Portal } from 'react-portal';
+import { LinksSocialMenu } from 'src/components/links/social-menu';
 import { NavigationModal } from 'src/components/navigation/modal';
 import { vevetApp } from 'src/utils/vevet';
 import { ScrollBar } from 'vevet';
@@ -80,7 +81,13 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                     {topChildren && (
                         <div className={styles.top__children}>
                             {topChildren}
-                            <span>Social</span>
+                            {footer && footer.social && (
+                                <LinksSocialMenu
+                                    appearAnimation={appearAnimation}
+                                    appearAnimationOn={appearAnimationOn}
+                                    {...footer.social}
+                                />
+                            )}
                         </div>
                     )}
                 </div>

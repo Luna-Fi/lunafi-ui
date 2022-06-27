@@ -12,6 +12,7 @@ import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/soci
 import './styles/index.scss';
 import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
 import { ButtonSvgOutline } from './components/button/svg-outline';
+import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 
 export {
     LayoutCSS,
@@ -34,4 +35,5 @@ export {
     ConnectNetwork, ConnectNetworkProps,
 
     ButtonSvgOutline,
+    ButtonSvgCircleFill,
 };

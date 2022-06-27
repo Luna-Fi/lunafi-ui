@@ -198,7 +198,13 @@
         }
     }
 
-    &__wallet {
+    &__children {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: px-to-rem(12);
+        
         @include media-xs {
             display: none;
         }

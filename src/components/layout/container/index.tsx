@@ -78,8 +78,9 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                         {pageTitle}
                     </h1>
                     {topChildren && (
-                        <div className={styles.top__wallet}>
+                        <div className={styles.top__children}>
                             {topChildren}
+                            <span>Social</span>
                         </div>
                     )}
                 </div>

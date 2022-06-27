@@ -1,0 +1,17 @@
+@import '@/styles/base';
+
+.connect_user_button {
+    position: relative;
+    padding-left: px-to-rem(18);
+    padding-right: px-to-rem(18);
+}
+
+.icon {
+    width: px-to-rem(17);
+    height: auto;
+    margin-right: px-to-rem(12);
+
+    path {
+        fill: var(--white);
+    }
+}

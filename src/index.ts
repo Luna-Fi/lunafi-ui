@@ -15,6 +15,7 @@ import { ButtonSvgOutline } from './components/button/svg-outline';
 import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 import { ConnectGrid } from './components/connect/grid';
 import { ConnectBalance } from './components/connect/balance';
+import { ConnectUser, ConnectUserProps } from './components/connect/user';
 
 export {
     LayoutCSS,
@@ -37,6 +38,7 @@ export {
     ConnectGrid,
     ConnectBalance,
     ConnectNetwork, ConnectNetworkProps,
+    ConnectUser, ConnectUserProps,
 
     ButtonSvgOutline,
     ButtonSvgCircleFill,

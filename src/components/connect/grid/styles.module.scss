@@ -1,0 +1,45 @@
+@import '@/styles/base';
+
+.connect_grid,
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: px-to-rem(12);
+}
+
+.row {
+    @include media-xs {
+        width: 100%;
+    }
+}
+
+.connect_grid {
+    @include media-xs {
+        flex-wrap: wrap;
+
+        .balance {
+            width: 100%;
+        
+            > * {
+                width: 100%;
+            }
+        }
+
+        .network {
+            flex-shrink: 0;
+        }
+    }
+
+}
+
+.user {
+    @include media-xs {
+        width: 100%;
+        
+        > * {
+            width: 100%;
+        }
+    }
+}

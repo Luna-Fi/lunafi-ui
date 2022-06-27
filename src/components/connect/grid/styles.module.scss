@@ -16,6 +16,10 @@
 }
 
 .connect_grid {
+    @include media-sm-min {
+        width: max-content;
+    }
+
     @include media-xs {
         flex-wrap: wrap;
 

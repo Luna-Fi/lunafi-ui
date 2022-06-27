@@ -5,16 +5,12 @@ import { ConnectGrid } from '.';
 import { ConnectBalance } from '../balance';
 import { ConnectNetwork } from '../network';
 import { lorem as networkLorem } from '../network/lorem';
+import { ConnectUser } from '../user';
 
 type ComponentType = typeof ConnectGrid;
 
 const Template: ComponentStory<ComponentType> = (args) => (
-    <ConnectGrid
-        {...args}
-        balance={<ConnectBalance balance={0.079} />}
-        network={<ConnectNetwork {...networkLorem} />}
-        connect={<ButtonSvgCircleFill>Connect</ButtonSvgCircleFill>}
-    />
+    <ConnectGrid {...args} />
 );
 
 const component: ComponentMeta<ComponentType> = {
@@ -24,3 +20,25 @@ const component: ComponentMeta<ComponentType> = {
 export default component;
 
 export const Default = Template.bind({});
+Default.args = {
+    balance: <ConnectBalance balance={0.079} />,
+    network: <ConnectNetwork {...networkLorem} />,
+    connect: <ButtonSvgCircleFill>Connect</ButtonSvgCircleFill>,
+};
+Default.parameters = {
+    controls: {
+        exclude: ['balance', 'network', 'connect'],
+    },
+};
+
+export const Logged = Template.bind({});
+Logged.args = {
+    balance: <ConnectBalance balance={0.079} />,
+    network: <ConnectNetwork {...networkLorem} />,
+    connect: <ConnectUser username="0x8959..ddE4" />,
+};
+Logged.parameters = {
+    controls: {
+        exclude: ['balance', 'network', 'connect'],
+    },
+};

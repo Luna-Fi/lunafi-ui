@@ -16,6 +16,10 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
      */
     size?: 'small' | 'medium' | 'large';
     /**
+     * @default 'medium'
+     */
+    spacing?: 'small' | 'medium' | 'large';
+    /**
      * @defaul false
      */
     fullWidth?: boolean;
@@ -30,6 +34,7 @@ export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
         appearAnimation,
         appearAnimationOn,
         size = 'medium',
+        spacing = 'medium',
         fullWidth,
         hasBg = true,
         children,
@@ -48,6 +53,9 @@ export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
         size === 'small' ? styles.small : '',
         size === 'medium' ? styles.medium : '',
         size === 'large' ? styles.large : '',
+        spacing === 'small' ? styles.spacing_small : '',
+        spacing === 'medium' ? styles.spacing_medium : '',
+        spacing === 'large' ? styles.spacing_large : '',
         fullWidth ? styles.full_width : '',
     ].join(' ');
 

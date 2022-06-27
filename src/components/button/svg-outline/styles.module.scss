@@ -10,7 +10,14 @@
     justify-content: center;
 
     box-sizing: border-box;
-    padding: px-to-rem(6) px-to-rem(8);
+    padding: px-to-rem(6) px-to-rem(24);
+
+    &.spacing_small {
+        padding: px-to-rem(6) px-to-rem(8);
+    }
+    &.spacing_large {
+        padding: px-to-rem(6) px-to-rem(40);
+    }
 
     &.large {
         min-height: px-to-rem(54);

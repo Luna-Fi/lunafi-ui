@@ -1,0 +1,60 @@
+@import '@/styles/base';
+
+.button_svg_circle_fill {
+    @include reset-button;
+
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: px-to-rem(4) px-to-rem(40);
+
+    &.large {
+        min-height: px-to-rem(54);
+    }
+    &.medium {
+        min-height: px-to-rem(44);
+    }
+    &.small {
+        min-height: px-to-rem(34);
+    }
+
+    &.full_width {
+        width: 100%;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+    
+.svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.content {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-weight: 500;
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(26);
+    color: var(--content-color);
+    transition: color 0.5s;
+
+    &.is_hovered {
+        color: var(--content-color-hover);
+    }
+}

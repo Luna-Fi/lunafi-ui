@@ -1,0 +1,74 @@
+@import '@/styles/base';
+
+.tooltip_content {
+    position: relative;
+    max-width: max-content;
+}
+
+.modal {
+    position: absolute;
+    box-sizing: border-box;
+    padding: px-to-rem(16) px-to-rem(24);
+    
+    transform: translateY(40px);
+    opacity: 0;
+
+    &.use_background {
+        background-color: var(--grey-900);
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            box-sizing: border-box;
+            border: 1px solid var(--blue);
+            opacity: 0.4;
+        }
+
+        &,
+        &::before {
+            border-radius: px-to-rem(8);
+        }
+    }
+
+    &:global(.top_left) {
+        top: 100%;
+        left: 0;
+
+        &.use_margin {
+            margin-top: px-to-rem(10);
+        }
+    }
+
+    &:global(.top_right) {
+        top: 100%;
+        right: 0;
+
+        &.use_margin {
+            margin-top: px-to-rem(10);
+        }
+    }
+
+    &:global(.bottom_left) {
+        bottom: 100%;
+        left: 0;
+
+        &.use_margin {
+            margin-bottom: px-to-rem(10);
+        }
+    }
+
+    &:global(.bottom_right) {
+        bottom: 100%;
+        right: 0;
+
+        &.use_margin {
+            margin-bottom: px-to-rem(10);
+        }
+    }
+}

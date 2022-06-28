@@ -17,6 +17,7 @@ import { ConnectGrid } from './components/connect/grid';
 import { ConnectBalance } from './components/connect/balance';
 import { ConnectUser, ConnectUserProps } from './components/connect/user';
 import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
+import { TooltipContent } from './components/tooltip/content';
 
 export {
     LayoutCSS,
@@ -44,4 +45,6 @@ export {
 
     ButtonSvgOutline,
     ButtonSvgCircleFill,
+
+    TooltipContent,
 };

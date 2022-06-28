@@ -7,15 +7,17 @@ import { ConnectNetworkProps } from '.';
 export const lorem: ConnectNetworkProps = {
     networks: [
         {
+            key: 0,
             name: 'Polygon',
             iconSrc: polygonIcon,
             previewSrc: polygonPreview,
         },
         {
+            key: 1,
             name: 'ETH',
             iconSrc: ethIcon,
             previewSrc: ethPreview,
         },
     ],
-    onSelect: () => { },
+    onSelect: () => {},
 };

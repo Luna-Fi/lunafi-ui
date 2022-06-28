@@ -14,6 +14,12 @@ const component: ComponentMeta<ComponentType> = {
 export default component;
 
 export const Default = Template.bind({});
+Default.parameters = {
+    controls: {
+        exclude: ['onSelect'],
+    },
+};
+
 Default.args = {
     ...lorem,
 };

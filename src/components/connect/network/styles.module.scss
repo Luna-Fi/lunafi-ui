@@ -1,0 +1,82 @@
+@import '@/styles/base';
+
+.tooltip {
+    @include media-sm-min {
+        width: px-to-rem(280);
+    }
+    @include media-xs {
+        width: px-to-rem(225);
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(24);
+}
+
+.list {
+    margin-top: px-to-rem(20);
+    margin-bottom: px-to-rem(8);
+
+    > * {
+        + * {
+            margin-top: px-to-rem(12);
+        }
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(24);
+
+    &.active {
+        font-weight: 700;
+    }
+
+    .icon {
+        position: relative;
+        display: block;
+        width: px-to-rem(30);
+        height: px-to-rem(30);
+        margin-right: px-to-rem(12);
+        flex-shrink: 0;
+
+        img {
+            width: px-to-rem(30);
+            height: px-to-rem(30);
+            object-fit: contain;
+        }
+
+    }
+
+    .checked {
+        display: block;
+        margin-left: px-to-rem(12);
+        width: px-to-rem(10);
+        height: px-to-rem(10);
+        border-radius: 50%;
+        background-color: var(--color-success);
+        opacity: 0;
+        transition: opacity 0.25s;
+
+        &.active {
+            opacity: 1;
+        }
+
+    }
+
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+}

@@ -5,41 +5,39 @@
     padding: 0;
     height: px-to-rem(44);
     width: px-to-rem(44);
-}
 
-.icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    &::before,
-    &::after {
-        content: '';
+    .icon {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: opacity 0.3s;
-    }
-
-    &::before {
-        background-size: px-to-rem(26) auto;
-        background-image: url('./static.svg');
-    }
-
-    &::after {
-        background-size: px-to-rem(18) auto;
-        background-image: url('./close.svg');
-        opacity: 0;
-    }
-
-    @at-root .button:global(.active) {
-        .icon {
+    
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 0.3s;
+        }
+    
+        &::before {
+            background-size: px-to-rem(26) auto;
+            background-image: url('./static.svg');
+        }
+    
+        &::after {
+            background-size: px-to-rem(18) auto;
+            background-image: url('./close.svg');
+            opacity: 0;
+        }
+    
+        @at-root :global(.tooltip_active) & {
             &::before {
                 opacity: 0;
             }
@@ -47,6 +45,43 @@
             &::after {
                 opacity: 1;
             }
+        }
+    }
+}
+
+.tooltip {
+    padding: px-to-rem(5);
+    width: px-to-rem(150);
+}
+
+.links {
+    @include reset-ul;
+
+    .link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: px-to-rem(9);
+        border-radius: px-to-rem(6);
+
+        font-weight: 500;
+        font-size: px-to-rem(16);
+        line-height: 150%;
+        letter-spacing: 0.01em;
+        color: var(--white);
+        text-decoration: none;
+
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.11);
+        }
+
+        svg {
+            width: px-to-rem(24);
+            height: px-to-rem(24);
+            margin-right: px-to-rem(12);
         }
     }
 }

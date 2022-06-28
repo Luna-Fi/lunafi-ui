@@ -99,14 +99,14 @@ export const TooltipContent: FC<PropsWithChildren<Props>> = ({
 
         if (isTop) {
             if (isLeft) {
-                return TooltipPos.topLeft;
+                return TooltipPos.TopLeft;
             }
-            return TooltipPos.topRight;
+            return TooltipPos.TopRight;
         }
         if (isLeft) {
-            return TooltipPos.bottomLeft;
+            return TooltipPos.BottomLeft;
         }
-        return TooltipPos.bottomRight;
+        return TooltipPos.BottomRight;
     }, [pos, modalRef]);
 
     // animate modal
@@ -116,7 +116,7 @@ export const TooltipContent: FC<PropsWithChildren<Props>> = ({
         }
         const toBeShown = isActive;
         const currentPos = getPosition();
-        const ySpace = currentPos === TooltipPos.topLeft || currentPos === TooltipPos.topRight
+        const ySpace = currentPos === TooltipPos.TopLeft || currentPos === TooltipPos.TopRight
             ? 40 : -40;
         gsap.to(modalRef, {
             duration: 0.35,

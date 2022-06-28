@@ -1,6 +1,6 @@
 export enum TooltipPos {
-    topLeft = 'top_left',
-    topRight = 'top_right',
-    bottomLeft = 'bottom_left',
-    bottomRight = 'bottom_right',
+    TopLeft = 'top_left',
+    TopRight = 'top_right',
+    BottomLeft = 'bottom_left',
+    BottomRight = 'bottom_right',
 }

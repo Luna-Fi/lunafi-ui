@@ -1,13 +1,17 @@
 import gsap from 'gsap';
 import React, {
-    cloneElement, FC, HTMLAttributes, PropsWithChildren, ReactNode,
+    cloneElement, forwardRef, HTMLAttributes, ReactNode,
     useCallback,
-    useEffect, useRef, useState,
+    useEffect, useImperativeHandle, useRef, useState,
 } from 'react';
 import { vevetApp } from 'src/utils/vevet';
 import { addEventListener, childOf } from 'vevet-dom';
 import { TooltipPos } from '../types';
 import styles from './styles.module.scss';
+
+export interface TooltipContentHandle {
+    close: () => void;
+}
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
     trigger: ReactNode;
@@ -23,7 +27,10 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
     pos?: TooltipPos;
 }
 
-export const TooltipContent: FC<PropsWithChildren<Props>> = ({
+export const TooltipContent = forwardRef<
+TooltipContentHandle,
+Props
+>(({
     trigger,
     forceShow,
     useBackground = true,
@@ -31,7 +38,7 @@ export const TooltipContent: FC<PropsWithChildren<Props>> = ({
     pos,
     children,
     ...tagProps
-}) => {
+}, ref) => {
     // elements
     const parentRef = useRef<HTMLDivElement>(null);
     const [modalRef, setModalRef] = useState<HTMLDivElement | null>(null);
@@ -40,6 +47,13 @@ export const TooltipContent: FC<PropsWithChildren<Props>> = ({
     const [allowRender, setAllowRender] = useState(false);
     const [position, setPosition] = useState<TooltipPos | null>(null);
     const [isActive, setIsActive] = useState<boolean | undefined>(undefined);
+
+    // pass ref
+    useImperativeHandle(ref, () => ({
+        close() {
+            setIsActive(false);
+        },
+    }));
 
     // render on first show
     useEffect(() => {
@@ -170,4 +184,4 @@ export const TooltipContent: FC<PropsWithChildren<Props>> = ({
             ) }
         </div>
     );
-};
+});

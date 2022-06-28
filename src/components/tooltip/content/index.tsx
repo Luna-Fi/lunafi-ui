@@ -138,7 +138,7 @@ export const TooltipContent: FC<PropsWithChildren<Props>> = ({
     const triggerChild = cloneElement(trigger as any, {
         onClick: () => {
             if (!forceShow) {
-                setIsActive(true);
+                setIsActive((val) => !val);
             }
         },
     });

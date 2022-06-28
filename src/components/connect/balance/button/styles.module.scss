@@ -33,11 +33,13 @@
         width: 100%;
         height: 100%;
 
-        transition: transform 1s;
-        transform: translate(0, 0);
-
-        &.hidden {
+        &.has_appear_animation {
             transform: translate(0, 100%);
+
+            &.show {
+                transition: transform 1s;
+                transform: translate(0, 0);
+            }
         }
     }
 

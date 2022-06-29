@@ -1,6 +1,8 @@
 @import './mixins/media';
 @import './mixins/reset';
 @import './mixins/font-size';
+@import './mixins/device';
+@import './mixins/states';
 
 $font-family: "Inter";
 $font-family-header: 'NB Architekt R';

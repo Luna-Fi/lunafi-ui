@@ -1,0 +1,13 @@
+@mixin hover() {
+    &:hover {
+        @content;
+    }
+}
+
+@mixin non-mobile-hover ($useGlobal: false) {
+    @include non-mobile-device ($useGlobal) {
+        @include hover {
+            @content;
+        }
+    }
+}

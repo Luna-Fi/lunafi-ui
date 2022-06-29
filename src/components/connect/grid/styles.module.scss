@@ -12,6 +12,10 @@
 .row {
     @include media-xs {
         width: 100%;
+
+        @media (max-width: 374px) {
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -26,7 +30,8 @@
         .balance {
             width: 100%;
         
-            > * {
+            > *,
+            > * > button {
                 width: 100%;
             }
         }

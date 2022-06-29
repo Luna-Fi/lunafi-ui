@@ -1,5 +1,6 @@
-import React, { ButtonHTMLAttributes } from 'react';
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+import React from 'react';
+import { ButtonAnchorProps } from '../ButtonAnchor';
+export interface ButtonSvgCircleFillProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     /**
@@ -30,4 +31,6 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
      */
     colorVariant?: 'primary' | 'primary_unactive' | 'gradient';
 }
-export declare const ButtonSvgCircleFill: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLButtonElement>>;
+declare type Props = ButtonSvgCircleFillProps & ButtonAnchorProps;
+export declare const ButtonSvgCircleFill: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>>;
+export {};

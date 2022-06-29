@@ -1,4 +1,7 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, {
+    forwardRef, HTMLAttributes, useRef,
+} from 'react';
+import { childOf } from 'vevet-dom';
 import { NavigationMenu, NavigationMenuProps } from '../menu';
 import styles from './styles.module.scss';
 
@@ -21,6 +24,8 @@ Props
     children,
     ...tagProps
 }, ref) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
     const classNames = [
         show && styles.show,
     ].join(' ');
@@ -34,42 +39,44 @@ Props
                 classNames,
                 tagProps.className,
             ].join(' ')}
+            onClick={(e) => {
+                if (!childOf(e.target as any, containerRef.current!)) {
+                    handleCloseClick();
+                }
+            }}
+            aria-hidden
         >
-            <div
-                className={styles.overlay}
-                aria-hidden
-                onClick={handleCloseClick}
-            />
-            <div
-                className={[
-                    styles.container,
-                    classNames,
-                ].join(' ')}
-            >
-                <div className={styles.wrapper}>
+            <div className={styles.scroll}>
+                <div
+                    ref={containerRef}
+                    className={[
+                        styles.container,
+                        classNames,
+                    ].join(' ')}
+                >
+                    <div className={styles.wrapper}>
 
-                    <div className={styles.links}>
-                        <NavigationMenu
-                            links={links}
-                        />
-                    </div>
-
-                    {children && (
-                        <div className={styles.children}>
-                            {children}
+                        <div className={styles.links}>
+                            <NavigationMenu
+                                links={links}
+                            />
                         </div>
-                    )}
 
+                        {children && (
+                            <div className={styles.children}>
+                                {children}
+                            </div>
+                        )}
+
+                    </div>
                 </div>
             </div>
-
             <button
                 type="button"
                 className={styles.close}
                 aria-label="Close navigation"
                 onClick={handleCloseClick}
             />
-
         </div>
     );
 });

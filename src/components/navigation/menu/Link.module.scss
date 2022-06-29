@@ -12,6 +12,12 @@
     padding-left: px-to-rem(40);
     box-sizing: border-box;
 
+    @include media-xs {
+        @media (max-width: 360px) {
+            padding-left: px-to-rem(30);
+        }
+    }
+
     &.adaptive {
         @include media-md-max {
             padding-left: px-to-rem(8);

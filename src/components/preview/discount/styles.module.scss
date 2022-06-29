@@ -82,9 +82,13 @@
         transition: transform 0.75s;
     }
 
-    @at-root .preview_discount:hover & {
-        &::before {
-            transform: translate(px-to-rem(-40), 0);
+    @at-root .preview_discount {
+        @include non-mobile-hover (true) {
+            .name {
+                &::before {
+                    transform: translate(px-to-rem(-40), 0);
+                }
+            }
         }
     }
 
@@ -123,11 +127,16 @@
         border-radius: px-to-rem(40);
     }
 
-    @at-root .preview_discount:hover & {
-        color: var(--grey-900);
+    
+    @at-root .preview_discount {
+        @include non-mobile-hover (true) {
+            .items {
+                color: var(--grey-900);
 
-        &::before {
-            transform: translate(px-to-rem(-40), 0);
+                &::before {
+                    transform: translate(px-to-rem(-40), 0);
+                }
+            }
         }
     }
 

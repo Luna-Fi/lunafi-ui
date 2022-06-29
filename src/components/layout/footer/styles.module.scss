@@ -160,7 +160,7 @@
                 line-height: px-to-rem(22);
             }
             
-            &:hover {
+            @include non-mobile-hover (true) {
                 color: var(--white);
             }
         }

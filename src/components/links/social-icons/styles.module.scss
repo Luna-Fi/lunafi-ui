@@ -28,7 +28,7 @@
             transition: fill 0.35s;
         }
     
-        &:hover {
+        @include non-mobile-hover (true) {
             path {
                 fill: var(--blue);
             }

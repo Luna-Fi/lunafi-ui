@@ -29,8 +29,10 @@
         transform: scale(0, 0);
     }
 
-    &:hover::before {
-        transform: scale(1);
+    @include non-mobile-hover (true) {
+        &::before {
+            transform: scale(1);
+        }
     }
 
     @at-root :global(.tooltip_active) & {

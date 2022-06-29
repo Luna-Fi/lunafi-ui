@@ -5,6 +5,7 @@ import React, {
 import gsap from 'gsap';
 import { utils } from 'vevet';
 import { useOnResize } from 'src/utils/resize';
+import { vevetApp } from 'src/utils/vevet';
 import styles from './styles.module.scss';
 import { ButtonAnchor, ButtonAnchorProps } from '../ButtonAnchor';
 
@@ -94,7 +95,7 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
         if (!hasHover) {
             return false;
         }
-        return showProgressRef.current === 1;
+        return !vevetApp.isMobile && showProgressRef.current === 1;
     }, [hasHover]);
 
     // set hover state

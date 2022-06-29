@@ -8,7 +8,6 @@ export type ButtonAnchorProps = ({
 } & AnchorHTMLAttributes<HTMLAnchorElement>)
 | ({
     tag: 'button';
-    type: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 } & ButtonHTMLAttributes<HTMLButtonElement>);
 
 export const ButtonAnchor = forwardRef<

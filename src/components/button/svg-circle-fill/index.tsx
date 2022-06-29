@@ -1,13 +1,14 @@
 import React, {
-    ButtonHTMLAttributes, forwardRef, useCallback,
+    forwardRef, useCallback,
     useEffect, useId, useImperativeHandle, useMemo, useRef, useState,
 } from 'react';
 import gsap from 'gsap';
 import { utils } from 'vevet';
 import { useOnResize } from 'src/utils/resize';
 import styles from './styles.module.scss';
+import { ButtonAnchor, ButtonAnchorProps } from '../ButtonAnchor';
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonSvgCircleFillProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     /**
@@ -39,7 +40,9 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     colorVariant?: 'primary' | 'primary_unactive' | 'gradient';
 }
 
-export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement, Props>((
+type Props = ButtonSvgCircleFillProps & ButtonAnchorProps;
+
+export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>((
     {
         appearAnimation,
         appearAnimationOn,
@@ -54,7 +57,7 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement, Props>((
     },
     ref,
 ) => {
-    const domRef = useRef<HTMLButtonElement>(null);
+    const domRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
     useImperativeHandle(ref, () => domRef.current!);
     const id = useId();
 
@@ -272,16 +275,15 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement, Props>((
     }, [colors]);
 
     return (
-        <button
+        <ButtonAnchor
             ref={domRef}
-            type="button"
             {...tagProps}
             className={[
                 styles.button_svg_circle_fill,
                 classNames,
                 tagProps.className,
             ].join(' ')}
-            onMouseEnter={(evt) => {
+            onMouseEnter={(evt: React.MouseEvent<any, MouseEvent>) => {
                 if (tagProps.onMouseEnter) {
                     tagProps.onMouseEnter(evt);
                 }
@@ -289,7 +291,7 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement, Props>((
                     setIsHovered(true);
                 }
             }}
-            onMouseLeave={(evt) => {
+            onMouseLeave={(evt: React.MouseEvent<any, MouseEvent>) => {
                 if (tagProps.onMouseLeave) {
                     tagProps.onMouseLeave(evt);
                 }
@@ -408,7 +410,6 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement, Props>((
             >
                 {children}
             </span>
-
-        </button>
+        </ButtonAnchor>
     );
 });

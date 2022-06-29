@@ -42,7 +42,7 @@ const Template: ComponentStory<ComponentType> = (args) => {
                             {...networkLorem}
                         />
                     )}
-                    connect={<ButtonSvgCircleFill>Connect</ButtonSvgCircleFill>}
+                    connect={<ButtonSvgCircleFill tag="button">Connect</ButtonSvgCircleFill>}
                 />
             )}
         >

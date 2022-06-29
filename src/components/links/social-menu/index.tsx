@@ -19,6 +19,7 @@ export const LinksSocialMenu: FC<Props> = ({
     <TooltipContent
         trigger={(
             <ButtonSvgCircleFill
+                tag="button"
                 className={styles.button}
                 aria-label="Social links"
                 hasStaticFill={false}

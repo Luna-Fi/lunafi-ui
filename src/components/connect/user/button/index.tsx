@@ -19,6 +19,7 @@ Props
 }, ref) => (
     <ButtonSvgCircleFill
         ref={ref}
+        tag="button"
         {...tagProps}
         className={[
             styles.connect_user_button,

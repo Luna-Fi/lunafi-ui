@@ -2,6 +2,7 @@
 
 .button_svg_circle_fill {
     @include reset-button;
+    text-decoration: none;
 
     position: relative;
     display: inline-flex;

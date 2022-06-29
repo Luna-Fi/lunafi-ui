@@ -23,7 +23,7 @@ export const Default = Template.bind({});
 Default.args = {
     balance: <ConnectBalance balance={0.079} />,
     network: <ConnectNetwork {...networkLorem} />,
-    connect: <ButtonSvgCircleFill>Connect</ButtonSvgCircleFill>,
+    connect: <ButtonSvgCircleFill tag="button">Connect</ButtonSvgCircleFill>,
 };
 Default.parameters = {
     controls: {

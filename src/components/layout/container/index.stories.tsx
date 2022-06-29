@@ -5,6 +5,8 @@ import { ButtonSvgOutline } from 'src/components/button/svg-outline';
 import { ConnectGrid } from 'src/components/connect/grid';
 import { ConnectBalance } from 'src/components/connect/balance';
 import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
+import { ConnectBalanceBuy } from 'src/components/connect/balance/buy';
+import { lorem as buyLorem } from 'src/components/connect/balance/buy/lorem';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
@@ -34,7 +36,13 @@ const Template: ComponentStory<ComponentType> = (args) => {
                 <ConnectGrid
                     appearAnimation={appearAnimation}
                     appearAnimationOn={appearAnimationOn}
-                    balance={<ConnectBalance balance={0.079} />}
+                    balance={(
+                        <ConnectBalance balance={0.079}>
+                            <ConnectBalanceBuy
+                                {...buyLorem}
+                            />
+                        </ConnectBalance>
+                    )}
                     network={(
                         <ConnectNetwork
                             appearAnimation={appearAnimation}

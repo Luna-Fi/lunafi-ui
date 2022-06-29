@@ -15,6 +15,7 @@ import { ButtonSvgOutline } from './components/button/svg-outline';
 import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 import { ConnectGrid } from './components/connect/grid';
 import { ConnectBalance } from './components/connect/balance';
+import { ConnectBalanceBuy, ConnectBalanceBuyProps } from './components/connect/balance/buy';
 import { ConnectUser, ConnectUserProps } from './components/connect/user';
 import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
 import { TooltipContent } from './components/tooltip/content';
@@ -40,6 +41,7 @@ export {
 
     ConnectGrid,
     ConnectBalance,
+    ConnectBalanceBuy, ConnectBalanceBuyProps,
     ConnectNetwork, ConnectNetworkProps,
     ConnectUser, ConnectUserProps,
 

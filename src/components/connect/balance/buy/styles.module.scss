@@ -1,0 +1,31 @@
+@import '@/styles/base';
+
+.connect_balance_buy {
+    @include reset-ul;
+    
+    > * {
+        width: 100%;
+
+        a,
+        button {
+            width: 100%;
+        }
+
+        + * {
+            margin-top: px-to-rem(10);
+        }
+    }
+}
+
+.button {
+    padding-left: 0;
+    padding-right: 0;
+
+    .icon {
+        display: block;
+        width: px-to-rem(28);
+        height: px-to-rem(28);
+        margin-right: px-to-rem(6);
+    }
+
+}

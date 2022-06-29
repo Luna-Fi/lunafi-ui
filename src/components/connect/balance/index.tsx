@@ -1,5 +1,9 @@
-import React, { FC } from 'react';
+import React, {
+    FC, PropsWithChildren,
+} from 'react';
+import { TooltipContent } from 'src/components/tooltip/content';
 import { ConnectBalanceButton } from './button';
+import styles from './styles.module.scss';
 
 export interface Props {
     appearAnimation?: boolean;
@@ -7,14 +11,22 @@ export interface Props {
     balance: number;
 }
 
-export const ConnectBalance: FC<Props> = ({
+export const ConnectBalance: FC<PropsWithChildren<Props>> = ({
     appearAnimation,
     appearAnimationOn,
     balance,
+    children,
 }) => (
-    <ConnectBalanceButton
-        appearAnimation={appearAnimation}
-        appearAnimationOn={appearAnimationOn}
-        balance={balance}
-    />
+    <TooltipContent
+        className={styles.tooltip}
+        trigger={(
+            <ConnectBalanceButton
+                appearAnimation={appearAnimation}
+                appearAnimationOn={appearAnimationOn}
+                balance={balance}
+            />
+        )}
+    >
+        {children}
+    </TooltipContent>
 );

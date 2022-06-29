@@ -1,0 +1,11 @@
+@import '@/styles/base';
+
+.tooltip {
+    width: px-to-rem(340);
+    
+    @include media-xs {
+        width: px-to-rem(300);
+        max-width: 85vw;
+    }
+
+}

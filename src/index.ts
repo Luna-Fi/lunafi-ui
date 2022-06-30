@@ -22,6 +22,7 @@ import { TooltipContent } from './components/tooltip/content';
 import { Modal } from './components/modal';
 import { ConnectSubmit, ConnectSubmitProps } from './components/connect/submit';
 import { LinkExplore } from './components/links/explore';
+import { ConnectBalanceInfo, ConnectBalanceInfoProps } from './components/connect/balance/info';
 
 export {
     LayoutCSS,
@@ -49,6 +50,7 @@ export {
     ConnectNetwork, ConnectNetworkProps,
     ConnectSubmit, ConnectSubmitProps,
     ConnectUser, ConnectUserProps,
+    ConnectBalanceInfo, ConnectBalanceInfoProps,
 
     ButtonSvgOutline,
     ButtonSvgCircleFill,

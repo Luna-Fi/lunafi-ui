@@ -9,6 +9,8 @@ import { ConnectSubmit } from '../submit';
 import { lorem as submitLorem } from '../submit/lorem';
 import { ConnectUser } from '../user';
 import { lorem as buyLorem } from '../balance/buy/lorem';
+import { ConnectBalanceInfo } from '../balance/info';
+import { lorem as infoLorem } from '../balance/info/lorem';
 
 type ComponentType = typeof ConnectGrid;
 
@@ -41,7 +43,12 @@ Default.parameters = {
 
 export const Logged = Template.bind({});
 Logged.args = {
-    balance: <ConnectBalance balance={0.079} />,
+    balance: (
+        <ConnectBalance balance={infoLorem.balance}>
+            <ConnectBalanceInfo
+                {...infoLorem}
+            />
+        </ConnectBalance>),
     network: <ConnectNetwork {...networkLorem} />,
     connect: <ConnectUser username="0xca7bf3c514d412ac12d10eff302301a81153f557" />,
 };

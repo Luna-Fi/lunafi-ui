@@ -4,9 +4,9 @@ import { PreviewDiscount } from 'src/components/preview/discount';
 import { ButtonSvgOutline } from 'src/components/button/svg-outline';
 import { ConnectGrid } from 'src/components/connect/grid';
 import { ConnectBalance } from 'src/components/connect/balance';
-import { ConnectBalanceBuy } from 'src/components/connect/balance/buy';
-import { lorem as buyLorem } from 'src/components/connect/balance/buy/lorem';
 import { ConnectSubmit } from 'src/components/connect/submit';
+import { ConnectBalanceInfo } from 'src/components/connect/balance/info';
+import { lorem as infoLorem } from 'src/components/connect/balance/info/lorem';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
@@ -39,8 +39,8 @@ const Template: ComponentStory<ComponentType> = (args) => {
                     appearAnimationOn={appearAnimationOn}
                     balance={(
                         <ConnectBalance balance={0.079}>
-                            <ConnectBalanceBuy
-                                {...buyLorem}
+                            <ConnectBalanceInfo
+                                {...infoLorem}
                             />
                         </ConnectBalance>
                     )}

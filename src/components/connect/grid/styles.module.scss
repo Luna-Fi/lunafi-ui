@@ -38,6 +38,15 @@
 
         .network {
             flex-shrink: 0;
+
+            @media (max-width: 374px) {
+                width: 100%;
+
+                > *,
+                > * button {
+                    width: 100%;
+                }
+            }
         }
     }
 

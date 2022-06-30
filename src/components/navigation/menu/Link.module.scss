@@ -40,7 +40,6 @@
         content: '';
         display: block;
         position: absolute;
-        z-index: -1;
         top: 0;
         left: 0;
         width: 100%;
@@ -77,8 +76,13 @@
     }
 }
 
-.icon {
+.icon,
+.name {
     position: relative;
+    z-index: 1;
+}
+
+.icon {
     display: flex;
     flex-direction: row;
     align-items: center;

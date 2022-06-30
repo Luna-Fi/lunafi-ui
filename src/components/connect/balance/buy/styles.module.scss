@@ -2,8 +2,6 @@
 
 .connect_balance_buy {
     @include reset-ul;
-    position: relative;
-    z-index: 1;
     border-radius: px-to-rem(8);
     background-color: var(--color-grey-900);
     border: 1px solid rgba(var(--color-blue--rgb), 0.4);

@@ -1,18 +1,11 @@
 @import '@/styles/base';
 
 .connect_balance_info {
-    position: relative;
     box-sizing: border-box;
     background-color: var(--color-grey-800);
     color: var(--color-white);
     border-radius: px-to-rem(8);
     border: 1px solid rgba(var(--color-blue--rgb), 0.4);
-
-    > * {
-        position: relative;
-        z-index: 1;
-    }
-
 }
 
 .wrap {

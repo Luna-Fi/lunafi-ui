@@ -2,11 +2,13 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { ConnectGrid } from '.';
 import { ConnectBalance } from '../balance';
+import { ConnectBalanceBuy } from '../balance/buy';
 import { ConnectNetwork } from '../network';
 import { lorem as networkLorem } from '../network/lorem';
 import { ConnectSubmit } from '../submit';
 import { lorem as submitLorem } from '../submit/lorem';
 import { ConnectUser } from '../user';
+import { lorem as buyLorem } from '../balance/buy/lorem';
 
 type ComponentType = typeof ConnectGrid;
 
@@ -22,7 +24,12 @@ export default component;
 
 export const Default = Template.bind({});
 Default.args = {
-    balance: <ConnectBalance balance={0.079} />,
+    balance: (
+        <ConnectBalance balance={0.079}>
+            <ConnectBalanceBuy
+                {...buyLorem}
+            />
+        </ConnectBalance>),
     network: <ConnectNetwork {...networkLorem} />,
     connect: <ConnectSubmit {...submitLorem} />,
 };

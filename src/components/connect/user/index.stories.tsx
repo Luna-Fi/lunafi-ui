@@ -14,5 +14,5 @@ export default component;
 
 export const Default = Template.bind({});
 Default.args = {
-    username: '0x8959..ddE4',
+    username: '0xca7bf3c514d412ac12d10eff302301a81153f557',
 };

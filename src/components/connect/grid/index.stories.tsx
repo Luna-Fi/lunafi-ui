@@ -43,7 +43,7 @@ export const Logged = Template.bind({});
 Logged.args = {
     balance: <ConnectBalance balance={0.079} />,
     network: <ConnectNetwork {...networkLorem} />,
-    connect: <ConnectUser username="0x8959..ddE4" />,
+    connect: <ConnectUser username="0xca7bf3c514d412ac12d10eff302301a81153f557" />,
 };
 Logged.parameters = {
     controls: {

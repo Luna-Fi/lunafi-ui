@@ -19,6 +19,7 @@ import { ConnectBalanceBuy, ConnectBalanceBuyProps } from './components/connect/
 import { ConnectUser, ConnectUserProps } from './components/connect/user';
 import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
 import { TooltipContent } from './components/tooltip/content';
+import { Modal } from './components/modal';
 
 export {
     LayoutCSS,
@@ -49,4 +50,6 @@ export {
     ButtonSvgCircleFill,
 
     TooltipContent,
+
+    Modal,
 };

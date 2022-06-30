@@ -22,7 +22,7 @@ export const ConnectSubmit: FC<ConnectSubmitProps> = ({
 }) => {
     const modalRef = useRef<ModalHandle>(null);
     const id = useId();
-    const [acceptPolicy, setAcceptPolicy] = useState(true);
+    const [acceptPolicy, setAcceptPolicy] = useState(false);
     const [selectedWallet, setSelectedWallet] = useState<WalletItem | null>(null);
 
     useEffect(() => {

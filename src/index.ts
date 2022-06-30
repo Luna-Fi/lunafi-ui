@@ -20,6 +20,7 @@ import { ConnectUser, ConnectUserProps } from './components/connect/user';
 import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
 import { TooltipContent } from './components/tooltip/content';
 import { Modal } from './components/modal';
+import { ConnectSubmit, ConnectSubmitProps } from './components/connect/submit';
 
 export {
     LayoutCSS,
@@ -44,6 +45,7 @@ export {
     ConnectBalance,
     ConnectBalanceBuy, ConnectBalanceBuyProps,
     ConnectNetwork, ConnectNetworkProps,
+    ConnectSubmit, ConnectSubmitProps,
     ConnectUser, ConnectUserProps,
 
     ButtonSvgOutline,

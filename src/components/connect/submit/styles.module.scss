@@ -58,7 +58,7 @@
             width: 0;
             height: 100%;
             box-sizing: content-box;
-            border: 1px dashed #1E5150;
+            border-left: 2px dashed #1E5150;
     
             @include media-sm-min {
                 left: px-to-rem(18);

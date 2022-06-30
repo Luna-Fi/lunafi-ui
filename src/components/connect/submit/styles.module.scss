@@ -82,7 +82,7 @@
         border-radius: 50%;
         background-color: #1E5150;
 
-        color: var(--white);
+        color: var(--color-white);
         font-weight: 600;
         
         @include media-sm-min {
@@ -115,7 +115,7 @@
         }
 
         a {
-            color: var(--blue);
+            color: var(--color-blue);
             text-decoration: none;
 
             @include non-mobile-hover {
@@ -179,7 +179,7 @@
 
     input:checked + i {
         &::before {
-            background: var(--blue);
+            background: var(--color-blue);
         }
         &::after {
             opacity: 1;
@@ -220,10 +220,10 @@
 
     transition: background-color 0.25s;
     @include non-mobile-hover (true) {
-        background: rgba(255, 255, 255, 0.11);
+        background: rgba(var(--color-white--rgb), 0.11);
     }
     &.selected {
-        background: rgba(255, 255, 255, 0.11);
+        background: rgba(var(--color-white--rgb), 0.11);
     }
 
     input {
@@ -235,7 +235,7 @@
         width: px-to-rem(60);
         height: px-to-rem(60);
         border-radius: 50%;
-        background: rgba(220, 255, 253, 0.15);
+        background: rgba(var(--color-white--rgb), 0.1);
 
         img {
             position: absolute;

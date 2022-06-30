@@ -3,10 +3,10 @@
 .connect_balance_info {
     position: relative;
     box-sizing: border-box;
-    background-color: var(--grey-800);
-    color: var(--white);
+    background-color: var(--color-grey-800);
+    color: var(--color-white);
     border-radius: px-to-rem(8);
-    border: 1px solid rgba(0, 255, 242, 0.5);
+    border: 1px solid rgba(var(--color-blue--rgb), 0.4);
 
     > * {
         position: relative;
@@ -76,7 +76,7 @@
 
     &__balance {
         font-weight: 500;
-        color: var(--grey-200);
+        color: var(--color-grey-200);
         
         @include media-sm-min {
             font-size: px-to-rem(18);
@@ -100,11 +100,11 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(var(--color-white--rgb), 0.08);
         border-radius: px-to-rem(4);
 
         font-weight: 500;
-        color: var(--grey-500);
+        color: var(--color-grey-500);
 
         @include media-sm-min {
             padding: px-to-rem(6) px-to-rem(18) px-to-rem(6) px-to-rem(12);
@@ -125,7 +125,7 @@
         span {
             margin-left: px-to-rem(4);
             font-weight: 500;
-            color: var(--white);
+            color: var(--color-white);
 
             @include media-sm-min {
                 font-size: px-to-rem(12);

@@ -17,7 +17,7 @@
     width: px-to-rem(32);
     height: px-to-rem(32);
     border-radius: 50%;
-    background: var(--black);
+    background: var(--color-black);
     overflow: hidden;
     margin-right: px-to-rem(12);
 
@@ -58,6 +58,6 @@
     margin-top: px-to-rem(2);
 
     path {
-        fill: var(--grey-500);
+        fill: var(--color-grey-500);
     }
 }

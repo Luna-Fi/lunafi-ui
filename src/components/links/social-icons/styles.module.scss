@@ -24,13 +24,13 @@
         }
     
         path {
-            fill: var(--grey-600);
+            fill: var(--color-grey-600);
             transition: fill 0.35s;
         }
     
         @include non-mobile-hover (true) {
             path {
-                fill: var(--blue);
+                fill: var(--color-blue);
             }
         }
 

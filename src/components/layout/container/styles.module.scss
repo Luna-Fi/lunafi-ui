@@ -18,8 +18,8 @@
     padding-left: var(--aside-width);
     box-sizing: border-box;
 
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--color-black);
+    color: var(--color-white);
 
     --aside-width: #{px-to-rem(224)};
     @include media-md-max {
@@ -44,8 +44,8 @@
     width: var(--aside-width);
     height: calc(100% - var(--top-height));
 
-    border-right: 1px solid var(--grey-800);
-    background-color: var(--grey-1200);
+    border-right: 1px solid var(--color-grey-800);
+    background-color: var(--color-grey-1200);
 
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@
     right: 0;
     width: 100%;
     height: var(--top-height);
-    background-color: var(--grey-1200);
+    background-color: var(--color-grey-1200);
 
     display: flex;
     flex-direction: row;
@@ -118,7 +118,7 @@
         left: var(--aside-width);
         right: 0;
         height: 1px;
-        background-color: var(--grey-800);
+        background-color: var(--color-grey-800);
     }
 
     @include media-sm-min {
@@ -130,7 +130,7 @@
             bottom: 0;
             left: calc(var(--aside-width) - 1px);
             width: 1px;
-            background-color: var(--grey-800);
+            background-color: var(--color-grey-800);
         }
     }
 

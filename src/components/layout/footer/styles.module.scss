@@ -1,8 +1,8 @@
 @import '@/styles/base';
 
 .layout_footer {
-    border-top: 1px solid var(--grey-800);
-    background-color: var(--grey-1200);
+    border-top: 1px solid var(--color-grey-800);
+    background-color: var(--color-grey-1200);
 
     @include media-xxl {
         &::after {
@@ -65,7 +65,7 @@
 
         font-size: px-to-rem(12);
         line-height: px-to-rem(16);
-        color: var(--grey-600);
+        color: var(--color-grey-600);
     }
 }
 
@@ -152,16 +152,16 @@
             text-decoration: none;
 
             @include media-sm-min {
-                color: var(--grey-500);
+                color: var(--color-grey-500);
                 line-height: px-to-rem(20);
             }
             @include media-xs {
-                color: var(--grey-600);
+                color: var(--color-grey-600);
                 line-height: px-to-rem(22);
             }
             
             @include non-mobile-hover (true) {
-                color: var(--white);
+                color: var(--color-white);
             }
         }
     }

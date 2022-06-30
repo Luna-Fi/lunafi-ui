@@ -44,15 +44,15 @@
 }
 
 .static_outline {
-    stroke: var(--grey-800);
+    stroke: var(--color-grey-800);
 }
 
 .hover_outline {
-    stroke: var(--blue);
+    stroke: var(--color-blue);
 }
 
 .bg_plane {
-    fill: var(--grey-800);
+    fill: var(--color-grey-800);
 }
 
 .content {
@@ -62,7 +62,7 @@
     justify-content: center;
     text-align: center;
 
-    color: var(--grey-100);
+    color: var(--color-grey-100);
 
     &.small {
         font-size: px-to-rem(12);

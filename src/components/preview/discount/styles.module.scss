@@ -40,9 +40,9 @@
         margin-top: px-to-rem(-54);
     }
 
-    border: 1px solid var(--grey-800);
+    border: 1px solid var(--color-grey-800);
     border-radius: px-to-rem(8);
-    background-color: var(--grey-1000);
+    background-color: var(--color-grey-1000);
 }
 
 .name {
@@ -59,7 +59,7 @@
     letter-spacing: 0.05em;
 
     @include media-sm-min {
-        color: var(--blue);
+        color: var(--color-blue);
     }
 
     @include media-xs {
@@ -76,7 +76,7 @@
         bottom: 0;
         left: 0;
         width: calc(100% + #{px-to-rem(80)});
-        background-color: var(--grey-900);
+        background-color: var(--color-grey-900);
         transform: translate(calc(100% - #{px-to-rem(80)}), 0);
         border-radius: px-to-rem(40);
         transition: transform 0.75s;
@@ -99,7 +99,7 @@
         padding: px-to-rem(8) px-to-rem(20);  
 
         @include media-xs {
-            border-top: 1px solid var(--grey-800);
+            border-top: 1px solid var(--color-grey-800);
 
             @media (max-height: 620px) {
                 border-top: 0;
@@ -110,7 +110,7 @@
 
 .items {
     position: relative;
-    color: var(--white);
+    color: var(--color-white);
     transition: color 0.75s;
 
     &::before {
@@ -121,7 +121,7 @@
         left: 0;
         width: calc(100% + #{px-to-rem(80)});
         height: 100%;
-        background-color: var(--blue);
+        background-color: var(--color-blue);
         transition: transform 0.75s;
         transform: translate(-110%, 0);
         border-radius: px-to-rem(40);
@@ -131,7 +131,7 @@
     @at-root .preview_discount {
         @include non-mobile-hover (true) {
             .items {
-                color: var(--grey-900);
+                color: var(--color-grey-900);
 
                 &::before {
                     transform: translate(px-to-rem(-40), 0);
@@ -150,7 +150,7 @@
     align-items: center;
     justify-content: space-between;
     padding: px-to-rem(8) px-to-rem(20);
-    border-top: 1px solid var(--grey-800);
+    border-top: 1px solid var(--color-grey-800);
     box-sizing: border-box;
 
     font-size: px-to-rem(12);

@@ -1,30 +1,39 @@
-@mixin default-colors {
-    --dark: #14161A;
-    --black: #000;
-    --white: #fff;
-    --grey-100: #F8F9FA;
-    --grey-200: #E9ECEF;
-    --grey-300: #DEE2E6;
-    --grey-500: #ADB5BD;
-    --grey-600: #8A919E;
-    --grey-800: #343A40;
-    --grey-900: #212529;
-    --grey-1000: #181B20;
-    --grey-1100: #141416;
-    --grey-1200: #0F1114;
-    --color-success: #00F463;
-    --color-danger: #DC2C2C;
-    --color-overlay: #212529;
-    --blue: #00FFF4; 
-    --purple: #8247E5;
-    --purple-1: #6034ad;
+$colors: (
+    "dark": #14161A,
+    "black": #000,
+    "white": #fff,
+    "grey-100": #F8F9FA,
+    "grey-200": #E9ECEF,
+    "grey-300": #DEE2E6,
+    "grey-500": #ADB5BD,
+    "grey-600": #8A919E,
+    "grey-800": #343A40,
+    "grey-900": #212529,
+    "grey-1000": #181B20,
+    "grey-1100": #141416,
+    "grey-1200": #0F1114,
+    "success": #00F463,
+    "danger": #DC2C2C,
+    "overlay": #212529,
+    "blue": #00FFF4,
+    "purple": #8247E5,
+    "purple-1": #6034ad,
+);
+
+@function HexToRGB ($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+  
+:root {
+    @each $key, $value in $colors {
+        --color-#{$key}: #{$value};
+        --color-#{$key}--rgb: #{HexToRGB($value)};
+    }
 }
 
 :root {
-    @include default-colors;
-
-    color: var(--white);
-    background-color: var(--dark);
+    color: var(--color-white);
+    background-color: var(--color-dark);
 
     font-family: $font-family;
 }

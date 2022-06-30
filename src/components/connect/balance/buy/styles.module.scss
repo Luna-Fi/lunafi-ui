@@ -2,6 +2,19 @@
 
 .connect_balance_buy {
     @include reset-ul;
+    position: relative;
+    z-index: 1;
+    border-radius: px-to-rem(8);
+    background-color: var(--grey-900);
+    border: 1px solid rgba(0, 255, 242, 0.4);
+    box-sizing: border-box;
+
+    @include media-sm-min {
+        padding: px-to-rem(15) px-to-rem(22);
+    }
+    @include media-xs {
+        padding: px-to-rem(15) px-to-rem(18);
+    }
     
     > * {
         width: 100%;

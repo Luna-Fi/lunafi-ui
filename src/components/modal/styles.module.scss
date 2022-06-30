@@ -73,6 +73,7 @@
 .close {
     @include reset-button;
     position: absolute;
+    z-index: 9;
     top: 0;
     right: 0;
     width: px-to-rem(36);

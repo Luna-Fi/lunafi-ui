@@ -4,14 +4,15 @@ import { PreviewDiscount } from 'src/components/preview/discount';
 import { ButtonSvgOutline } from 'src/components/button/svg-outline';
 import { ConnectGrid } from 'src/components/connect/grid';
 import { ConnectBalance } from 'src/components/connect/balance';
-import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
 import { ConnectBalanceBuy } from 'src/components/connect/balance/buy';
 import { lorem as buyLorem } from 'src/components/connect/balance/buy/lorem';
+import { ConnectSubmit } from 'src/components/connect/submit';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
 import { ConnectNetwork } from '../../connect/network';
 import { lorem as networkLorem } from '../../connect/network/lorem';
+import { lorem as submitLorem } from '../../connect/submit/lorem';
 import metamaskSVG from '@/img/general/metamask.svg';
 
 type ComponentType = typeof LayoutContainer;
@@ -50,7 +51,7 @@ const Template: ComponentStory<ComponentType> = (args) => {
                             {...networkLorem}
                         />
                     )}
-                    connect={<ButtonSvgCircleFill tag="button">Connect</ButtonSvgCircleFill>}
+                    connect={<ConnectSubmit {...submitLorem} />}
                 />
             )}
         >

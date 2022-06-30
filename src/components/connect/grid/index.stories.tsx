@@ -1,10 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
 import { ConnectGrid } from '.';
 import { ConnectBalance } from '../balance';
 import { ConnectNetwork } from '../network';
 import { lorem as networkLorem } from '../network/lorem';
+import { ConnectSubmit } from '../submit';
+import { lorem as submitLorem } from '../submit/lorem';
 import { ConnectUser } from '../user';
 
 type ComponentType = typeof ConnectGrid;
@@ -23,7 +24,7 @@ export const Default = Template.bind({});
 Default.args = {
     balance: <ConnectBalance balance={0.079} />,
     network: <ConnectNetwork {...networkLorem} />,
-    connect: <ButtonSvgCircleFill tag="button">Connect</ButtonSvgCircleFill>,
+    connect: <ConnectSubmit {...submitLorem} />,
 };
 Default.parameters = {
     controls: {

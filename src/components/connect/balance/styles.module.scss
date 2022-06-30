@@ -1,11 +1,19 @@
 @import '@/styles/base';
 
 .tooltip {
-    width: px-to-rem(340);
-    
-    @include media-xs {
-        width: px-to-rem(300);
-        max-width: 85vw;
-    }
+    width: px-to-rem(432);
+    padding: 0;
+}
 
+.modal {
+    :global(.modal-content) {
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
+    
+    :global(.modal-close) {
+        top: px-to-rem(16);
+        right: px-to-rem(10);
+    }
 }

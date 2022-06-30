@@ -21,6 +21,7 @@ import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social
 import { TooltipContent } from './components/tooltip/content';
 import { Modal } from './components/modal';
 import { ConnectSubmit, ConnectSubmitProps } from './components/connect/submit';
+import { LinkExplore } from './components/links/explore';
 
 export {
     LayoutCSS,
@@ -40,6 +41,7 @@ export {
 
     LinksSocialIcons, LinksSocialIconsProps,
     LinksSocialMenu, LinksSocialMenuProps,
+    LinkExplore,
 
     ConnectGrid,
     ConnectBalance,

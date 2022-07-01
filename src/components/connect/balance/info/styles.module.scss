@@ -24,6 +24,18 @@
     align-items: center;
     justify-content: space-between;
     margin-top: px-to-rem(30);
+
+    @include media-xs {
+        @media (max-width: 360px) {
+            align-items: flex-start;
+            flex-direction: column;
+
+            .add_to_metamask {
+                margin-top: px-to-rem(10);
+            }
+
+        }
+    }
 }
 
 .token {
@@ -79,6 +91,26 @@
             font-size: px-to-rem(16);
             line-height: px-to-rem(24);
         }
+    }
+}
+
+.add_to_metamask {
+    font-weight: 600;
+    font-size: px-to-rem(12);
+
+    @include media-sm-min {
+        padding-left: px-to-rem(27);
+        padding-right: px-to-rem(27);
+    }
+    @include media-xs {
+        padding-left: px-to-rem(18);
+        padding-right: px-to-rem(18);
+    }
+
+    &__icon {
+        width: px-to-rem(14);
+        height: auto;
+        margin-right: px-to-rem(6);
     }
 }
 

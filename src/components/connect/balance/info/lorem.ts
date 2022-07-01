@@ -1,7 +1,7 @@
-import { ConnectBalanceInfoProps } from '.';
+import { Props } from '.';
 import { lorem as buyLorem } from '../buy/lorem';
 
-export const lorem: ConnectBalanceInfoProps = {
+export const lorem: Props = {
     balance: 0.079,
     info: [
         {
@@ -27,4 +27,8 @@ export const lorem: ConnectBalanceInfoProps = {
     ],
     buy: buyLorem,
     explorerHref: 'https://google.com/',
+    addToMetamaskCallback() {
+        // eslint-disable-next-line no-alert
+        alert('Add to Metamask');
+    },
 };

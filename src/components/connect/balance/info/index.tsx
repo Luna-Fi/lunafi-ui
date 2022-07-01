@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { NumberFormat } from 'src/components/number/format';
 import { LinkExplore } from 'src/components/links/explore';
+import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
+import { IconMetamask } from 'src/components/icons/Metamask';
 import { ConnectBalanceBuy, ConnectBalanceBuyProps } from '../buy';
 import styles from './styles.module.scss';
 
@@ -17,11 +19,16 @@ export interface ConnectBalanceInfoProps {
     explorerHref?: string;
 }
 
-export const ConnectBalanceInfo: FC<ConnectBalanceInfoProps> = ({
+export interface Props extends ConnectBalanceInfoProps {
+    addToMetamaskCallback?: () => void;
+}
+
+export const ConnectBalanceInfo: FC<Props> = ({
     balance,
     info,
     buy,
     explorerHref,
+    addToMetamaskCallback,
 }) => (
     <div className={styles.connect_balance_info}>
         <div className={styles.wrap}>
@@ -56,7 +63,23 @@ export const ConnectBalanceInfo: FC<ConnectBalanceInfoProps> = ({
                         </div>
                     </div>
                 </div>
-                <span>Add LFI </span>
+                <span>
+                    {addToMetamaskCallback && (
+                        <ButtonSvgCircleFill
+                            tag="button"
+                            hasStaticFill={false}
+                            size="small"
+                            colorVariant="gradient"
+                            className={styles.add_to_metamask}
+                            onClick={() => {
+                                addToMetamaskCallback?.();
+                            }}
+                        >
+                            <IconMetamask className={styles.add_to_metamask__icon} />
+                            Add LFI
+                        </ButtonSvgCircleFill>
+                    )}
+                </span>
             </div>
 
             {info && (

@@ -5,3 +5,4 @@ declare type ComponentType = typeof ConnectBalance;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
 export declare const Default: ComponentStory<React.FC<React.PropsWithChildren<import(".").Props>>>;
+export declare const Logged: ComponentStory<React.FC<React.PropsWithChildren<import(".").Props>>>;

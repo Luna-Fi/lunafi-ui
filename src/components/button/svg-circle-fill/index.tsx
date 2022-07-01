@@ -258,12 +258,12 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
             };
         }
         return {
-            staticColor1: '#008983',
-            staticColor2: '#2A85FF',
-            hoverColor1: hasStaticFill ? '#14161A' : '#008983',
-            hoverColor2: hasStaticFill ? '#14161A' : '#2A85FF',
-            contentColor: hasStaticFill ? '#000' : '#fff',
-            contentColorHover: hasStaticFill ? '#fff' : '#000',
+            staticColor1: '#0280EF',
+            staticColor2: '#2DE4B6',
+            hoverColor1: hasStaticFill ? '#14161A' : '#0280EF',
+            hoverColor2: hasStaticFill ? '#14161A' : '#2DE4B6',
+            contentColor: hasStaticFill ? '#fff' : '#fff',
+            contentColorHover: hasStaticFill ? '#fff' : '#fff',
         };
     }, [colorVariant, hasStaticFill]);
 
@@ -383,9 +383,9 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
                     <linearGradient
                         id={`${id}-gradient-static`}
                         x1={width * 0}
-                        y1={height * 0}
+                        y1={height * 1}
                         x2={width * 1}
-                        y2={height * 2}
+                        y2={height * 0}
                         gradientUnits="userSpaceOnUse"
                     >
                         <stop offset="0" stopColor={colors.staticColor1} />
@@ -394,9 +394,9 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
                     <linearGradient
                         id={`${id}-gradient-hover`}
                         x1={width * 0}
-                        y1={height * 0}
+                        y1={height * 1}
                         x2={width * 1}
-                        y2={height * 2}
+                        y2={height * 0}
                         gradientUnits="userSpaceOnUse"
                     >
                         <stop offset="0" stopColor={colors.hoverColor1} />

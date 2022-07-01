@@ -23,6 +23,7 @@ import { Modal } from './components/modal';
 import { ConnectSubmit, ConnectSubmitProps } from './components/connect/submit';
 import { LinkExplore } from './components/links/explore';
 import { ConnectBalanceInfo, ConnectBalanceInfoProps } from './components/connect/balance/info';
+import { ConnectUserInfo, ConnectUserInfoProps } from './components/connect/user/info';
 import { ButtonCopyToClipboard } from './components/button/copy-to-clipboard';
 
 export {
@@ -52,6 +53,7 @@ export {
     ConnectSubmit, ConnectSubmitProps,
     ConnectUser, ConnectUserProps,
     ConnectBalanceInfo, ConnectBalanceInfoProps,
+    ConnectUserInfo, ConnectUserInfoProps,
 
     ButtonSvgOutline,
     ButtonSvgCircleFill,

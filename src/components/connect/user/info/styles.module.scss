@@ -1,0 +1,109 @@
+@import '@/styles/base';
+
+.connect_balance_info {
+    box-sizing: border-box;
+    background-color: var(--color-grey-800);
+    color: var(--color-white);
+    border-radius: px-to-rem(8);
+    border: 1px solid rgba(var(--color-blue--rgb), 0.4);
+}
+
+.wrap {
+    padding: px-to-rem(22) px-to-rem(20) px-to-rem(16);
+}
+
+.title {
+    font-weight: 600;
+    font-size: px-to-rem(18);
+    line-height: px-to-rem(24);
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: px-to-rem(30);
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    @include media-xs {
+        @media (max-width: 370px) {
+            align-items: flex-start;
+            flex-direction: column;
+
+            > * + * {
+                margin-top: px-to-rem(10);
+            }
+
+        }
+    }
+
+    &__img {
+        width: px-to-rem(32);
+        height: px-to-rem(32);
+        border-radius: 50%;
+        background: linear-gradient(145.48deg, #FAB446 18.8%, #7B61FF 132.99%);
+    }
+
+    &__info {
+        margin-left: px-to-rem(16);
+    }
+
+    &__address {
+        font-weight: 500;
+        font-size: px-to-rem(16);
+        line-height: px-to-rem(24);
+    }
+
+    &__network {
+        margin-top: px-to-rem(-4);
+        font-weight: 500;
+        font-size: px-to-rem(14);
+        line-height: px-to-rem(21);
+        color: var(--color-grey-500);
+    }
+
+    &__disconnect {
+        @include media-sm-min {
+            padding-left: px-to-rem(27);
+            padding-right: px-to-rem(27);
+        }
+        @include media-xs {
+            padding-left: px-to-rem(18);
+            padding-right: px-to-rem(18);
+        }
+    }
+}
+
+.links {
+    margin-top: px-to-rem(20);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    font-weight: 500;
+    font-size: px-to-rem(12);
+    line-height: px-to-rem(21);
+
+    > * {
+        margin-top: px-to-rem(10);
+
+        &:not(:last-child) {
+            margin-right: px-to-rem(40);
+        }
+    }
+}
+
+.buy {
+    margin-top: px-to-rem(14);
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}

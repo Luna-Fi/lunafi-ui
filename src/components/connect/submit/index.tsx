@@ -13,10 +13,13 @@ interface WalletItem {
 
 export interface ConnectSubmitProps {
     wallets: WalletItem[];
+}
+
+export interface Props extends ConnectSubmitProps {
     onSelect?: (wallet: WalletItem) => void;
 }
 
-export const ConnectSubmit: FC<ConnectSubmitProps> = ({
+export const ConnectSubmit: FC<Props> = ({
     wallets,
     onSelect,
 }) => {

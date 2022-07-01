@@ -1,6 +1,6 @@
-import { ConnectSubmitProps } from '.';
+import { Props } from '.';
 
-export const lorem: ConnectSubmitProps = {
+export const lorem: Props = {
     wallets: [
         {
             key: 0,

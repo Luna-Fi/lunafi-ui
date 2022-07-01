@@ -4,8 +4,8 @@ interface Item {
     href: string;
     iconSrc: string;
 }
-export interface ConnectBalanceBuyProps {
+export interface ConnectBuyProps {
     items: Item[];
 }
-export declare const ConnectBalanceBuy: FC<ConnectBalanceBuyProps>;
+export declare const ConnectBuy: FC<ConnectBuyProps>;
 export {};

@@ -4,4 +4,4 @@ import { ConnectUser } from '.';
 declare type ComponentType = typeof ConnectUser;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
-export declare const Default: ComponentStory<React.FC<import(".").Props>>;
+export declare const Default: ComponentStory<React.FC<React.PropsWithChildren<import(".").Props>>>;

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ConnectBalanceBuyProps } from '../buy';
+import { ConnectBuyProps } from '../../buy';
 interface ConnectBalanceInfoItem {
     key: string | number;
     name: string;
@@ -8,7 +8,7 @@ interface ConnectBalanceInfoItem {
 export interface ConnectBalanceInfoProps {
     balance: number;
     info?: ConnectBalanceInfoItem[];
-    buy?: ConnectBalanceBuyProps;
+    buy?: ConnectBuyProps;
     explorerHref?: string;
 }
 export interface Props extends ConnectBalanceInfoProps {

@@ -5,4 +5,4 @@ export declare type ButtonAnchorProps = ({
 } & AnchorHTMLAttributes<HTMLAnchorElement>) | ({
     tag: 'button';
 } & ButtonHTMLAttributes<HTMLButtonElement>);
-export declare const ButtonAnchor: React.ForwardRefExoticComponent<ButtonAnchorProps & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>>;
+export declare const ButtonAnchor: React.ForwardRefExoticComponent<ButtonAnchorProps & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement>>;

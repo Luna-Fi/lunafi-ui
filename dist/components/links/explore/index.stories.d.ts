@@ -4,4 +4,4 @@ import { LinkExplore } from '.';
 declare type ComponentType = typeof LinkExplore;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
-export declare const Default: ComponentStory<React.FC<import(".").Props>>;
+export declare const Default: ComponentStory<React.ForwardRefExoticComponent<import(".").Props & React.RefAttributes<HTMLAnchorElement>>>;

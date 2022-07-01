@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 export interface ConnectUserProps {
-    username: string;
+    address: string;
 }
 export interface Props extends ConnectUserProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
 }
-export declare const ConnectUser: FC<Props>;
+export declare const ConnectUser: FC<PropsWithChildren<Props>>;

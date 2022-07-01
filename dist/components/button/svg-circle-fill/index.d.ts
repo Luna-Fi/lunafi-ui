@@ -32,5 +32,5 @@ export interface ButtonSvgCircleFillProps {
     colorVariant?: 'primary' | 'primary_unactive' | 'gradient';
 }
 declare type Props = ButtonSvgCircleFillProps & ButtonAnchorProps;
-export declare const ButtonSvgCircleFill: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLButtonElement | HTMLAnchorElement>>;
+export declare const ButtonSvgCircleFill: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement>>;
 export {};

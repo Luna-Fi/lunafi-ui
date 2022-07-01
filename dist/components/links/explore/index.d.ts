@@ -1,5 +1,5 @@
-import { AnchorHTMLAttributes, FC } from 'react';
+import React, { AnchorHTMLAttributes } from 'react';
 export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
     href: string;
 }
-export declare const LinkExplore: FC<Props>;
+export declare const LinkExplore: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLAnchorElement>>;

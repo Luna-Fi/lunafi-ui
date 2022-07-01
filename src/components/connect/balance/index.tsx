@@ -38,6 +38,10 @@ export const ConnectBalance: FC<PropsWithChildren<Props>> = ({
         />
     ), [appearAnimation, appearAnimationOn, balance]);
 
+    if (!children) {
+        return button;
+    }
+
     if (useTooltip) {
         return (
             <TooltipContent

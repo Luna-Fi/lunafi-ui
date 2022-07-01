@@ -41,6 +41,10 @@ export const ConnectUser: FC<PropsWithChildren<Props>> = ({
         />
     ), [appearAnimation, appearAnimationOn, address]);
 
+    if (!children) {
+        return button;
+    }
+
     if (useTooltip) {
         return (
             <TooltipContent

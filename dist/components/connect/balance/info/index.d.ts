@@ -11,5 +11,8 @@ export interface ConnectBalanceInfoProps {
     buy?: ConnectBalanceBuyProps;
     explorerHref?: string;
 }
-export declare const ConnectBalanceInfo: FC<ConnectBalanceInfoProps>;
+export interface Props extends ConnectBalanceInfoProps {
+    addToMetamaskCallback?: () => void;
+}
+export declare const ConnectBalanceInfo: FC<Props>;
 export {};

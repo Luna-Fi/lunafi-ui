@@ -1,2 +1,2 @@
-import { ConnectSubmitProps } from '.';
-export declare const lorem: ConnectSubmitProps;
+import { Props } from '.';
+export declare const lorem: Props;

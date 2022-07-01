@@ -4,4 +4,4 @@ import { ConnectBalanceInfo } from '.';
 declare type ComponentType = typeof ConnectBalanceInfo;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
-export declare const Default: ComponentStory<React.FC<import(".").ConnectBalanceInfoProps>>;
+export declare const Default: ComponentStory<React.FC<import(".").Props>>;

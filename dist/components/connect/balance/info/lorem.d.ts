@@ -1,2 +1,2 @@
-import { ConnectBalanceInfoProps } from '.';
-export declare const lorem: ConnectBalanceInfoProps;
+import { Props } from '.';
+export declare const lorem: Props;

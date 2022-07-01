@@ -1,10 +1,18 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { ConnectUser } from '.';
+import { ConnectUserInfo } from './info';
+import { lorem } from './info/lorem';
 
 type ComponentType = typeof ConnectUser;
 
-const Template: ComponentStory<ComponentType> = (args) => <ConnectUser {...args} />;
+const Template: ComponentStory<ComponentType> = (args) => (
+    <ConnectUser {...args}>
+        <ConnectUserInfo
+            {...lorem}
+        />
+    </ConnectUser>
+);
 
 const component: ComponentMeta<ComponentType> = {
     title: 'Connect/User',

@@ -19,6 +19,11 @@ const component: ComponentMeta<ComponentType> = {
 export default component;
 
 export const Default = Template.bind({});
+Default.parameters = {
+    controls: {
+        exclude: ['tag', 'href'],
+    },
+};
 Default.args = {
     hasStaticFill: true,
     hasHover: true,

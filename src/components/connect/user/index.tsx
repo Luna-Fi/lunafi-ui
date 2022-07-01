@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ConnectUserButton } from './button';
 
 export interface ConnectUserProps {
-    username: string;
+    address: string;
 }
 
 export interface Props extends ConnectUserProps {
@@ -13,11 +13,11 @@ export interface Props extends ConnectUserProps {
 export const ConnectUser: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
-    username,
+    address,
 }) => (
     <ConnectUserButton
         appearAnimation={appearAnimation}
         appearAnimationOn={appearAnimationOn}
-        username={username}
+        address={address}
     />
 );

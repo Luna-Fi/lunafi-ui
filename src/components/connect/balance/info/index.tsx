@@ -56,6 +56,7 @@ export const ConnectBalanceInfo: FC<Props> = ({
                                     href={explorerHref}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className={styles.token__explore}
                                 >
                                     View on Explorer
                                 </LinkExplore>

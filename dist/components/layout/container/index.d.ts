@@ -5,6 +5,7 @@ export interface LayoutContainerProps {
     menuLinks: NavigationMenuProps['links'];
     pageTitle: string;
     footer?: LayoutFooterProps;
+    addToMetamaskCallback?: () => void;
 }
 export interface Props extends LayoutContainerProps {
     appearAnimation?: boolean;

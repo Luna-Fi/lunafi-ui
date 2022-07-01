@@ -1,30 +1,26 @@
 import { ConnectSubmitProps } from '.';
-import metamaskImg from '@/img/wallets/metamask.svg';
-import coinbaseImg from '@/img/wallets/coinbase.svg';
-import walletConnectImg from '@/img/wallets/wallet-connect.svg';
-import magicImg from '@/img/wallets/magic.svg';
 
 export const lorem: ConnectSubmitProps = {
     wallets: [
         {
             key: 0,
             name: 'MetaMask',
-            img: metamaskImg,
+            img: '/img/wallets/metamask.svg',
         },
         {
             key: 1,
             name: 'Coinbase Wallet',
-            img: coinbaseImg,
+            img: '/img/wallets/coinbase.svg',
         },
         {
             key: 2,
             name: 'Wallet Connect',
-            img: walletConnectImg,
+            img: '/img/wallets/wallet-connect.svg',
         },
         {
             key: 3,
             name: 'Magic Link',
-            img: magicImg,
+            img: '/img/wallets/magic.svg',
         },
     ],
     onSelect: (wallet) => {

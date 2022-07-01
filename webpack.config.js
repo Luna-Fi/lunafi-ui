@@ -60,12 +60,12 @@ module.exports = {
             {
                 test: /\.(svg|png|jpg|gif)$/i,
                 type: 'asset',
-                generator: { filename: 'static/media/[hash][ext]' },
+                generator: { filename: 'assets/img/[hash][ext]' },
             },
             {
                 test: /\.(woff|woff2|ttf)$/i,
                 type: 'asset/resource',
-                generator: { filename: 'static/fonts/[hash][ext]' },
+                generator: { filename: 'assets/fonts/[hash][ext]' },
             },
         ],
     },

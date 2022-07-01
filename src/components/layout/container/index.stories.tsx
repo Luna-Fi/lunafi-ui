@@ -13,7 +13,6 @@ import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
 import { ConnectNetwork } from '../../connect/network';
 import { lorem as networkLorem } from '../../connect/network/lorem';
 import { lorem as submitLorem } from '../../connect/submit/lorem';
-import metamaskSVG from '@/img/general/metamask.svg';
 
 type ComponentType = typeof LayoutContainer;
 
@@ -28,7 +27,7 @@ const Template: ComponentStory<ComponentType> = (args) => {
                 <>
                     <PreviewDiscount {...discountPreviewLorem} />
                     <ButtonSvgOutline size="small" fullWidth hasBg={false} spacing="small">
-                        <img src={metamaskSVG} alt="Metamask" />
+                        <img src="/img/general/metamask.svg" alt="Metamask" />
                         <span>Add LFI to Metamask</span>
                     </ButtonSvgOutline>
                 </>

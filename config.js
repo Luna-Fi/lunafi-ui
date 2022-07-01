@@ -4,6 +4,6 @@ module.exports = {
     alias: {
         src: path.resolve(__dirname, 'src/'),
         '@/styles': path.resolve(__dirname, 'src/styles/'),
-        '@/img': path.resolve(__dirname, 'src/img/'),
+        '@/img': path.resolve(__dirname, 'static/img/'),
     },
 };

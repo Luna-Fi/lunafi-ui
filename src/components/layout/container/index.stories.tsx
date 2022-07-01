@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { PreviewDiscount } from 'src/components/preview/discount';
-import { ButtonSvgOutline } from 'src/components/button/svg-outline';
 import { ConnectGrid } from 'src/components/connect/grid';
 import { ConnectBalance } from 'src/components/connect/balance';
 import { ConnectSubmit } from 'src/components/connect/submit';
@@ -24,13 +23,7 @@ const Template: ComponentStory<ComponentType> = (args) => {
             {...args}
             {...lorem}
             asideChildren={(
-                <>
-                    <PreviewDiscount {...discountPreviewLorem} />
-                    <ButtonSvgOutline size="small" fullWidth hasBg={false} spacing="small">
-                        <img src="/img/general/metamask.svg" alt="Metamask" />
-                        <span>Add LFI to Metamask</span>
-                    </ButtonSvgOutline>
-                </>
+                <PreviewDiscount {...discountPreviewLorem} />
             )}
             topChildren={(
                 <ConnectGrid

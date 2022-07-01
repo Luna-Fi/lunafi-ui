@@ -2,6 +2,8 @@ import React, {
     FC, PropsWithChildren, ReactNode, useEffect, useState,
 } from 'react';
 import { Portal } from 'react-portal';
+import { ButtonSvgOutline } from 'src/components/button/svg-outline';
+import { IconMetamask } from 'src/components/icons/Metamask';
 import { LinksSocialMenu } from 'src/components/links/social-menu';
 import { NavigationModal } from 'src/components/navigation/modal';
 import { vevetApp } from 'src/utils/vevet';
@@ -14,6 +16,7 @@ export interface LayoutContainerProps {
     menuLinks: NavigationMenuProps['links'];
     pageTitle: string;
     footer?: LayoutFooterProps;
+    addToMetamaskCallback?: () => void;
 }
 
 export interface Props extends LayoutContainerProps {
@@ -31,6 +34,7 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
     menuLinks,
     pageTitle,
     footer,
+    addToMetamaskCallback,
     children,
 }) => {
     const classNames = [
@@ -116,6 +120,18 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                     ].join(' ')}
                 >
                     {asideChildren}
+                    <ButtonSvgOutline
+                        size="small"
+                        fullWidth
+                        hasBg={false}
+                        spacing="small"
+                        onClick={() => {
+                            addToMetamaskCallback?.();
+                        }}
+                    >
+                        <IconMetamask />
+                        <span>Add LFI to Metamask</span>
+                    </ButtonSvgOutline>
                 </div>
             </div>
 

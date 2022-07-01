@@ -6,4 +6,8 @@ export const lorem: LayoutContainerProps = {
     menuLinks: menuLorem.links,
     pageTitle: 'Home',
     footer: footerLorem,
+    addToMetamaskCallback() {
+        // eslint-disable-next-line no-alert
+        alert('Add to Metamask');
+    },
 };

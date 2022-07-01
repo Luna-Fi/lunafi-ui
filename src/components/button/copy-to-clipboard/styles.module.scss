@@ -1,0 +1,43 @@
+@import '@/styles/base';
+
+.button_copy {
+    @include reset-button;
+
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-decoration: none;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    color: var(--color-white);
+
+    .icon {
+        margin-top: -0.16em;
+        margin-left: 0.5em;
+        width: 1.33em;
+        height: auto;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+        transition: transform 0.35s;
+        transform: scale(0, 1);
+    }
+
+    @include non-mobile-hover (true) {
+        &::before {
+            transform: scale(1, 1);
+        }
+    }
+}

@@ -1,17 +1,17 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ConnectBalanceBuy } from '.';
+import { ConnectBuy } from '.';
 import { lorem } from './lorem';
 
-type ComponentType = typeof ConnectBalanceBuy;
+type ComponentType = typeof ConnectBuy;
 
 const component: ComponentMeta<ComponentType> = {
-    title: 'Connect/Balance/Buy',
-    component: ConnectBalanceBuy,
+    title: 'Connect/Buy',
+    component: ConnectBuy,
 };
 export default component;
 
-const Template: ComponentStory<ComponentType> = (args) => <ConnectBalanceBuy {...args} />;
+const Template: ComponentStory<ComponentType> = (args) => <ConnectBuy {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

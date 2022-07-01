@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { ConnectBalance } from '.';
-import { ConnectBalanceBuy } from './buy';
-import { lorem as buyLorem } from './buy/lorem';
+import { ConnectBuy } from '../buy';
+import { lorem as buyLorem } from '../buy/lorem';
 import { ConnectBalanceInfo } from './info';
 import { lorem as infoLorem } from './info/lorem';
 
@@ -21,7 +21,7 @@ const Template: ComponentStory<ComponentType> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
     balance: 0.079,
-    children: <ConnectBalanceBuy
+    children: <ConnectBuy
         {...buyLorem}
     />,
 };

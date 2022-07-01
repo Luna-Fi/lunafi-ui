@@ -1,6 +1,6 @@
-import { ConnectBalanceBuyProps } from '.';
+import { ConnectBuyProps } from '.';
 
-export const lorem: ConnectBalanceBuyProps = {
+export const lorem: ConnectBuyProps = {
     items: [
         {
             name: 'Buy LFI on Sharkswap',

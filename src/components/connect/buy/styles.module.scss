@@ -1,6 +1,6 @@
 @import '@/styles/base';
 
-.connect_balance_buy {
+.connect_buy {
     @include reset-ul;
     border-radius: px-to-rem(8);
     background-color: var(--color-grey-900);

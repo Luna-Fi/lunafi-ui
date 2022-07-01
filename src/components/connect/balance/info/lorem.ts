@@ -1,5 +1,5 @@
 import { Props } from '.';
-import { lorem as buyLorem } from '../buy/lorem';
+import { lorem as buyLorem } from '../../buy/lorem';
 
 export const lorem: Props = {
     balance: 0.079,

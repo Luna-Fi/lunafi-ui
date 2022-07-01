@@ -8,14 +8,14 @@ interface Item {
     iconSrc: string;
 }
 
-export interface ConnectBalanceBuyProps {
+export interface ConnectBuyProps {
     items: Item[];
 }
 
-export const ConnectBalanceBuy: FC<ConnectBalanceBuyProps> = ({
+export const ConnectBuy: FC<ConnectBuyProps> = ({
     items,
 }) => (
-    <ul className={styles.connect_balance_buy}>
+    <ul className={styles.connect_buy}>
         {items.map((item) => (
             <li
                 key={item.name}

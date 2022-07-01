@@ -1,5 +1,5 @@
 import { Props } from '.';
-import { lorem as buyLorem } from '../../balance/buy/lorem';
+import { lorem as buyLorem } from '../../buy/lorem';
 
 export const lorem: Props = {
     address: '0xca7bf3c514d412ac12d10eff302301a81153f557',

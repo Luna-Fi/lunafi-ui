@@ -3,7 +3,7 @@ import { NumberFormat } from 'src/components/number/format';
 import { LinkExplore } from 'src/components/links/explore';
 import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
 import { IconMetamask } from 'src/components/icons/Metamask';
-import { ConnectBalanceBuy, ConnectBalanceBuyProps } from '../buy';
+import { ConnectBuy, ConnectBuyProps } from '../../buy';
 import styles from './styles.module.scss';
 
 interface ConnectBalanceInfoItem {
@@ -15,7 +15,7 @@ interface ConnectBalanceInfoItem {
 export interface ConnectBalanceInfoProps {
     balance: number;
     info?: ConnectBalanceInfoItem[];
-    buy?: ConnectBalanceBuyProps;
+    buy?: ConnectBuyProps;
     explorerHref?: string;
 }
 
@@ -106,7 +106,7 @@ export const ConnectBalanceInfo: FC<Props> = ({
 
         {buy && (
             <div className={styles.buy}>
-                <ConnectBalanceBuy {...buy} />
+                <ConnectBuy {...buy} />
             </div>
         )}
     </div>

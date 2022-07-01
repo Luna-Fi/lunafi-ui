@@ -3,13 +3,13 @@ import { LinkExplore } from 'src/components/links/explore';
 import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
 import { ButtonCopyToClipboard } from 'src/components/button/copy-to-clipboard';
 import styles from './styles.module.scss';
-import { ConnectBalanceBuy, ConnectBalanceBuyProps } from '../../balance/buy';
+import { ConnectBuy, ConnectBuyProps } from '../../buy';
 
 export interface ConnectUserInfoProps {
     address: string;
     network: string;
     explorerHref?: string;
-    buy?: ConnectBalanceBuyProps;
+    buy?: ConnectBuyProps;
 }
 
 export interface Props extends ConnectUserInfoProps {
@@ -70,7 +70,7 @@ export const ConnectUserInfo: FC<Props> = ({
 
             {buy && (
                 <div className={styles.buy}>
-                    <ConnectBalanceBuy {...buy} />
+                    <ConnectBuy {...buy} />
                 </div>
             )}
         </div>

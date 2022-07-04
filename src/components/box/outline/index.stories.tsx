@@ -27,7 +27,7 @@ const Template: ComponentStory<ComponentType> = (args) => (
 );
 
 const component: ComponentMeta<ComponentType> = {
-    title: 'Container/Outline',
+    title: 'Box/Outline',
     component: BoxOutline,
 };
 export default component;

@@ -10,6 +10,7 @@ export interface IConnectNetworkItem {
     name: string;
     previewSrc?: string;
     iconSrc?: string;
+    color?: string;
 }
 
 export interface ConnectNetworkProps {
@@ -48,6 +49,7 @@ export const ConnectNetwork: FC<Props> = ({
                     appearAnimation={appearAnimation}
                     appearAnimationOn={appearAnimationOn}
                     iconSrc={activeNetwork?.iconSrc}
+                    color={activeNetwork?.color}
                 />
             )}
             className={styles.tooltip}

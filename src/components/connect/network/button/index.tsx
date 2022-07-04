@@ -5,6 +5,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     iconSrc?: string;
+    color?: string;
 }
 
 export const ConnectNetworkButton = forwardRef<
@@ -14,6 +15,7 @@ Props
     appearAnimation,
     appearAnimationOn,
     iconSrc,
+    color,
     ...tagProps
 }, ref) => {
     const classNames = [
@@ -31,6 +33,9 @@ Props
                 classNames,
                 tagProps.className,
             ].join(' ')}
+            style={{
+                backgroundColor: color || '',
+            }}
         >
             <span className={styles.icon}>
                 {iconSrc && <img src={iconSrc} alt="Network" />}

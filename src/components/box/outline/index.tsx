@@ -6,15 +6,15 @@ import { utils } from 'vevet';
 import { useOnResize } from 'src/utils/resize';
 import styles from './styles.module.scss';
 
-export interface ContainerOutlineProps {
+export interface BoxOutlineProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     appearAnimationDuration?: number;
 }
 
-export interface Props extends HTMLAttributes<HTMLDivElement>, ContainerOutlineProps { }
+export interface Props extends HTMLAttributes<HTMLDivElement>, BoxOutlineProps { }
 
-export const ContainerOutline = forwardRef<HTMLDivElement, Props>(({
+export const BoxOutline = forwardRef<HTMLDivElement, Props>(({
     appearAnimation,
     appearAnimationOn,
     appearAnimationDuration = 1000,
@@ -106,7 +106,7 @@ export const ContainerOutline = forwardRef<HTMLDivElement, Props>(({
             ref={domRef}
             {...tagProps}
             className={[
-                styles.container_outline,
+                styles.box_outline,
                 !appearAnimation && styles.is_static,
                 tagProps.className,
             ].join(' ')}

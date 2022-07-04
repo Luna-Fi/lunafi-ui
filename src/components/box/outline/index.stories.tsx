@@ -1,11 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ContainerOutline } from '.';
+import { BoxOutline } from '.';
 
-type ComponentType = typeof ContainerOutline;
+type ComponentType = typeof BoxOutline;
 
 const Template: ComponentStory<ComponentType> = (args) => (
-    <ContainerOutline
+    <BoxOutline
         {...args}
         style={{
             padding: '1rem',
@@ -23,12 +23,12 @@ const Template: ComponentStory<ComponentType> = (args) => (
         Aut asperiores voluptatem minus illo consequatur necessitatibus in beatae,
         possimus minima molestias tempora consequuntur suscipit
         quaerat sunt nemo est explicabo molestiae aspernatur!
-    </ContainerOutline>
+    </BoxOutline>
 );
 
 const component: ComponentMeta<ComponentType> = {
     title: 'Container/Outline',
-    component: ContainerOutline,
+    component: BoxOutline,
 };
 export default component;
 

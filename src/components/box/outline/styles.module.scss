@@ -1,11 +1,14 @@
+@import '@/styles/base';
+
 .box_outline {
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: px-to-rem(8);
 
     &.is_static {
-        border: 1px solid var(--color-grey-800);
-        border-radius: 8px;
+        border-color: var(--color-grey-800);
         background-color: var(--color-grey-1000);
     }
 }

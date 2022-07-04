@@ -3,6 +3,7 @@ import { LayoutContainer, LayoutContainerProps } from './components/layout/conta
 import { NumberFormat, NumberFormatProps } from './components/number/format';
 import { NumberCounter, NumberCounterProps } from './components/number/counter';
 import { BoxOutline, BoxOutlineProps } from './components/box/outline';
+import { BoxBanner, BoxBannerProps } from './components/box/banner';
 import { NavigationMenu, NavigationMenuProps } from './components/navigation/menu';
 import { NavigationMenuLink, NavigationMenuLinkProps } from './components/navigation/menu/Link';
 import { NavigationModal, NavigationModalProps } from './components/navigation/modal';
@@ -38,6 +39,7 @@ export {
     NumberFormat, NumberFormatProps,
     NumberCounter, NumberCounterProps,
 
+    BoxBanner, BoxBannerProps,
     BoxOutline, BoxOutlineProps,
 
     PreviewDiscount, PreviewDiscountProps,

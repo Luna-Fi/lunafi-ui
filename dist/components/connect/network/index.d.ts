@@ -4,6 +4,7 @@ export interface IConnectNetworkItem {
     name: string;
     previewSrc?: string;
     iconSrc?: string;
+    color?: string;
 }
 export interface ConnectNetworkProps {
     networks: IConnectNetworkItem[];

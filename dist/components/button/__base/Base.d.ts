@@ -3,7 +3,7 @@ declare type Props = {
     /**
      * @default 'medium'
      */
-    size?: 'small' | 'medium' | 'large';
+    size?: 'small' | 'medium' | 'large' | false;
     /**
      * @default false
      */

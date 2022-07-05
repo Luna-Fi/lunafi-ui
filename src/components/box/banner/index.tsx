@@ -8,6 +8,7 @@ export interface BoxBannerProps {
     href?: string;
     media?: {
         img?: string;
+        mp4?: string;
     }
 }
 
@@ -25,6 +26,18 @@ export const BoxBanner: FC<BoxBannerProps> = ({
         <section className={styles.box_banner}>
             {media && (
                 <div className={styles.bg}>
+                    {media.mp4 && (
+                        <video
+                            disablePictureInPicture
+                            playsInline
+                            preload="auto"
+                            autoPlay
+                            loop
+                            muted
+                        >
+                            <source src={media.mp4} type="video/mp4" />
+                        </video>
+                    )}
                     {media.img && (
                         <img src={media.img} alt={header || ''} />
                     )}

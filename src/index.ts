@@ -26,6 +26,7 @@ import { LinkExplore } from './components/links/explore';
 import { ConnectBalanceInfo, ConnectBalanceInfoProps } from './components/connect/balance/info';
 import { ConnectUserInfo, ConnectUserInfoProps } from './components/connect/user/info';
 import { ButtonCopyToClipboard } from './components/button/copy-to-clipboard';
+import { Button } from './components/button';
 
 export {
     LayoutCSS,
@@ -57,6 +58,7 @@ export {
     ConnectBalanceInfo, ConnectBalanceInfoProps,
     ConnectUserInfo, ConnectUserInfoProps,
 
+    Button,
     ButtonSvgOutline,
     ButtonSvgCircleFill,
     ButtonCopyToClipboard,

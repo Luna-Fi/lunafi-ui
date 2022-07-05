@@ -1,0 +1,130 @@
+@import '@/styles/base';
+
+.button {
+    @include reset-button;
+
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 0 px-to-rem(32);
+    border-radius: px-to-rem(8);
+    overflow: hidden;
+
+    &:global(.large),
+    &:global(.medium) {
+        font-weight: 500;
+        font-size: px-to-rem(16);
+        line-height: px-to-rem(24);
+    }
+
+    &:global(.small) {
+        font-weight: 600;
+        font-size: px-to-rem(12);
+        line-height: px-to-rem(22);
+        letter-spacing: 0.01em;
+    }
+
+    &.full_width {
+        width: 100%;
+    }
+
+    background-color: var(--color-grey-700);
+    color: var(--color-white);
+
+    &.primary {
+        --button-color-text: #000;
+        --button-color-bg: #00FFF4;
+        --button-color-bg-hover: #00e2d7;
+    }
+
+    &.secondary {
+        --button-color-text: #fff;
+        --button-color-bg: #343A40;
+        --button-color-bg-hover: #4b5259;
+    }
+
+    &.success {
+        --button-color-text: #fff;
+        --button-color-bg: #0E6330;
+        --button-color-bg-hover: #0D7737;
+    }
+
+    &.danger {
+        --button-color-text: #fff;
+        --button-color-bg: #5B1D1D;
+        --button-color-bg-hover: #711F1F;
+    }
+
+    &.light {
+        --button-color-text: #000;
+        --button-color-bg: #E9ECEF;
+        --button-color-bg-hover: #fff;
+    }
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: px-to-rem(8);
+    background-color: var(--button-color-bg);
+    transition: transform 0.5s, filter 0.25s;
+
+    &.is_disabled {
+        transform: translate(0, 100%);
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        border-radius: calc(var(--button-size) / 2);
+        width: calc(50% + var(--button-size) / 2);
+        height: 100%;
+        transition: transform 0.5s;
+        background-color: var(--button-color-bg-hover);
+    }
+
+    &::before {
+        left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        transform: translate(-101%, 0);
+    }
+
+    &::after {
+        right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        transform: translate(101%, 0);
+    }
+
+    &.is_hovered {
+        &::before,
+        &::after {
+            transform: none;
+        }
+    }
+
+    @at-root .button:active & {
+        filter: brightness(0.75);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: var(--button-color-text);
+    transition: color 0.5s;
+
+    &.is_disabled {
+        color: var(--color-white);
+    }
+}

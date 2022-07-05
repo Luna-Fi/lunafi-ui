@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "format-number": "^3.0.0",
+    "rc-input-number": "^7.3.4",
     "react-portal": "^4.2.2"
   }
 }

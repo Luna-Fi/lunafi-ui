@@ -28,6 +28,7 @@ import { ConnectUserInfo, ConnectUserInfoProps } from './components/connect/user
 import { ButtonCopyToClipboard } from './components/button/copy-to-clipboard';
 import { Button } from './components/button';
 import { FormInput } from './components/form/input';
+import { FormInputNumber } from './components/form/input-number';
 
 export {
     LayoutCSS,
@@ -69,4 +70,5 @@ export {
     Modal,
 
     FormInput,
+    FormInputNumber,
 };

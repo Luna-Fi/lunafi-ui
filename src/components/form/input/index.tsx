@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import React, {
-    forwardRef, ForwardRefExoticComponent, HTMLAttributes, useCallback, useEffect, useId,
+    forwardRef, ForwardRefExoticComponent, InputHTMLAttributes, useCallback, useEffect, useId,
     useImperativeHandle, useRef, useState,
 } from 'react';
 import { useOnResize } from 'src/utils/resize';
@@ -13,7 +13,7 @@ export interface FormInputProps {
     InputElement?: ForwardRefExoticComponent<any>;
 }
 
-type HTMLAttr = Omit<HTMLAttributes<HTMLInputElement>, 'className'>;
+type HTMLAttr = Omit<InputHTMLAttributes<HTMLInputElement>, 'className'>;
 
 export interface Props extends HTMLAttr, FormInputProps { }
 
@@ -112,7 +112,7 @@ Props
         });
     }, [isFocused, resize]);
 
-    const inputProps: HTMLAttributes<HTMLInputElement> = {
+    const inputProps: InputHTMLAttributes<HTMLInputElement> = {
         ...tagProps,
         id,
         onFocus: (e) => {

@@ -2,8 +2,7 @@
 
 .button_svg_circle_fill {
     @include reset-button;
-    text-decoration: none;
-
+    
     position: relative;
     display: inline-flex;
     flex-direction: row;
@@ -12,20 +11,6 @@
 
     box-sizing: border-box;
     padding: px-to-rem(4) px-to-rem(40);
-
-    &.large {
-        min-height: px-to-rem(54);
-    }
-    &.medium {
-        min-height: px-to-rem(44);
-    }
-    &.small {
-        min-height: px-to-rem(34);
-    }
-
-    &.full_width {
-        width: 100%;
-    }
 
     &:disabled {
         opacity: 0.5;

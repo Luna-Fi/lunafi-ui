@@ -7,7 +7,7 @@ import { utils } from 'vevet';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
 import styles from './styles.module.scss';
-import { ButtonAnchor, ButtonAnchorProps } from '../ButtonAnchor';
+import { ButtonBase, ButtonBaseProps } from '../__base/Base';
 
 export interface ButtonSvgCircleFillProps {
     appearAnimation?: boolean;
@@ -28,20 +28,12 @@ export interface ButtonSvgCircleFillProps {
      */
     forceHover?: boolean;
     /**
-     * @default 'medium'
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * @defaul false
-     */
-    fullWidth?: boolean;
-    /**
      * @default 'primary'
      */
     colorVariant?: 'primary' | 'primary_unactive' | 'gradient';
 }
 
-type Props = ButtonSvgCircleFillProps & ButtonAnchorProps;
+type Props = ButtonSvgCircleFillProps & ButtonBaseProps;
 
 export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>((
     {
@@ -50,8 +42,6 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
         hasStaticFill = true,
         hasHover = true,
         forceHover,
-        size = 'medium',
-        fullWidth = false,
         colorVariant = 'primary',
         children,
         ...tagProps
@@ -81,10 +71,6 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
     const classNames = [
         appearAnimation ? styles.has_appear_animation : '',
         appearAnimationOn ? styles.show : '',
-        size === 'small' ? styles.small : '',
-        size === 'medium' ? styles.medium : '',
-        size === 'large' ? styles.large : '',
-        fullWidth ? styles.full_width : '',
         isHovered === true ? styles.is_hovered : '',
     ].join(' ');
 
@@ -276,7 +262,7 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
     }, [colors]);
 
     return (
-        <ButtonAnchor
+        <ButtonBase
             ref={domRef}
             {...tagProps}
             className={[
@@ -411,6 +397,6 @@ export const ButtonSvgCircleFill = forwardRef<HTMLButtonElement | HTMLAnchorElem
             >
                 {children}
             </span>
-        </ButtonAnchor>
+        </ButtonBase>
     );
 });

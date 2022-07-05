@@ -25,6 +25,7 @@ Default.parameters = {
     },
 };
 Default.args = {
+    tag: 'button',
     hasStaticFill: true,
     hasHover: true,
     size: 'medium',

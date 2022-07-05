@@ -1,0 +1,21 @@
+@import '@/styles/base';
+
+.button {
+    height: var(--button-size);
+
+    &.large {
+        --button-size: #{px-to-rem(54)};
+    }
+
+    &.medium {
+        --button-size: #{px-to-rem(44)};
+    }
+
+    &.small {
+        --button-size: #{px-to-rem(34)};
+    }
+
+    &.fullwidth {
+        width: 100%;
+    }
+}

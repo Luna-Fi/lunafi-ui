@@ -58,6 +58,7 @@
     font-size: px-to-rem(14);
     font-weight: 700;
     letter-spacing: 0.05em;
+    color: var(--color-white);
 
     @include media-sm-min {
         color: var(--color-blue);

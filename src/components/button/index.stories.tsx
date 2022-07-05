@@ -65,3 +65,11 @@ Light.args = {
     children: 'Light button',
 };
 Light.parameters = parameters;
+
+export const Dark = Template.bind({});
+Dark.args = {
+    ...args,
+    variant: 'dark',
+    children: 'Dark button',
+};
+Dark.parameters = parameters;

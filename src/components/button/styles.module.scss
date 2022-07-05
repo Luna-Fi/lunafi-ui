@@ -42,9 +42,9 @@
     }
 
     &.secondary {
-        --button-color-text: #fff;
-        --button-color-bg: #343A40;
-        --button-color-bg-hover: #4b5259;
+        --button-color-text: #00FFFF;
+        --button-color-bg: rgba(0, 255, 244, 0.2);
+        --button-color-bg-hover: #008d8d;
     }
 
     &.success {
@@ -63,6 +63,12 @@
         --button-color-text: #000;
         --button-color-bg: #E9ECEF;
         --button-color-bg-hover: #fff;
+    }
+
+    &.dark {
+        --button-color-text: #fff;
+        --button-color-bg: #343A40;
+        --button-color-bg-hover: #4b5259;
     }
 }
 

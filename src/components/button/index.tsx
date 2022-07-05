@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { ButtonBase, ButtonBaseProps } from './__base/Base';
 
 export interface ButtonProps {
-    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'light';
+    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'light' | 'dark';
 }
 
 export type Props = ButtonProps & ButtonBaseProps;

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
+import { Button } from 'src/components/button';
 import styles from './styles.module.scss';
 
 export interface BoxBannerProps {
@@ -40,14 +40,16 @@ export const BoxBanner: FC<BoxBannerProps> = ({
                     </div>
                     <div className={styles.link}>
                         {href && (
-                            <ButtonSvgCircleFill
+                            <Button
                                 tag="a"
                                 href={href}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                variant="light"
+                                size="small"
                             >
-                                {href}
-                            </ButtonSvgCircleFill>
+                                Learn More
+                            </Button>
                         )}
                     </div>
                 </div>

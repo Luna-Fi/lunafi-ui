@@ -100,7 +100,6 @@
 
 }
 
-
 .desc {
     color: var(--color-grey-200);
     
@@ -125,5 +124,29 @@
     flex-shrink: 0;
     margin-left: px-to-rem(40);
     margin-top: px-to-rem(-12);
+
+    a,
+    button {
+        padding-left: px-to-rem(0);
+        padding-right: px-to-rem(0);
+
+        @include media-xl-min {
+            padding-left: px-to-rem(46);
+            padding-right: px-to-rem(46);
+        }
+        @include media-lg {
+            padding-left: px-to-rem(24);
+            padding-right: px-to-rem(24);
+        }
+        @include media-md {
+            padding-left: px-to-rem(20);
+            padding-right: px-to-rem(20);
+        }
+        @include media-sm-max {
+            padding-left: px-to-rem(16);
+            padding-right: px-to-rem(16);
+        }
+    }
+
 }
 

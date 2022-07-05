@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonAnchorProps } from '../ButtonAnchor';
+import { ButtonBaseProps } from '../__base/Base';
 export interface ButtonSvgCircleFillProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
@@ -19,18 +19,10 @@ export interface ButtonSvgCircleFillProps {
      */
     forceHover?: boolean;
     /**
-     * @default 'medium'
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * @defaul false
-     */
-    fullWidth?: boolean;
-    /**
      * @default 'primary'
      */
     colorVariant?: 'primary' | 'primary_unactive' | 'gradient';
 }
-declare type Props = ButtonSvgCircleFillProps & ButtonAnchorProps;
+declare type Props = ButtonSvgCircleFillProps & ButtonBaseProps;
 export declare const ButtonSvgCircleFill: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement>>;
 export {};

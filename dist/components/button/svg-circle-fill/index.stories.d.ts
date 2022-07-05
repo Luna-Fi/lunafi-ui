@@ -4,4 +4,4 @@ import { ButtonSvgCircleFill } from '.';
 declare type ComponentType = typeof ButtonSvgCircleFill;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
-export declare const Default: ComponentStory<React.ForwardRefExoticComponent<(import(".").ButtonSvgCircleFillProps & import("../ButtonAnchor").ButtonAnchorProps) & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement>>>;
+export declare const Default: ComponentStory<React.ForwardRefExoticComponent<(import(".").ButtonSvgCircleFillProps & import("../__base/Base").ButtonBaseProps) & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement>>>;

@@ -5,6 +5,7 @@ export interface BoxBannerProps {
     href?: string;
     media?: {
         img?: string;
+        mp4?: string;
     };
 }
 export declare const BoxBanner: FC<BoxBannerProps>;

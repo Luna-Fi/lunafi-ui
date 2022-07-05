@@ -1,6 +1,7 @@
 import { FC } from 'react';
 export interface PreviewDiscountProps {
-    name?: string;
+    href: string;
+    name: string;
     items?: {
         key?: string;
         value?: string;

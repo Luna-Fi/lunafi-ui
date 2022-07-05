@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { BoxBanner } from '.';
+import { BoxBanner, BoxBannerProps } from '.';
 declare type ComponentType = typeof BoxBanner;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
-export declare const Default: ComponentStory<React.FC<import(".").BoxBannerProps>>;
+export declare const Image: ComponentStory<React.FC<BoxBannerProps>>;
+export declare const Video: ComponentStory<React.FC<BoxBannerProps>>;

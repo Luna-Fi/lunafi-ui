@@ -1,19 +1,7 @@
 import React from 'react';
-import { ButtonAnchorProps } from './ButtonAnchor';
+import { ButtonBaseProps } from './__base/Base';
 export interface ButtonProps {
-    /**
-     * @default 'medium'
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * @default 'primary'
-     */
-    variant?: 'primary' | 'success' | 'danger';
-    /**
-     * @default false
-     */
-    fullWidth?: boolean;
+    variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'light';
 }
-declare type Props = ButtonProps & ButtonAnchorProps;
+export declare type Props = ButtonProps & ButtonBaseProps;
 export declare const Button: React.ForwardRefExoticComponent<Props & React.RefAttributes<HTMLAnchorElement | HTMLButtonElement>>;
-export {};

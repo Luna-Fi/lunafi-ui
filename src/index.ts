@@ -29,6 +29,7 @@ import { ButtonCopyToClipboard } from './components/button/copy-to-clipboard';
 import { Button } from './components/button';
 import { FormInput } from './components/form/input';
 import { FormInputNumber } from './components/form/input-number';
+import { PreviewNetworkLabel, PreviewNetworkLabelProps } from './components/preview/network-label';
 
 export {
     LayoutCSS,
@@ -46,6 +47,7 @@ export {
     BoxOutline, BoxOutlineProps,
 
     PreviewDiscount, PreviewDiscountProps,
+    PreviewNetworkLabel, PreviewNetworkLabelProps,
 
     LinksSocialIcons, LinksSocialIconsProps,
     LinksSocialMenu, LinksSocialMenuProps,

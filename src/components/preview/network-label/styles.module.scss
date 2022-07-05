@@ -1,0 +1,28 @@
+@import '@/styles/base';
+
+.preview_network_label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: px-to-rem(4);
+    padding: px-to-rem(2) px-to-rem(6);
+    background-color: var(--color-black);
+
+    font-weight: 500;
+    font-size: px-to-rem(12);
+    line-height: px-to-rem(20);
+    color: var(--color-white);
+
+    > * {
+        + * {
+            margin-left: px-to-rem(4);
+        }
+    }
+
+    img {
+        width: auto;
+        height: px-to-rem(12);
+    }
+
+}

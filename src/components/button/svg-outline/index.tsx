@@ -1,5 +1,5 @@
 import React, {
-    ButtonHTMLAttributes, forwardRef,
+    forwardRef,
     useCallback, useEffect, useId, useImperativeHandle, useRef, useState,
 } from 'react';
 import gsap from 'gsap';
@@ -7,42 +7,35 @@ import { vevetApp } from 'src/utils/vevet';
 import { useOnResize } from 'src/utils/resize';
 import { utils } from 'vevet';
 import styles from './styles.module.scss';
+import { ButtonBase, ButtonBaseProps } from '../__base/Base';
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonSvgOutlineProps = {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     /**
      * @default 'medium'
      */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * @default 'medium'
-     */
     spacing?: 'small' | 'medium' | 'large';
-    /**
-     * @defaul false
-     */
-    fullWidth?: boolean;
     /**
      * @default true
      */
     hasBg?: boolean;
-}
+};
 
-export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
+export type Props = ButtonSvgOutlineProps & ButtonBaseProps;
+
+export const ButtonSvgOutline = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>((
     {
         appearAnimation,
         appearAnimationOn,
-        size = 'medium',
         spacing = 'medium',
-        fullWidth,
         hasBg = true,
         children,
         ...tagProps
     },
     ref,
 ) => {
-    const domRef = useRef<HTMLButtonElement>(null);
+    const domRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
     useImperativeHandle(ref, () => domRef.current!);
     const id = useId();
 
@@ -50,13 +43,9 @@ export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
     const classNames = [
         appearAnimation ? styles.has_appear_animation : '',
         appearAnimationOn ? styles.show : '',
-        size === 'small' ? styles.small : '',
-        size === 'medium' ? styles.medium : '',
-        size === 'large' ? styles.large : '',
         spacing === 'small' ? styles.spacing_small : '',
         spacing === 'medium' ? styles.spacing_medium : '',
         spacing === 'large' ? styles.spacing_large : '',
-        fullWidth ? styles.full_width : '',
     ].join(' ');
 
     // elements
@@ -176,16 +165,15 @@ export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
     }, [appearAnimation, appearAnimationOn, render]);
 
     return (
-        <button
+        <ButtonBase
             ref={domRef}
-            type="button"
             {...tagProps}
             className={[
                 styles.button_svg_outline,
                 classNames,
                 tagProps.className,
             ].join(' ')}
-            onMouseEnter={(evt) => {
+            onMouseEnter={(evt: React.MouseEvent<any, MouseEvent>) => {
                 if (tagProps.onMouseEnter) {
                     tagProps.onMouseEnter(evt);
                 }
@@ -199,7 +187,7 @@ export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
                     });
                 }
             }}
-            onMouseLeave={(evt) => {
+            onMouseLeave={(evt: React.MouseEvent<any, MouseEvent>) => {
                 if (tagProps.onMouseLeave) {
                     tagProps.onMouseLeave(evt);
                 }
@@ -302,6 +290,6 @@ export const ButtonSvgOutline = forwardRef<HTMLButtonElement, Props>((
                 {children}
             </span>
 
-        </button>
+        </ButtonBase>
     );
 });

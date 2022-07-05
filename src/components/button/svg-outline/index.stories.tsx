@@ -19,3 +19,17 @@ const component: ComponentMeta<ComponentType> = {
 export default component;
 
 export const Default = Template.bind({});
+Default.parameters = {
+    controls: {
+        exclude: ['tag', 'href'],
+    },
+};
+Default.args = {
+    tag: 'button',
+    appearAnimation: false,
+    appearAnimationOn: false,
+    size: 'medium',
+    fullWidth: false,
+    spacing: 'medium',
+    hasBg: true,
+};

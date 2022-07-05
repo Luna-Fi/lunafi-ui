@@ -121,6 +121,8 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                 >
                     {asideChildren}
                     <ButtonSvgOutline
+                        tag="button"
+                        className={styles.metamask_button}
                         size="small"
                         fullWidth
                         hasBg={false}
@@ -129,7 +131,7 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                             addToMetamaskCallback?.();
                         }}
                     >
-                        <IconMetamask />
+                        <IconMetamask className={styles.metamask_button__icon} />
                         <span>Add LFI to Metamask</span>
                     </ButtonSvgOutline>
                 </div>

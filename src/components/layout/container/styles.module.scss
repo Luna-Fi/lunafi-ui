@@ -91,6 +91,13 @@
     }
 }
 
+.metamask_button {
+    &__icon {
+        flex-shrink: 0;
+        margin-right: px-to-rem(6);
+    }
+}
+
 .top {
     position: fixed;
     top: 0;

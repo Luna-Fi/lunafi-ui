@@ -27,6 +27,7 @@ Props
     return (
         <ButtonSvgOutline
             ref={ref}
+            tag="button"
             {...tagProps}
             className={[
                 styles.connect_balance_button,

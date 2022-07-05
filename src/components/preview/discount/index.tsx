@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import styles from './styles.module.scss';
 
 export interface PreviewDiscountProps {
-    name?: string;
+    href: string;
+    name: string;
     items?: {
         key?: string;
         value?: string;
@@ -12,10 +13,14 @@ export interface PreviewDiscountProps {
 export interface Props extends PreviewDiscountProps { }
 
 export const PreviewDiscount: FC<Props> = ({
+    href,
     name,
     items,
 }) => (
-    <div className={styles.preview_discount}>
+    <a
+        href={href}
+        className={styles.preview_discount}
+    >
         <div className={styles.img}>
             <div />
         </div>
@@ -36,5 +41,5 @@ export const PreviewDiscount: FC<Props> = ({
                 ))}
             </div>
         </div>
-    </div>
+    </a>
 );

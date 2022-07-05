@@ -27,6 +27,7 @@ import { ConnectBalanceInfo, ConnectBalanceInfoProps } from './components/connec
 import { ConnectUserInfo, ConnectUserInfoProps } from './components/connect/user/info';
 import { ButtonCopyToClipboard } from './components/button/copy-to-clipboard';
 import { Button } from './components/button';
+import { FormInput } from './components/form/input';
 
 export {
     LayoutCSS,
@@ -66,4 +67,6 @@ export {
     TooltipContent,
 
     Modal,
+
+    FormInput,
 };

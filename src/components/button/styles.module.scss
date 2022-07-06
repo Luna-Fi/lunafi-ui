@@ -14,6 +14,10 @@
     border-radius: px-to-rem(8);
     overflow: hidden;
 
+    &.is_disabled {
+        cursor: default;
+    }
+
     &:global(.large),
     &:global(.medium) {
         font-weight: 500;

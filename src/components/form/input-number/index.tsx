@@ -10,6 +10,7 @@ import styles from './styles.module.scss';
 export type FormInputNumberProps = InputNumberProps & {
     label: string;
     icon?: string;
+    onMax?: (max: number) => void;
 };
 
 export const FormInputNumber = forwardRef<
@@ -18,6 +19,7 @@ FormInputNumberProps
 >(({
     label,
     icon,
+    onMax,
     ...tagProps
 }, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -70,6 +72,7 @@ FormInputNumberProps
                     aria-hidden
                     onClick={() => {
                         setValue(tagProps.max);
+                        onMax?.(parseFloat(`${tagProps.max}` || '0'));
                     }}
                 >
                     Max

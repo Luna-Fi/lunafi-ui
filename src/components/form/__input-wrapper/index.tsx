@@ -93,7 +93,7 @@ export const FormInputWrapper: FC<PropsWithChildren<FormInputWrapperProps>> = ({
                     rectLength = 0;
                 }
                 const offset = rectLength * -0.5 - (rectLength * progress);
-                focusRect.style.opacity = '1';
+                focusRect.style.opacity = progress === 0 ? '0' : '1';
                 focusRect.style.strokeDasharray = `${rectLength * progress} ${rectLength * (1 - progress)}`;
                 focusRect.style.strokeDashoffset = `${offset}`;
 

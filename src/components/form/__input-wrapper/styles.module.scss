@@ -73,6 +73,7 @@
     
     .rect_focus {
         fill: transparent;
+        opacity: 0;
     }
 }
 
@@ -133,7 +134,16 @@
     @include media-sm-min {
         font-size: px-to-rem(16);
     }
+}
+
+.label {
     @include media-xs {
         font-size: px-to-rem(14);
+    }
+}
+
+.input input {
+    @include media-xs {
+        font-size: px-to-rem(16);
     }
 }

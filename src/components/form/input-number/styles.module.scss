@@ -19,6 +19,10 @@
     line-height: px-to-rem(20);
     letter-spacing: 0.03em;
 
+    > * {
+        color: var(--color-blue);
+    }
+
     @include media-sm-min {
         --button-size: #{px-to-rem(36)};
         font-size: px-to-rem(14);

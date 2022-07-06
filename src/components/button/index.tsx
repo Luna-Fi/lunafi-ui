@@ -33,6 +33,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>((
         variant === 'success' ? styles.success : '',
         variant === 'danger' ? styles.danger : '',
         variant === 'light' ? styles.light : '',
+        variant === 'dark' ? styles.dark : '',
 
         isHovered === true ? styles.is_hovered : '',
         isDisabled ? styles.is_disabled : '',

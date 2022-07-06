@@ -41,6 +41,7 @@ FormInputNumberProps
             isFocused={isFocused}
             label={label}
             icon={icon}
+            id={id}
         >
             <InputNumber
                 ref={inputRef}

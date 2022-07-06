@@ -13,6 +13,7 @@ export interface FormInputWrapperProps {
     label: string;
     icon?: string;
     className?: string;
+    id?: string;
 }
 
 const borderRadius = 8;
@@ -23,10 +24,12 @@ export const FormInputWrapper: FC<PropsWithChildren<FormInputWrapperProps>> = ({
     label,
     icon,
     className,
+    id: propId,
     children,
 }) => {
     const parentRef = useRef<HTMLDivElement>(null);
-    const id = useId();
+    const dynamicId = useId();
+    const id = propId || dynamicId;
 
     const classNames = [
         isFocused ? styles.focused : '',

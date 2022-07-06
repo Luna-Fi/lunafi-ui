@@ -37,6 +37,7 @@ FormInputProps
             isFocused={isFocused}
             label={label}
             icon={icon}
+            id={id}
         >
             <input
                 ref={inputRef}

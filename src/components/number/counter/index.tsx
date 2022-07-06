@@ -24,6 +24,8 @@ export const NumberCounter: FC<NumberCounterProps> = ({
     const [dynamicRef, setDynamicRef] = useState<HTMLSpanElement | null>(null);
     const [dynamicValue, setDynamicValue] = useState(0);
 
+    const rightFixed = formatOptions.rightFixed ?? (`${value}`).split('.')[1]?.length;
+
     useEffect(() => {
         if (!animation || !dynamicRef) {
             setDynamicValue(0);
@@ -51,13 +53,14 @@ export const NumberCounter: FC<NumberCounterProps> = ({
                 <NumberFormat
                     value={value}
                     {...formatOptions}
+                    rightFixed={rightFixed}
                 />
             </span>
             <span className={styles.dynamic} ref={setDynamicRef}>
                 <NumberFormat
                     value={dynamicValue}
                     {...formatOptions}
-                    rightFixed={(`${value}`).split('.')[1]?.length || 0}
+                    rightFixed={rightFixed}
                 />
             </span>
         </span>

@@ -30,8 +30,7 @@ export function formatNumber(
     if (typeof options?.rightFixed !== 'undefined') {
         rightFixed = options.rightFixed;
     } else {
-        const decimalLength = str.split('.')[1]?.length || 0;
-        rightFixed = decimalLength || 2;
+        rightFixed = str.split('.')[1]?.length || 0;
     }
 
     const output = numberFormatter({

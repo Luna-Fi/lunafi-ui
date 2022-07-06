@@ -1,5 +1,6 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import { ButtonSvgOutline } from 'src/components/button/svg-outline';
+import { IconLunaFi } from 'src/components/icons/LunaFi';
 import { NumberCounter } from 'src/components/number/counter';
 import { NumberFormat } from 'src/components/number/format';
 import styles from './styles.module.scss';
@@ -40,11 +41,7 @@ Props
             <span className={styles.wrap}>
                 <span className={styles.icon}>
                     <span className={classNames}>
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <ellipse cx="12.8011" cy="15.9998" rx="7.68" ry="7.68" fill="#00FFFF" />
-                            <ellipse cx="19.3841" cy="15.9998" rx="7.68" ry="7.68" fill="#00FFFF" />
-                            <path fillRule="evenodd" clipRule="evenodd" d="M16.0926 22.9409C18.6872 21.7083 20.4811 19.0637 20.4811 16.0001C20.4811 12.9364 18.6872 10.2918 16.0926 9.05917C13.4979 10.2918 11.7041 12.9364 11.7041 16.0001C11.7041 19.0637 13.4979 21.7083 16.0926 22.9409Z" fill="#141416" />
-                        </svg>
+                        <IconLunaFi />
                     </span>
                 </span>
                 {appearAnimation ? (

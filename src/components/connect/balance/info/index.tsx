@@ -3,6 +3,7 @@ import { NumberFormat } from 'src/components/number/format';
 import { LinkExplore } from 'src/components/links/explore';
 import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
 import { IconMetamask } from 'src/components/icons/Metamask';
+import { IconLunaFi } from 'src/components/icons/LunaFi';
 import { ConnectBuy, ConnectBuyProps } from '../../buy';
 import styles from './styles.module.scss';
 
@@ -37,12 +38,9 @@ export const ConnectBalanceInfo: FC<Props> = ({
 
             <div className={styles.head}>
                 <div className={styles.token}>
-                    <svg className={styles.token__img} width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="16" cy="16" r="16" fill="black" />
-                        <ellipse cx="12.8011" cy="15.9998" rx="7.68" ry="7.68" fill="#00FFFF" />
-                        <ellipse cx="19.3841" cy="15.9998" rx="7.68" ry="7.68" fill="#00FFFF" />
-                        <path fillRule="evenodd" clipRule="evenodd" d="M16.0926 22.941C18.6872 21.7084 20.4811 19.0637 20.4811 16.0001C20.4811 12.9365 18.6872 10.2918 16.0926 9.0592C13.4979 10.2918 11.7041 12.9365 11.7041 16.0001C11.7041 19.0637 13.4979 21.7084 16.0926 22.941Z" fill="#141416" />
-                    </svg>
+                    <IconLunaFi
+                        className={styles.token__img}
+                    />
                     <div className={styles.token__info}>
                         <div>
                             <div className={styles.token__name}>LFI</div>

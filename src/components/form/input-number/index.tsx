@@ -33,7 +33,7 @@ FormInputNumberProps
     const [value, setValue] = useState(tagProps.value);
 
     useEffect(() => {
-        setIsFilled(!!value);
+        setIsFilled(value !== '' && value !== undefined && value !== null);
     }, [value]);
 
     return (

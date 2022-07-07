@@ -2,6 +2,6 @@ import { FC, PropsWithChildren } from 'react';
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    balance: number;
+    price: number;
 }
-export declare const ConnectBalance: FC<PropsWithChildren<Props>>;
+export declare const ConnectCoin: FC<PropsWithChildren<Props>>;

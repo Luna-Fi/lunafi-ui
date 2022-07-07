@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    balance: ReactNode;
+    coin: ReactNode;
     network: ReactNode;
     connect: ReactNode;
 }

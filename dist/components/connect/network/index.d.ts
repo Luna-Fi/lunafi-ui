@@ -9,6 +9,7 @@ export interface IConnectNetworkItem {
 export interface ConnectNetworkProps {
     networks: IConnectNetworkItem[];
     onSelect: (network?: IConnectNetworkItem) => void;
+    selectedKey: IConnectNetworkItem['key'];
 }
 export interface Props extends ConnectNetworkProps {
     appearAnimation?: boolean;

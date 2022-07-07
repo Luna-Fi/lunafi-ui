@@ -11,7 +11,7 @@ import { PreviewDiscount, PreviewDiscountProps } from './components/preview/disc
 import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
 import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
-import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
+import { ConnectNetwork, ConnectNetworkProps, IConnectNetworkItem } from './components/connect/network';
 import { ButtonSvgOutline } from './components/button/svg-outline';
 import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 import { ConnectGrid } from './components/connect/grid';
@@ -30,4 +30,4 @@ import { Button } from './components/button';
 import { FormInput } from './components/form/input';
 import { FormInputNumber } from './components/form/input-number';
 import { PreviewNetworkLabel, PreviewNetworkLabelProps } from './components/preview/network-label';
-export { LayoutCSS, LayoutContainer, LayoutContainerProps, LayoutFooter, LayoutFooterProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, BoxBanner, BoxBannerProps, BoxOutline, BoxOutlineProps, PreviewDiscount, PreviewDiscountProps, PreviewNetworkLabel, PreviewNetworkLabelProps, LinksSocialIcons, LinksSocialIconsProps, LinksSocialMenu, LinksSocialMenuProps, LinkExplore, ConnectGrid, ConnectBalance, ConnectBuy, ConnectBuyProps, ConnectNetwork, ConnectNetworkProps, ConnectSubmit, ConnectSubmitProps, ConnectUser, ConnectUserProps, ConnectBalanceInfo, ConnectBalanceInfoProps, ConnectUserInfo, ConnectUserInfoProps, Button, ButtonSvgOutline, ButtonSvgCircleFill, ButtonCopyToClipboard, TooltipContent, Modal, FormInput, FormInputNumber, };
+export { LayoutCSS, LayoutContainer, LayoutContainerProps, LayoutFooter, LayoutFooterProps, NavigationMenu, NavigationMenuProps, NavigationMenuLink, NavigationMenuLinkProps, NavigationModal, NavigationModalProps, NumberFormat, NumberFormatProps, NumberCounter, NumberCounterProps, BoxBanner, BoxBannerProps, BoxOutline, BoxOutlineProps, PreviewDiscount, PreviewDiscountProps, PreviewNetworkLabel, PreviewNetworkLabelProps, LinksSocialIcons, LinksSocialIconsProps, LinksSocialMenu, LinksSocialMenuProps, LinkExplore, ConnectGrid, ConnectBalance, ConnectBuy, ConnectBuyProps, ConnectNetwork, ConnectNetworkProps, IConnectNetworkItem, ConnectSubmit, ConnectSubmitProps, ConnectUser, ConnectUserProps, ConnectBalanceInfo, ConnectBalanceInfoProps, ConnectUserInfo, ConnectUserInfoProps, Button, ButtonSvgOutline, ButtonSvgCircleFill, ButtonCopyToClipboard, TooltipContent, Modal, FormInput, FormInputNumber, };

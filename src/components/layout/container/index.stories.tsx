@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { PreviewDiscount } from 'src/components/preview/discount';
 import { ConnectGrid } from 'src/components/connect/grid';
 import { ConnectBalance } from 'src/components/connect/balance';
@@ -9,7 +9,7 @@ import { lorem as infoLorem } from 'src/components/connect/balance/info/lorem';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
-import { ConnectNetwork } from '../../connect/network';
+import { ConnectNetwork, IConnectNetworkItem } from '../../connect/network';
 import { lorem as networkLorem } from '../../connect/network/lorem';
 import { lorem as submitLorem } from '../../connect/submit/lorem';
 
@@ -17,6 +17,8 @@ type ComponentType = typeof LayoutContainer;
 
 const Template: ComponentStory<ComponentType> = (args) => {
     const { appearAnimation, appearAnimationOn } = args;
+
+    const [selectedNetworkKey, setSelectedNetworkKey] = useState<IConnectNetworkItem['key']>(networkLorem.networks[0].key);
 
     return (
         <LayoutContainer
@@ -41,6 +43,12 @@ const Template: ComponentStory<ComponentType> = (args) => {
                             appearAnimation={appearAnimation}
                             appearAnimationOn={appearAnimationOn}
                             {...networkLorem}
+                            selectedKey={selectedNetworkKey}
+                            onSelect={(network) => {
+                                if (network) {
+                                    setSelectedNetworkKey(network.key);
+                                }
+                            }}
                         />
                     )}
                     connect={<ConnectSubmit {...submitLorem} />}

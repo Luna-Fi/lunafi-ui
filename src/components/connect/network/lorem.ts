@@ -17,5 +17,9 @@ export const lorem: ConnectNetworkProps = {
             color: '#627eea',
         },
     ],
-    onSelect: () => {},
+    onSelect: (network) => {
+        // eslint-disable-next-line no-alert
+        alert(network?.name);
+    },
+    selectedKey: 0,
 };

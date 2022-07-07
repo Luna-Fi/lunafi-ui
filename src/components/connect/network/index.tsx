@@ -16,6 +16,7 @@ export interface IConnectNetworkItem {
 export interface ConnectNetworkProps {
     networks: IConnectNetworkItem[];
     onSelect: (network?: IConnectNetworkItem) => void;
+    selectedKey: IConnectNetworkItem['key'];
 }
 
 export interface Props extends ConnectNetworkProps {
@@ -27,19 +28,16 @@ export const ConnectNetwork: FC<Props> = ({
     networks = [],
     appearAnimation,
     onSelect,
+    selectedKey,
     appearAnimationOn,
 }) => {
     const id = useId();
-    const [activeNetwork, setActiveNetwork] = useState(
-        networks.find(() => true),
-    );
     const tooltipRef = useRef<TooltipContentHandle>(null);
 
+    const [activeNetwork, setActiveNetwork] = useState<IConnectNetworkItem | undefined>();
     useEffect(() => {
-        if (activeNetwork) {
-            onSelect(activeNetwork);
-        }
-    }, [activeNetwork, onSelect]);
+        setActiveNetwork(networks.find(({ key }) => key === selectedKey));
+    }, [selectedKey, networks]);
 
     return (
         <TooltipContent
@@ -57,7 +55,7 @@ export const ConnectNetwork: FC<Props> = ({
             <div className={styles.title}>Swap Network</div>
             <div className={styles.list}>
                 {networks.map((network) => {
-                    const isActive = activeNetwork?.name === network.name;
+                    const isActive = network.key === activeNetwork?.key;
                     return (
                         <label
                             key={network.name}
@@ -90,7 +88,7 @@ export const ConnectNetwork: FC<Props> = ({
                                 checked={isActive}
                                 onChange={(e) => {
                                     if (e.target.checked) {
-                                        setActiveNetwork(network);
+                                        onSelect(network);
                                     }
                                     tooltipRef.current?.close();
                                 }}

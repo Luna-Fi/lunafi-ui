@@ -6,12 +6,16 @@ import { ConnectBalance } from 'src/components/connect/balance';
 import { ConnectSubmit } from 'src/components/connect/submit';
 import { ConnectBalanceInfo } from 'src/components/connect/balance/info';
 import { lorem as infoLorem } from 'src/components/connect/balance/info/lorem';
+import { BoxBanner } from 'src/components/box/banner';
+import { FarmItem } from 'src/components/farm/item';
+import { BoxHeading } from 'src/components/box/heading';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
 import { ConnectNetwork, IConnectNetworkItem } from '../../connect/network';
 import { lorem as networkLorem } from '../../connect/network/lorem';
 import { lorem as submitLorem } from '../../connect/submit/lorem';
+import { lorem as farmLorem } from '../../farm/item/lorem';
 
 type ComponentType = typeof LayoutContainer;
 
@@ -55,9 +59,24 @@ const Template: ComponentStory<ComponentType> = (args) => {
                 />
             )}
         >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <BoxBanner
+                header="Stake LP, earn rewards"
+                description="You can withdraw your LP tokens at anytime "
+                href="https://google.com/"
+                media={{
+                    img: '/img/general/banner.jpg',
+                }}
+            />
+
+            <br />
+
+            <BoxHeading heading="Farm ETH / LFI">
+                <FarmItem
+                    {...farmLorem}
+                />
+            </BoxHeading>
+
         </LayoutContainer>
     );
 };

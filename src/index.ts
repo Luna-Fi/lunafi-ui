@@ -31,6 +31,7 @@ import { FormInput } from './components/form/input';
 import { FormInputNumber } from './components/form/input-number';
 import { PreviewNetworkLabel, PreviewNetworkLabelProps } from './components/preview/network-label';
 import { BoxHeading } from './components/box/heading';
+import { ButtonOutline } from './components/button/outline';
 
 export {
     LayoutCSS,
@@ -68,6 +69,7 @@ export {
     ButtonSvgOutline,
     ButtonSvgCircleFill,
     ButtonCopyToClipboard,
+    ButtonOutline,
 
     TooltipContent,
 

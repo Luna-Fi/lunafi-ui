@@ -32,6 +32,7 @@ import { FormInputNumber } from './components/form/input-number';
 import { PreviewNetworkLabel, PreviewNetworkLabelProps } from './components/preview/network-label';
 import { BoxHeading } from './components/box/heading';
 import { ButtonOutline } from './components/button/outline';
+import { FarmItem, FarmItemProps } from './components/farm/item';
 
 export {
     LayoutCSS,
@@ -78,4 +79,5 @@ export {
     FormInput,
     FormInputNumber,
 
+    FarmItem, FarmItemProps,
 };

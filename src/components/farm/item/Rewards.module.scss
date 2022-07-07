@@ -1,0 +1,130 @@
+@import '@/styles/base';
+
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > * {
+        padding-left: px-to-rem(12);
+        padding-right: px-to-rem(12);
+
+        &:global(.medium) {
+            font-weight: 600;
+            font-size: px-to-rem(12);
+            line-height: px-to-rem(22);
+            letter-spacing: 0.01em;
+        }
+    }
+
+    @include media-xl-min {
+        justify-content: space-between;
+        height: px-to-rem(54);
+        padding-right: px-to-rem(36);
+
+        > * {
+            width: 100%;
+
+            + * {
+                @include media-xxl {
+                    margin-left: px-to-rem(40);
+                } 
+                @include media-xl {
+                    margin-left: px-to-rem(20);
+                } 
+            }
+        }
+    }
+
+    @include media-lg-max {
+        @include media-sm-min {
+            justify-content: center;
+
+            > * + * {
+                margin-left: px-to-rem(20);
+            }
+        }
+
+        @include media-xs {
+            justify-content: space-between;
+
+            > * {
+                width: 100%;
+
+                + * {
+                    margin-left: px-to-rem(10);
+                }
+            }
+        }
+
+        > * {
+            @include media-sm-min {
+                min-width: px-to-rem(135);
+            }
+        }
+    }
+    
+}
+
+.value {
+    @include media-xl-min {
+        margin-top: px-to-rem(28);
+
+        font-weight: 600;
+        font-size: px-to-rem(18);
+        line-height: px-to-rem(24);
+        color: var(--color-grey-450);
+    
+        b {
+            font-weight: 600;
+            font-size: px-to-rem(36);
+            color: var(--color-white);
+        }
+    
+        i {
+            font-style: normal;
+            font-size: px-to-rem(20);
+            color: var(--color-blue);
+        }
+    }
+
+    @include media-lg-max {
+        @include media-sm-min {
+            margin-top: px-to-rem(60);
+            font-size: px-to-rem(24);
+        }
+        @include media-xs {
+            margin-top: px-to-rem(40);
+            font-size: px-to-rem(16);
+        }
+
+        text-align: center;
+        font-weight: 500;
+        line-height: px-to-rem(24);
+        color: var(--color-grey-450);
+    
+        b {
+            font-weight: 600;
+            font-size: px-to-rem(44);
+            color: var(--color-white);
+        }
+    
+        i {
+            font-style: normal;
+            font-size: px-to-rem(24);
+            font-weight: 600;
+            color: var(--color-blue);
+        }
+    }
+}
+
+.button {
+    width: 100%;
+    
+    @include media-xl-min {
+        margin-top: px-to-rem(25);
+    }
+    @include media-lg-max {
+        margin-top: px-to-rem(36);
+    }
+}

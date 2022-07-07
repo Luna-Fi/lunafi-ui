@@ -1,0 +1,68 @@
+@import '@/styles/base';
+
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include media-xl-min {
+        height: px-to-rem(54);
+        font-weight: 500;
+        font-size: px-to-rem(12);
+        line-height: px-to-rem(24);
+        color: var(--color-white);
+    }
+
+    @include media-lg-max {
+        padding-bottom: px-to-rem(12);
+        font-weight: 600;
+        color: var(--color-grey-400);
+        
+        @include media-sm-min {
+            font-size: px-to-rem(12);
+            line-height: px-to-rem(20);
+        }
+        @include media-xs {
+            font-size: px-to-rem(10);
+            line-height: px-to-rem(18);
+        }
+    }
+}
+
+.input {
+    width: 100%;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+
+        + * {
+            margin-left: px-to-rem(20);
+        }
+
+    }
+
+    @include media-xl-min {
+        margin-top: px-to-rem(24);
+    }
+
+    @include media-lg-max {
+        @include media-sm-min {
+            margin-top: px-to-rem(30);
+        }
+        @include media-xs {
+            margin-top: px-to-rem(24);
+        }
+    }
+
+}

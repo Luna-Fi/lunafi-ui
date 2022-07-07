@@ -30,6 +30,7 @@ import { Button } from './components/button';
 import { FormInput } from './components/form/input';
 import { FormInputNumber } from './components/form/input-number';
 import { PreviewNetworkLabel, PreviewNetworkLabelProps } from './components/preview/network-label';
+import { BoxHeading } from './components/box/heading';
 
 export {
     LayoutCSS,
@@ -45,6 +46,7 @@ export {
 
     BoxBanner, BoxBannerProps,
     BoxOutline, BoxOutlineProps,
+    BoxHeading,
 
     PreviewDiscount, PreviewDiscountProps,
     PreviewNetworkLabel, PreviewNetworkLabelProps,
@@ -73,4 +75,5 @@ export {
 
     FormInput,
     FormInputNumber,
+
 };

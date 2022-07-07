@@ -11,7 +11,7 @@ import { PreviewDiscount, PreviewDiscountProps } from './components/preview/disc
 import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
 import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
-import { ConnectNetwork, ConnectNetworkProps } from './components/connect/network';
+import { ConnectNetwork, ConnectNetworkProps, IConnectNetworkItem } from './components/connect/network';
 import { ButtonSvgOutline } from './components/button/svg-outline';
 import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 import { ConnectGrid } from './components/connect/grid';
@@ -56,7 +56,7 @@ export {
     ConnectGrid,
     ConnectBalance,
     ConnectBuy, ConnectBuyProps,
-    ConnectNetwork, ConnectNetworkProps,
+    ConnectNetwork, ConnectNetworkProps, IConnectNetworkItem,
     ConnectSubmit, ConnectSubmitProps,
     ConnectUser, ConnectUserProps,
     ConnectBalanceInfo, ConnectBalanceInfoProps,

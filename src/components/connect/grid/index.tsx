@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    balance: ReactNode;
+    coin: ReactNode;
     network: ReactNode;
     connect: ReactNode;
 }
@@ -12,11 +12,11 @@ export interface Props {
 export const ConnectGrid: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
-    balance,
+    coin,
     network,
     connect,
 }: Props) => {
-    const balanceChild = balance && cloneElement(balance as any, {
+    const coinChild = coin && cloneElement(coin as any, {
         appearAnimation,
         appearAnimationOn,
     });
@@ -32,7 +32,7 @@ export const ConnectGrid: FC<Props> = ({
     return (
         <div className={styles.connect_grid}>
             <div className={styles.row}>
-                <div className={styles.balance}>{balanceChild}</div>
+                <div className={styles.coin}>{coinChild}</div>
                 <div className={styles.network}>{networkChild}</div>
             </div>
             <div className={styles.user}>{connectChild}</div>

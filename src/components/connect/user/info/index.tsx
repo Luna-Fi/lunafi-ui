@@ -26,7 +26,7 @@ export const ConnectUserInfo: FC<Props> = ({
     const shortAddress = address.length > 10 ? `${address.slice(0, 6)}..${address.slice(-4)}` : address;
 
     return (
-        <div className={styles.connect_balance_info}>
+        <div className={styles.connect_coin_info}>
             <div className={styles.wrap}>
 
                 <div className={styles.title}>Account</div>

@@ -1,6 +1,6 @@
 @import '@/styles/base';
 
-.connect_balance_info {
+.connect_coin_info {
     box-sizing: border-box;
     background-color: var(--color-grey-800);
     color: var(--color-white);
@@ -79,7 +79,7 @@
         }
     }
 
-    &__balance {
+    &__price {
         font-weight: 500;
         color: var(--color-grey-200);
         

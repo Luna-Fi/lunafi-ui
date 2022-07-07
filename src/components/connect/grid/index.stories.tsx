@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { ConnectGrid } from '.';
-import { ConnectBalance } from '../balance';
+import { ConnectCoin } from '../coin';
 import { ConnectBuy } from '../buy';
 import { ConnectNetwork } from '../network';
 import { lorem as networkLorem } from '../network/lorem';
@@ -9,8 +9,8 @@ import { ConnectSubmit } from '../submit';
 import { lorem as submitLorem } from '../submit/lorem';
 import { ConnectUser } from '../user';
 import { lorem as buyLorem } from '../buy/lorem';
-import { ConnectBalanceInfo } from '../balance/info';
-import { lorem as infoLorem } from '../balance/info/lorem';
+import { ConnectCoinInfo } from '../coin/info';
+import { lorem as infoLorem } from '../coin/info/lorem';
 
 type ComponentType = typeof ConnectGrid;
 
@@ -26,34 +26,34 @@ export default component;
 
 export const Default = Template.bind({});
 Default.args = {
-    balance: (
-        <ConnectBalance balance={0.079}>
+    coin: (
+        <ConnectCoin price={0.079}>
             <ConnectBuy
                 {...buyLorem}
             />
-        </ConnectBalance>),
+        </ConnectCoin>),
     network: <ConnectNetwork {...networkLorem} />,
     connect: <ConnectSubmit {...submitLorem} />,
 };
 Default.parameters = {
     controls: {
-        exclude: ['balance', 'network', 'connect'],
+        exclude: ['coin', 'network', 'connect'],
     },
 };
 
 export const Logged = Template.bind({});
 Logged.args = {
-    balance: (
-        <ConnectBalance balance={infoLorem.balance}>
-            <ConnectBalanceInfo
+    coin: (
+        <ConnectCoin price={infoLorem.price}>
+            <ConnectCoinInfo
                 {...infoLorem}
             />
-        </ConnectBalance>),
+        </ConnectCoin>),
     network: <ConnectNetwork {...networkLorem} />,
     connect: <ConnectUser address="0xca7bf3c514d412ac12d10eff302301a81153f557" />,
 };
 Logged.parameters = {
     controls: {
-        exclude: ['balance', 'network', 'connect'],
+        exclude: ['coin', 'network', 'connect'],
     },
 };

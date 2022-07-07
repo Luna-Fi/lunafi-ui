@@ -1,26 +1,26 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ConnectBalance } from '.';
+import { ConnectCoin } from '.';
 import { ConnectBuy } from '../buy';
 import { lorem as buyLorem } from '../buy/lorem';
-import { ConnectBalanceInfo } from './info';
+import { ConnectCoinInfo } from './info';
 import { lorem as infoLorem } from './info/lorem';
 
-type ComponentType = typeof ConnectBalance;
+type ComponentType = typeof ConnectCoin;
 
 const component: ComponentMeta<ComponentType> = {
-    title: 'Connect/Balance',
-    component: ConnectBalance,
+    title: 'Connect/Coin',
+    component: ConnectCoin,
 };
 export default component;
 
 const Template: ComponentStory<ComponentType> = (args) => (
-    <ConnectBalance {...args} />
+    <ConnectCoin {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-    balance: 0.079,
+    price: 0.079,
     children: <ConnectBuy
         {...buyLorem}
     />,
@@ -33,8 +33,8 @@ Default.parameters = {
 
 export const Logged = Template.bind({});
 Logged.args = {
-    balance: 0.079,
-    children: <ConnectBalanceInfo
+    price: 0.079,
+    children: <ConnectCoinInfo
         {...infoLorem}
     />,
 };

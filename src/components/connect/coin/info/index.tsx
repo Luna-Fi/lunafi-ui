@@ -7,31 +7,31 @@ import { IconLunaFi } from 'src/components/icons/LunaFi';
 import { ConnectBuy, ConnectBuyProps } from '../../buy';
 import styles from './styles.module.scss';
 
-interface ConnectBalanceInfoItem {
+interface ConnectCoinInfoItem {
     key: string | number;
     name: string;
     value: number;
 }
 
-export interface ConnectBalanceInfoProps {
-    balance: number;
-    info?: ConnectBalanceInfoItem[];
+export interface ConnectCoinInfoProps {
+    price: number;
+    info?: ConnectCoinInfoItem[];
     buy?: ConnectBuyProps;
     explorerHref?: string;
 }
 
-export interface Props extends ConnectBalanceInfoProps {
+export interface Props extends ConnectCoinInfoProps {
     addToMetamaskCallback?: () => void;
 }
 
-export const ConnectBalanceInfo: FC<Props> = ({
-    balance,
+export const ConnectCoinInfo: FC<Props> = ({
+    price,
     info,
     buy,
     explorerHref,
     addToMetamaskCallback,
 }) => (
-    <div className={styles.connect_balance_info}>
+    <div className={styles.connect_coin_info}>
         <div className={styles.wrap}>
 
             <div className={styles.title}>LFI Tokens</div>
@@ -44,8 +44,8 @@ export const ConnectBalanceInfo: FC<Props> = ({
                     <div className={styles.token__info}>
                         <div>
                             <div className={styles.token__name}>LFI</div>
-                            <div className={styles.token__balance}>
-                                <NumberFormat value={balance} prefix="$" />
+                            <div className={styles.token__price}>
+                                <NumberFormat value={price} prefix="$" />
                             </div>
                         </div>
                         <div>

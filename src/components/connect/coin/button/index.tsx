@@ -8,16 +8,16 @@ import styles from './styles.module.scss';
 interface Props extends HTMLAttributes<HTMLButtonElement> {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    balance: number;
+    price: number;
 }
 
-export const ConnectBalanceButton = forwardRef<
+export const ConnectCoinButton = forwardRef<
 HTMLButtonElement,
 Props
 >(({
     appearAnimation,
     appearAnimationOn,
-    balance,
+    price,
     ...tagProps
 }, ref) => {
     const classNames = [
@@ -31,7 +31,7 @@ Props
             tag="button"
             {...tagProps}
             className={[
-                styles.connect_balance_button,
+                styles.connect_coin_button,
                 tagProps.className,
             ].join(' ')}
             appearAnimation={appearAnimation}
@@ -47,12 +47,12 @@ Props
                 {appearAnimation ? (
                     <NumberCounter
                         animation={appearAnimationOn}
-                        value={balance}
+                        value={price}
                         prefix="$"
                     />
                 ) : (
                     <NumberFormat
-                        value={balance}
+                        value={price}
                         prefix="$"
                     />
                 )}

@@ -5,19 +5,19 @@ import { Modal, ModalHandle } from 'src/components/modal';
 import { TooltipContent } from 'src/components/tooltip/content';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
-import { ConnectBalanceButton } from './button';
+import { ConnectCoinButton } from './button';
 import styles from './styles.module.scss';
 
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    balance: number;
+    price: number;
 }
 
-export const ConnectBalance: FC<PropsWithChildren<Props>> = ({
+export const ConnectCoin: FC<PropsWithChildren<Props>> = ({
     appearAnimation,
     appearAnimationOn,
-    balance,
+    price,
     children,
 }) => {
     const modalRef = useRef<ModalHandle>(null);
@@ -28,15 +28,15 @@ export const ConnectBalance: FC<PropsWithChildren<Props>> = ({
     }, []);
 
     const button = useMemo(() => (
-        <ConnectBalanceButton
+        <ConnectCoinButton
             appearAnimation={appearAnimation}
             appearAnimationOn={appearAnimationOn}
-            balance={balance}
+            price={price}
             onClick={() => {
                 modalRef.current?.show();
             }}
         />
-    ), [appearAnimation, appearAnimationOn, balance]);
+    ), [appearAnimation, appearAnimationOn, price]);
 
     if (!children) {
         return button;

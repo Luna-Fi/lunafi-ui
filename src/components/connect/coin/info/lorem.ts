@@ -2,7 +2,7 @@ import { Props } from '.';
 import { lorem as buyLorem } from '../../buy/lorem';
 
 export const lorem: Props = {
-    balance: 0.079,
+    price: 0.079,
     info: [
         {
             key: 0,

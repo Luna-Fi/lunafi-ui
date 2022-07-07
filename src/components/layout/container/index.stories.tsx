@@ -2,10 +2,10 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
 import { PreviewDiscount } from 'src/components/preview/discount';
 import { ConnectGrid } from 'src/components/connect/grid';
-import { ConnectBalance } from 'src/components/connect/balance';
+import { ConnectCoin } from 'src/components/connect/coin';
 import { ConnectSubmit } from 'src/components/connect/submit';
-import { ConnectBalanceInfo } from 'src/components/connect/balance/info';
-import { lorem as infoLorem } from 'src/components/connect/balance/info/lorem';
+import { ConnectCoinInfo } from 'src/components/connect/coin/info';
+import { lorem as infoLorem } from 'src/components/connect/coin/info/lorem';
 import { BoxBanner } from 'src/components/box/banner';
 import { FarmItem } from 'src/components/farm/item';
 import { BoxHeading } from 'src/components/box/heading';
@@ -35,12 +35,12 @@ const Template: ComponentStory<ComponentType> = (args) => {
                 <ConnectGrid
                     appearAnimation={appearAnimation}
                     appearAnimationOn={appearAnimationOn}
-                    balance={(
-                        <ConnectBalance balance={0.079}>
-                            <ConnectBalanceInfo
+                    coin={(
+                        <ConnectCoin price={0.079}>
+                            <ConnectCoinInfo
                                 {...infoLorem}
                             />
-                        </ConnectBalance>
+                        </ConnectCoin>
                     )}
                     network={(
                         <ConnectNetwork

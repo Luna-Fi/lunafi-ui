@@ -1,0 +1,50 @@
+@import '@/styles/base';
+
+.tooltip {
+    position: relative;
+    width: max-content;
+    min-width: px-to-rem(106);
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    box-sizing: border-box;
+    padding: px-to-rem(8);
+    border: 1px solid rgba(var(--color-white--rgb), 0.12);
+    border-radius: px-to-rem(8);
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1), inset 0px 0px 1px #000000;
+    background-color: var(--color-grey-900);
+
+    font-weight: 600;
+    font-size: px-to-rem(12);
+    line-height: px-to-rem(20);
+    text-transform: uppercase;
+    color: var(--color-white);
+
+    > * {
+        + * {
+            margin-top: 8px;
+        }
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    > * {
+        + * {
+            margin-left: px-to-rem(4);
+        }
+    }
+
+    &__color {
+        width: px-to-rem(12);
+        height: px-to-rem(12);
+        border-radius: 50%;
+        background-color: var(--color-black);
+    }
+
+}

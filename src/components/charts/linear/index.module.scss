@@ -1,0 +1,27 @@
+@import '@/styles/base';
+
+.chart_linear {
+    @include absolute-fullsize;
+
+    &.has_appear_animation {
+        opacity: 0;
+
+        &.show {
+            opacity: 1;
+            transition: opacity 1s;
+        }
+    }
+
+    svg {
+        overflow: visible;
+    }
+}
+
+.wrapper {
+    @include absolute-fullsize;
+
+    &.has_axis_y {
+        left: 27px;
+        width: calc(100% - 27px);
+    }
+}

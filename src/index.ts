@@ -33,6 +33,7 @@ import { PreviewNetworkLabel, PreviewNetworkLabelProps } from './components/prev
 import { BoxHeading } from './components/box/heading';
 import { ButtonOutline } from './components/button/outline';
 import { FarmItem, FarmItemProps } from './components/farm/item';
+import { ChartLinear, ChartLinearProps } from './components/charts/linear';
 
 export {
     LayoutCSS,
@@ -80,4 +81,6 @@ export {
     FormInputNumber,
 
     FarmItem, FarmItemProps,
+
+    ChartLinear, ChartLinearProps,
 };

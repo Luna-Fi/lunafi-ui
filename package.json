@@ -68,6 +68,7 @@
     "format-number": "^3.0.0",
     "rc-input-number": "^7.3.4",
     "react-portal": "^4.2.2",
-    "recharts": "^2.1.12"
+    "recharts": "^2.1.12",
+    "ts-essentials": "^9.2.0"
   }
 }

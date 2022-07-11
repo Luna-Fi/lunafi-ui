@@ -93,6 +93,7 @@ export const ConnectCoinInfo: FC<Props> = ({
                                 <NumberFormat
                                     value={item.value}
                                     rightFixed={0}
+                                    prefix="$"
                                 />
                             </span>
                         </div>

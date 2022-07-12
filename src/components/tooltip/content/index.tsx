@@ -23,6 +23,10 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
     /**
      * @default true
      */
+    usePadding?: boolean;
+    /**
+     * @default true
+     */
     useMargin?: boolean;
     pos?: TooltipPos;
 }
@@ -34,6 +38,7 @@ Props
     trigger,
     forceShow,
     useBackground = true,
+    usePadding = true,
     useMargin = true,
     pos,
     children,
@@ -176,6 +181,7 @@ Props
                         position,
                         isActive ? styles.active : '',
                         useBackground ? styles.use_background : '',
+                        !usePadding ? styles.no_padding : '',
                         useMargin ? styles.use_margin : '',
                     ].join(' ')}
                 >

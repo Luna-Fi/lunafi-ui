@@ -9,6 +9,10 @@
     position: absolute;
     box-sizing: border-box;
     padding: px-to-rem(16) px-to-rem(24);
+
+    &.no_padding {
+        padding: 0;
+    }
     
     transform: translateY(40px);
     opacity: 0;

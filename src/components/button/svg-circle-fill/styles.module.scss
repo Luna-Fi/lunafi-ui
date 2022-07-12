@@ -17,9 +17,24 @@
         cursor: default;
     }
 
-    font-weight: 500;
-    font-size: px-to-rem(16);
-    line-height: px-to-rem(26);
+    @at-root .button_svg_circle_fill:global(.small) {
+        font-size: px-to-rem(14);
+        line-height: px-to-rem(22);
+        font-weight: 600;
+    }
+
+    @at-root .button_svg_circle_fill:global(.medium) {
+        font-size: px-to-rem(15);
+        line-height: px-to-rem(24);
+        font-weight: 500;
+    }
+
+    @at-root .button_svg_circle_fill:global(.large) {
+        font-size: px-to-rem(16);
+        line-height: px-to-rem(26);
+        font-weight: 500;
+    }
+
     color: var(--content-color);
     transition: color 0.5s;
 

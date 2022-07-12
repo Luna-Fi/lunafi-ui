@@ -1,7 +1,7 @@
-import { ConnectNetworkProps } from '.';
+import { ConnectNetworkProps } from './types';
 
 export const lorem: ConnectNetworkProps = {
-    networks: [
+    items: [
         {
             key: 0,
             name: 'Polygon',

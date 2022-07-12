@@ -1,7 +1,6 @@
-import { Props } from '.';
-import { lorem as buyLorem } from '../../buy/lorem';
+import { CoinLFIProps } from './types';
 
-export const lorem: Props = {
+export const lorem: CoinLFIProps = {
     price: 0.079,
     info: [
         {
@@ -25,10 +24,5 @@ export const lorem: Props = {
             value: 9000212,
         },
     ],
-    buy: buyLorem,
     explorerHref: 'https://google.com/',
-    addToMetamaskCallback() {
-        // eslint-disable-next-line no-alert
-        alert('Add to Metamask');
-    },
 };

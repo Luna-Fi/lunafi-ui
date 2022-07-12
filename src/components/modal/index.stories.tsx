@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React, { useRef } from 'react';
-import { Modal, ModalHandle } from '.';
+import React, { useState } from 'react';
+import { Modal } from '.';
 
 type ComponentType = typeof Modal;
 
@@ -11,19 +11,20 @@ const component: ComponentMeta<ComponentType> = {
 export default component;
 
 const Template: ComponentStory<ComponentType> = (args) => {
-    const modalRef = useRef<ModalHandle>(null);
+    const [show, setShow] = useState(false);
 
     return (
         <>
             <button
                 type="button"
-                onClick={() => modalRef.current?.show()}
+                onClick={() => setShow(true)}
             >
                 Show the modal
             </button>
             <Modal
-                ref={modalRef}
                 {...args}
+                show={show}
+                onRequestClose={() => setShow(false)}
             >
                 <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
                 <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>

@@ -1,41 +1,51 @@
-import React, { cloneElement, FC, ReactNode } from 'react';
+import React, { FC, useContext } from 'react';
+import { CoinLFI } from 'src/components/coin/lfi';
+import { Context } from 'src/store/context';
+import { ConnectNetwork } from '../network';
+import { ConnectSubmit } from '../submit';
+import { ConnectUser } from '../user';
 import styles from './styles.module.scss';
 
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    coin: ReactNode;
-    network: ReactNode;
-    connect: ReactNode;
 }
 
 export const ConnectGrid: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
-    coin,
-    network,
-    connect,
 }: Props) => {
-    const coinChild = coin && cloneElement(coin as any, {
-        appearAnimation,
-        appearAnimationOn,
-    });
-    const networkChild = network && cloneElement(network as any, {
-        appearAnimation,
-        appearAnimationOn,
-    });
-    const connectChild = connect && cloneElement(connect as any, {
-        appearAnimation,
-        appearAnimationOn,
-    });
+    const { authorized } = useContext(Context);
 
     return (
         <div className={styles.connect_grid}>
             <div className={styles.row}>
-                <div className={styles.coin}>{coinChild}</div>
-                <div className={styles.network}>{networkChild}</div>
+                <div className={styles.coin}>
+                    <CoinLFI
+                        appearAnimation={appearAnimation}
+                        appearAnimationOn={appearAnimationOn}
+                    />
+                </div>
+                <div className={styles.network}>
+                    <ConnectNetwork
+                        appearAnimation={appearAnimation}
+                        appearAnimationOn={appearAnimationOn}
+                    />
+                </div>
             </div>
-            <div className={styles.user}>{connectChild}</div>
+            <div className={styles.user}>
+                {authorized ? (
+                    <ConnectUser
+                        appearAnimation={appearAnimation}
+                        appearAnimationOn={appearAnimationOn}
+                    />
+                ) : (
+                    <ConnectSubmit
+                        appearAnimation={appearAnimation}
+                        appearAnimationOn={appearAnimationOn}
+                    />
+                )}
+            </div>
         </div>
     );
 };

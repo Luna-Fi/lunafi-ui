@@ -1,30 +1,25 @@
 import React, {
-    FC, PropsWithChildren, useMemo, useRef, useState,
+    FC, useMemo, useState,
 } from 'react';
-import { Modal, ModalHandle } from 'src/components/modal';
+import { Modal } from 'src/components/modal';
 import { TooltipContent } from 'src/components/tooltip/content';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
-import { ConnectUserButton } from './button';
-import styles from './styles.module.scss';
+import { ConnectUserButton } from './Button';
+import styles from './index.module.scss';
+import { ConnectUserInfo } from './Info';
 
-export interface ConnectUserProps {
-    address: string;
-}
-
-export interface Props extends ConnectUserProps {
+export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
 }
 
-export const ConnectUser: FC<PropsWithChildren<Props>> = ({
+export const ConnectUser: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
-    address,
-    children,
 }) => {
-    const modalRef = useRef<ModalHandle>(null);
     const [useTooltip, setUseTooltip] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     useOnResize(() => {
         setUseTooltip(vevetApp.viewport.width > 1024);
@@ -34,16 +29,11 @@ export const ConnectUser: FC<PropsWithChildren<Props>> = ({
         <ConnectUserButton
             appearAnimation={appearAnimation}
             appearAnimationOn={appearAnimationOn}
-            address={address}
             onClick={() => {
-                modalRef.current?.show();
+                setShowModal(true);
             }}
         />
-    ), [appearAnimation, appearAnimationOn, address]);
-
-    if (!children) {
-        return button;
-    }
+    ), [appearAnimation, appearAnimationOn]);
 
     if (useTooltip) {
         return (
@@ -52,7 +42,7 @@ export const ConnectUser: FC<PropsWithChildren<Props>> = ({
                 useBackground={false}
                 trigger={button}
             >
-                {children}
+                <ConnectUserInfo />
             </TooltipContent>
         );
     }
@@ -61,11 +51,14 @@ export const ConnectUser: FC<PropsWithChildren<Props>> = ({
         <>
             {button}
             <Modal
-                ref={modalRef}
+                show={showModal}
+                onRequestClose={() => {
+                    setShowModal(false);
+                }}
                 className={styles.modal}
                 hasPadding={false}
             >
-                {children}
+                <ConnectUserInfo />
             </Modal>
         </>
     );

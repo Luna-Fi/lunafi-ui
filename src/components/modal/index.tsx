@@ -2,16 +2,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import gsap from 'gsap';
 import React, {
-    forwardRef, PropsWithChildren, useEffect, useImperativeHandle, useRef, useState,
+    FC, PropsWithChildren, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'react-portal';
 import { addEventListener, childOf } from 'vevet-dom';
 import styles from './styles.module.scss';
-
-export interface ModalHandle {
-    show: () => void;
-    hide: () => void;
-}
 
 export interface Props {
     className?: string;
@@ -23,33 +18,35 @@ export interface Props {
      * @defaul true
      */
     hasCloseButton?: boolean;
+    show: boolean;
+    onRequestClose: () => void;
 }
 
-export const Modal = forwardRef<
-ModalHandle,
-PropsWithChildren<Props>
->(({
+export const Modal: FC<PropsWithChildren<Props>> = ({
     hasPadding = true,
     hasCloseButton = true,
     className,
+    show,
+    onRequestClose,
     children,
-}, ref) => {
+}) => {
     // elements
     const parentRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
     // states
     const [isActive, setIsActive] = useState<undefined | boolean>(undefined);
+    useEffect(() => {
+        if (isActive === undefined && !show) {
+            return;
+        }
+        setIsActive(show);
+    }, [isActive, show]);
     const [allowRender, setAllowRender] = useState(false);
 
-    useImperativeHandle(ref, () => ({
-        show: () => {
-            setIsActive(true);
-        },
-        hide: () => {
-            setIsActive(false);
-        },
-    }));
+    const requestHide = useCallback(() => {
+        onRequestClose();
+    }, [onRequestClose]);
 
     // class names
     const classNames = [
@@ -59,19 +56,14 @@ PropsWithChildren<Props>
     // hide events
     useEffect(() => {
         const escapeListener = addEventListener(window, 'keydown', (evt) => {
-            let bool: boolean | undefined = false;
-            setIsActive((val) => {
-                bool = val;
-                return val;
-            });
-            if (evt.keyCode === 27 && bool) {
-                setIsActive(false);
+            if (evt.keyCode === 27 && isActive) {
+                requestHide();
             }
         });
         return () => {
             escapeListener.remove();
         };
-    }, []);
+    }, [requestHide, isActive]);
 
     // animate the popup
     const animationProgress = useRef(isActive ? 1 : 0);
@@ -114,7 +106,7 @@ PropsWithChildren<Props>
                     ].join(' ')}
                     onClick={(e) => {
                         if (!childOf(e.target as any, contentRef.current!)) {
-                            setIsActive(false);
+                            requestHide();
                         }
                     }}
                 >
@@ -147,7 +139,7 @@ PropsWithChildren<Props>
                                             'modal-close',
                                         ].join(' ')}
                                         onClick={() => {
-                                            setIsActive(false);
+                                            requestHide();
                                         }}
                                         aria-label="Close"
                                     >
@@ -164,4 +156,4 @@ PropsWithChildren<Props>
             </Portal>
         ) : null
     );
-});
+};

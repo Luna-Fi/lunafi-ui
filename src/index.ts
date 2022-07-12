@@ -11,20 +11,20 @@ import { PreviewDiscount, PreviewDiscountProps } from './components/preview/disc
 import { LayoutFooter, LayoutFooterProps } from './components/layout/footer';
 import { LinksSocialIcons, LinksSocialIconsProps } from './components/links/social-icons';
 import './styles/index.scss';
-import { ConnectNetwork, ConnectNetworkProps, IConnectNetworkItem } from './components/connect/network';
+import { ConnectWallet } from './components/connect/wallet';
+import { ConnectWalletProps, ConnectWalletItem } from './components/connect/wallet/types';
+import { ConnectNetwork } from './components/connect/network';
+import { ConnectNetworkProps, ConnectNetworkItem } from './components/connect/network/types';
 import { ButtonSvgOutline } from './components/button/svg-outline';
 import { ButtonSvgCircleFill } from './components/button/svg-circle-fill';
 import { ConnectGrid } from './components/connect/grid';
-import { ConnectCoin } from './components/connect/coin';
-import { ConnectBuy, ConnectBuyProps } from './components/connect/buy';
-import { ConnectUser, ConnectUserProps } from './components/connect/user';
+import { CoinBuy } from './components/coin/buy';
+import { CoinBuyProps, CoinBuyItem } from './components/coin/buy/types';
 import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
 import { TooltipContent } from './components/tooltip/content';
 import { Modal } from './components/modal';
-import { ConnectSubmit, ConnectSubmitProps } from './components/connect/submit';
+import { ConnectSubmit } from './components/connect/submit';
 import { LinkExplore } from './components/links/explore';
-import { ConnectCoinInfo, ConnectCoinInfoProps } from './components/connect/coin/info';
-import { ConnectUserInfo, ConnectUserInfoProps } from './components/connect/user/info';
 import { ButtonCopyToClipboard } from './components/button/copy-to-clipboard';
 import { Button } from './components/button';
 import { FormInput } from './components/form/input';
@@ -34,8 +34,15 @@ import { BoxHeading } from './components/box/heading';
 import { ButtonOutline } from './components/button/outline';
 import { FarmItem, FarmItemProps } from './components/farm/item';
 import { ChartLinear, ChartLinearProps } from './components/charts/linear';
+import { CoinLFI } from './components/coin/lfi';
+import { CoinLFIProps } from './components/coin/lfi/types';
+import { ConnectUser } from './components/connect/user';
+import { ConnectUserProps } from './components/connect/user/types';
+import { StoreProps, StoreData } from './store/types';
 
 export {
+    StoreProps, StoreData,
+
     LayoutCSS,
     LayoutContainer, LayoutContainerProps,
     LayoutFooter, LayoutFooterProps,
@@ -58,14 +65,14 @@ export {
     LinksSocialMenu, LinksSocialMenuProps,
     LinkExplore,
 
+    CoinLFI, CoinLFIProps,
+    CoinBuy, CoinBuyProps, CoinBuyItem,
+
     ConnectGrid,
-    ConnectCoin,
-    ConnectBuy, ConnectBuyProps,
-    ConnectNetwork, ConnectNetworkProps, IConnectNetworkItem,
-    ConnectSubmit, ConnectSubmitProps,
+    ConnectWallet, ConnectWalletProps, ConnectWalletItem,
+    ConnectNetwork, ConnectNetworkProps, ConnectNetworkItem,
+    ConnectSubmit,
     ConnectUser, ConnectUserProps,
-    ConnectCoinInfo, ConnectCoinInfoProps,
-    ConnectUserInfo, ConnectUserInfoProps,
 
     Button,
     ButtonSvgOutline,

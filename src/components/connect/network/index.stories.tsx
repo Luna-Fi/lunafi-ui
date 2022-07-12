@@ -1,11 +1,16 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { Provider } from 'src/store/context';
+import { storeLorem } from 'src/store/lorem';
 import { ConnectNetwork } from '.';
-import { lorem } from './lorem';
 
 type ComponentType = typeof ConnectNetwork;
 
-const Template: ComponentStory<ComponentType> = (args) => <ConnectNetwork {...args} />;
+const Template: ComponentStory<ComponentType> = (args) => (
+    <Provider value={storeLorem}>
+        <ConnectNetwork {...args} />
+    </Provider>
+);
 
 const component: ComponentMeta<ComponentType> = {
     title: 'Connect/Network',
@@ -18,8 +23,4 @@ Default.parameters = {
     controls: {
         exclude: ['onSelect'],
     },
-};
-
-Default.args = {
-    ...lorem,
 };

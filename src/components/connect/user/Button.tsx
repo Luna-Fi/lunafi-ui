@@ -1,11 +1,11 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes, useContext } from 'react';
 import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
-import styles from './styles.module.scss';
+import { Context } from 'src/store/context';
+import styles from './Button.module.scss';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    address: string;
 }
 
 export const ConnectUserButton = forwardRef<
@@ -14,9 +14,10 @@ Props
 >(({
     appearAnimation,
     appearAnimationOn,
-    address,
     ...tagProps
 }, ref) => {
+    const { address } = useContext(Context).user;
+
     const shortAddress = address.length > 10 ? `${address.slice(0, 6)}..${address.slice(-4)}` : address;
 
     return (

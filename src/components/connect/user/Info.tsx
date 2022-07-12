@@ -1,32 +1,20 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { LinkExplore } from 'src/components/links/explore';
 import { ButtonSvgCircleFill } from 'src/components/button/svg-circle-fill';
 import { ButtonCopyToClipboard } from 'src/components/button/copy-to-clipboard';
-import styles from './styles.module.scss';
-import { ConnectBuy, ConnectBuyProps } from '../../buy';
+import { Context } from 'src/store/context';
+import { CoinBuy } from 'src/components/coin/buy';
+import styles from './Info.module.scss';
 
-export interface ConnectUserInfoProps {
-    address: string;
-    network: string;
-    explorerHref?: string;
-    buy?: ConnectBuyProps;
-}
+export const ConnectUserInfo: FC = () => {
+    const {
+        address, network, disconnectCallback, explorerHref,
+    } = useContext(Context).user;
 
-export interface Props extends ConnectUserInfoProps {
-    disconnectCallback?: () => void;
-}
-
-export const ConnectUserInfo: FC<Props> = ({
-    address,
-    network,
-    explorerHref,
-    buy,
-    disconnectCallback,
-}) => {
     const shortAddress = address.length > 10 ? `${address.slice(0, 6)}..${address.slice(-4)}` : address;
 
     return (
-        <div className={styles.connect_coin_info}>
+        <div className={styles.connect_user_info}>
             <div className={styles.wrap}>
 
                 <div className={styles.title}>Account</div>
@@ -68,11 +56,9 @@ export const ConnectUserInfo: FC<Props> = ({
 
             </div>
 
-            {buy && (
-                <div className={styles.buy}>
-                    <ConnectBuy {...buy} />
-                </div>
-            )}
+            <div className={styles.buy}>
+                <CoinBuy />
+            </div>
         </div>
     );
 };

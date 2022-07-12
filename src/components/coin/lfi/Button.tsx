@@ -1,25 +1,27 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { forwardRef, HTMLAttributes, useContext } from 'react';
 import { ButtonSvgOutline } from 'src/components/button/svg-outline';
 import { IconLunaFi } from 'src/components/icons/LunaFi';
 import { NumberCounter } from 'src/components/number/counter';
 import { NumberFormat } from 'src/components/number/format';
-import styles from './styles.module.scss';
+import { Context } from 'src/store/context';
+import styles from './Button.module.scss';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    price: number;
 }
 
-export const ConnectCoinButton = forwardRef<
+export const CoinLFIButton = forwardRef<
 HTMLButtonElement,
 Props
 >(({
     appearAnimation,
     appearAnimationOn,
-    price,
     ...tagProps
 }, ref) => {
+    const { price } = useContext(Context).lfi;
+    const priceValue = Math.round(price * 1000) / 1000;
+
     const classNames = [
         appearAnimation ? styles.has_appear_animation : '',
         appearAnimationOn ? styles.show : '',
@@ -31,7 +33,7 @@ Props
             tag="button"
             {...tagProps}
             className={[
-                styles.connect_coin_button,
+                styles.coin_lfi_button,
                 tagProps.className,
             ].join(' ')}
             appearAnimation={appearAnimation}
@@ -47,12 +49,12 @@ Props
                 {appearAnimation ? (
                     <NumberCounter
                         animation={appearAnimationOn}
-                        value={price}
+                        value={priceValue}
                         prefix="$"
                     />
                 ) : (
                     <NumberFormat
-                        value={price}
+                        value={priceValue}
                         prefix="$"
                     />
                 )}

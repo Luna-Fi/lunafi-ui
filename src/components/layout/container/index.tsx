@@ -3,38 +3,40 @@ import React, {
 } from 'react';
 import { Portal } from 'react-portal';
 import { ButtonSvgOutline } from 'src/components/button/svg-outline';
+import { ConnectGrid } from 'src/components/connect/grid';
+import { ConnectWallet } from 'src/components/connect/wallet';
 import { IconMetamask } from 'src/components/icons/Metamask';
 import { LinksSocialMenu } from 'src/components/links/social-menu';
 import { NavigationModal } from 'src/components/navigation/modal';
+import { Provider } from 'src/store/context';
 import { vevetApp } from 'src/utils/vevet';
 import { ScrollBar } from 'vevet';
+import { StoreProps } from '../../../store/types';
 import { NavigationMenu, NavigationMenuProps } from '../../navigation/menu';
 import { LayoutFooter, LayoutFooterProps } from '../footer';
 import styles from './styles.module.scss';
 
 export interface LayoutContainerProps {
+    storeProps: StoreProps;
     menuLinks: NavigationMenuProps['links'];
     pageTitle: string;
     footer?: LayoutFooterProps;
-    addToMetamaskCallback?: () => void;
 }
 
 export interface Props extends LayoutContainerProps {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
     asideChildren?: ReactNode;
-    topChildren?: ReactNode;
 }
 
 export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
     appearAnimation,
     appearAnimationOn,
     asideChildren,
-    topChildren,
+    storeProps,
     menuLinks,
     pageTitle,
     footer,
-    addToMetamaskCallback,
     children,
 }) => {
     const classNames = [
@@ -58,33 +60,36 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
     }, []);
 
     return (
-        <div className={styles.layout_container}>
+        <Provider value={storeProps}>
+            <div className={styles.layout_container}>
 
-            {/* top  */}
-            <div className={styles.top}>
-                <a
-                    href="/"
-                    className={[
-                        styles.top__logo,
-                        classNames,
-                    ].join(' ')}
-                >
-                    <span>
-                        Home
-                    </span>
-                </a>
-                <div
-                    className={[
-                        styles.top__content,
-                        classNames,
-                    ].join(' ')}
-                >
-                    <h1 className={styles.top__title}>
-                        {pageTitle}
-                    </h1>
-                    {topChildren && (
+                {/* top  */}
+                <div className={styles.top}>
+                    <a
+                        href="/"
+                        className={[
+                            styles.top__logo,
+                            classNames,
+                        ].join(' ')}
+                    >
+                        <span>
+                            Home
+                        </span>
+                    </a>
+                    <div
+                        className={[
+                            styles.top__content,
+                            classNames,
+                        ].join(' ')}
+                    >
+                        <h1 className={styles.top__title}>
+                            {pageTitle}
+                        </h1>
                         <div className={styles.top__children}>
-                            {topChildren}
+                            <ConnectGrid
+                                appearAnimation={appearAnimation}
+                                appearAnimationOn={appearAnimationOn}
+                            />
                             {footer && footer.social && (
                                 <LinksSocialMenu
                                     appearAnimation={appearAnimation}
@@ -93,76 +98,79 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                                 />
                             )}
                         </div>
-                    )}
-                </div>
-                <button
-                    type="button"
-                    className={styles.top__menu_button}
-                    aria-label="Show navigation"
-                    onClick={() => setNavigationModalShown(true)}
-                />
-            </div>
-
-            {/* aside */}
-            <div className={styles.aside}>
-                <div className={styles.aside__menu}>
-                    <NavigationMenu
-                        isAdaptive
-                        appearAnimation={appearAnimation}
-                        appearAnimationOn={appearAnimationOn}
-                        links={menuLinks}
+                    </div>
+                    <button
+                        type="button"
+                        className={styles.top__menu_button}
+                        aria-label="Show navigation"
+                        onClick={() => setNavigationModalShown(true)}
                     />
                 </div>
+
+                {/* aside */}
+                <div className={styles.aside}>
+                    <div className={styles.aside__menu}>
+                        <NavigationMenu
+                            isAdaptive
+                            appearAnimation={appearAnimation}
+                            appearAnimationOn={appearAnimationOn}
+                            links={menuLinks}
+                        />
+                    </div>
+                    <div
+                        className={[
+                            styles.aside__content,
+                            classNames,
+                        ].join(' ')}
+                    >
+                        {asideChildren}
+                        <ButtonSvgOutline
+                            tag="button"
+                            className={styles.metamask_button}
+                            size="small"
+                            fullWidth
+                            hasBg={false}
+                            spacing="small"
+                            onClick={() => {
+                                storeProps.addToMetamaskCallback?.();
+                            }}
+                        >
+                            <IconMetamask className={styles.metamask_button__icon} />
+                            <span>Add LFI to Metamask</span>
+                        </ButtonSvgOutline>
+                    </div>
+                </div>
+
+                {/* main */}
                 <div
                     className={[
-                        styles.aside__content,
+                        styles.content,
                         classNames,
                     ].join(' ')}
                 >
-                    {asideChildren}
-                    <ButtonSvgOutline
-                        tag="button"
-                        className={styles.metamask_button}
-                        size="small"
-                        fullWidth
-                        hasBg={false}
-                        spacing="small"
-                        onClick={() => {
-                            addToMetamaskCallback?.();
-                        }}
+                    <div className={styles.content__wrapper}>
+                        {children}
+                    </div>
+                    {footer && <LayoutFooter {...footer} />}
+                </div>
+
+                {/* menu */}
+                <Portal>
+                    <NavigationModal
+                        links={menuLinks}
+                        show={navigationModalShown}
+                        handleCloseClick={() => setNavigationModalShown(false)}
+                        className={styles.navigation_modal}
                     >
-                        <IconMetamask className={styles.metamask_button__icon} />
-                        <span>Add LFI to Metamask</span>
-                    </ButtonSvgOutline>
-                </div>
+                        {asideChildren}
+                        <ConnectGrid />
+                    </NavigationModal>
+                </Portal>
+
+                {/* connect wallet modal */}
+                <ConnectWallet />
+
             </div>
-
-            {/* main */}
-            <div
-                className={[
-                    styles.content,
-                    classNames,
-                ].join(' ')}
-            >
-                <div className={styles.content__wrapper}>
-                    {children}
-                </div>
-                {footer && <LayoutFooter {...footer} />}
-            </div>
-
-            {/* menu */}
-            <Portal>
-                <NavigationModal
-                    links={menuLinks}
-                    show={navigationModalShown}
-                    handleCloseClick={() => setNavigationModalShown(false)}
-                    className={styles.navigation_modal}
-                >
-                    {asideChildren}
-                    {topChildren}
-                </NavigationModal>
-            </Portal>
-
-        </div>
+        </Provider>
     );
 };

@@ -1,46 +1,39 @@
 import React, {
-    FC, PropsWithChildren, useMemo, useRef, useState,
+    FC, useMemo, useState,
 } from 'react';
-import { Modal, ModalHandle } from 'src/components/modal';
+import { Modal } from 'src/components/modal';
 import { TooltipContent } from 'src/components/tooltip/content';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
-import { ConnectCoinButton } from './button';
-import styles from './styles.module.scss';
+import { CoinLFIButton } from './Button';
+import { CoinLFIInfo } from './Info';
+import styles from './index.module.scss';
 
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
-    price: number;
 }
 
-export const ConnectCoin: FC<PropsWithChildren<Props>> = ({
+export const CoinLFI: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
-    price,
-    children,
 }) => {
-    const modalRef = useRef<ModalHandle>(null);
     const [useTooltip, setUseTooltip] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     useOnResize(() => {
         setUseTooltip(vevetApp.viewport.width > 1024);
     }, []);
 
     const button = useMemo(() => (
-        <ConnectCoinButton
+        <CoinLFIButton
             appearAnimation={appearAnimation}
             appearAnimationOn={appearAnimationOn}
-            price={price}
             onClick={() => {
-                modalRef.current?.show();
+                setShowModal(true);
             }}
         />
-    ), [appearAnimation, appearAnimationOn, price]);
-
-    if (!children) {
-        return button;
-    }
+    ), [appearAnimation, appearAnimationOn]);
 
     if (useTooltip) {
         return (
@@ -49,7 +42,7 @@ export const ConnectCoin: FC<PropsWithChildren<Props>> = ({
                 useBackground={false}
                 trigger={button}
             >
-                {children}
+                <CoinLFIInfo />
             </TooltipContent>
         );
     }
@@ -58,11 +51,14 @@ export const ConnectCoin: FC<PropsWithChildren<Props>> = ({
         <>
             {button}
             <Modal
-                ref={modalRef}
+                show={showModal}
+                onRequestClose={() => {
+                    setShowModal(false);
+                }}
                 className={styles.modal}
                 hasPadding={false}
             >
-                {children}
+                <CoinLFIInfo />
             </Modal>
         </>
     );

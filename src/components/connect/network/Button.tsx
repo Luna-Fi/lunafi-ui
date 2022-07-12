@@ -1,5 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
-import styles from './styles.module.scss';
+import styles from './Button.module.scss';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
     appearAnimation?: boolean;

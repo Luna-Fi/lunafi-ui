@@ -1,43 +1,30 @@
 import React, {
-    FC, useEffect, useId, useRef, useState,
+    FC, useContext, useEffect, useId, useRef, useState,
 } from 'react';
 import { TooltipContent, TooltipContentHandle } from 'src/components/tooltip/content';
-import { ConnectNetworkButton } from './button';
+import { Context } from 'src/store/context';
+import { ConnectNetworkButton } from './Button';
 import styles from './styles.module.scss';
+import { ConnectNetworkItem } from './types';
 
-export interface IConnectNetworkItem {
-    key: string | number;
-    name: string;
-    previewSrc?: string;
-    iconSrc?: string;
-    color?: string;
-}
-
-export interface ConnectNetworkProps {
-    networks: IConnectNetworkItem[];
-    onSelect: (network?: IConnectNetworkItem) => void;
-    selectedKey: IConnectNetworkItem['key'];
-}
-
-export interface Props extends ConnectNetworkProps {
+export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
 }
 
 export const ConnectNetwork: FC<Props> = ({
-    networks = [],
     appearAnimation,
-    onSelect,
-    selectedKey,
     appearAnimationOn,
 }) => {
+    const { items, selectedKey, onSelect } = useContext(Context).connectNetwork;
+
     const id = useId();
     const tooltipRef = useRef<TooltipContentHandle>(null);
 
-    const [activeNetwork, setActiveNetwork] = useState<IConnectNetworkItem | undefined>();
+    const [activeNetwork, setActiveNetwork] = useState<ConnectNetworkItem | undefined>();
     useEffect(() => {
-        setActiveNetwork(networks.find(({ key }) => key === selectedKey));
-    }, [selectedKey, networks]);
+        setActiveNetwork(items.find(({ key }) => key === selectedKey));
+    }, [selectedKey, items]);
 
     return (
         <TooltipContent
@@ -54,7 +41,7 @@ export const ConnectNetwork: FC<Props> = ({
         >
             <div className={styles.title}>Swap Network</div>
             <div className={styles.list}>
-                {networks.map((network) => {
+                {items.map((network) => {
                     const isActive = network.key === activeNetwork?.key;
                     return (
                         <label

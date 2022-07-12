@@ -1,6 +1,6 @@
-import { Props } from '.';
+import { ConnectWalletProps } from './types';
 
-export const lorem: Props = {
+export const lorem: ConnectWalletProps = {
     wallets: [
         {
             key: 0,

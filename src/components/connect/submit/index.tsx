@@ -7,16 +7,21 @@ import { Context } from 'src/store/context';
 export interface Props {
     appearAnimation?: boolean;
     appearAnimationOn?: boolean;
+    text?: string;
+    size?: 'small' | 'medium' | 'large';
 }
 
 export const ConnectSubmit: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
+    text,
+    ...buttonProps
 }) => {
     const { setShown } = useContext(Context).system.connectWallet;
 
     return (
         <ButtonSvgCircleFill
+            {...buttonProps}
             tag="button"
             onClick={() => {
                 setShown(true);
@@ -24,7 +29,7 @@ export const ConnectSubmit: FC<Props> = ({
             appearAnimation={appearAnimation}
             appearAnimationOn={appearAnimationOn}
         >
-            Connect
+            {text || 'Connect'}
         </ButtonSvgCircleFill>
     );
 };

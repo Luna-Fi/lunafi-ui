@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import React, {
     FC, useEffect, useState,
 } from 'react';
-import { NumberFormatterOptions, toNumber } from 'src/utils/number';
+import { NumberFormatterOptions, toNumber } from '../../../utils/number';
 import styles from './styles.module.scss';
 import { NumberFormat } from '../format/index';
 

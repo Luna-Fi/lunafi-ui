@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IconLunaFi } from 'src/components/icons/LunaFi';
 import { NumberFormat } from 'src/components/number/format';
-import { PreviewNetworkLabel, PreviewNetworkLabelProps } from 'src/components/preview/network-label';
+import { PreviewNetworkLabel, PreviewNetworkLabelProps } from '../../preview/network-label';
 import styles from './Info.module.scss';
 
 export interface FarmItemInfoProps {

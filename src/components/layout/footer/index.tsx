@@ -1,9 +1,9 @@
 import React, {
     FC, useCallback, useEffect, useRef,
 } from 'react';
-import { LinksSocialIcons, LinksSocialIconsProps } from 'src/components/links/social-icons';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
+import { LinksSocialIcons, LinksSocialIconsProps } from '../../links/social-icons';
 import { LayoutFooterMenu, LayoutFooterMenuProps } from './Menu';
 import styles from './styles.module.scss';
 

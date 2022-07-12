@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { formatNumber, NumberFormatterOptions } from 'src/utils/number';
+import { formatNumber, NumberFormatterOptions } from '../../../utils/number';
 
 export interface NumberFormatProps extends NumberFormatterOptions {
     value: number;

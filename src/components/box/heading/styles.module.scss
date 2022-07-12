@@ -1,11 +1,19 @@
 @import '@/styles/base';
 
-.heading {
-    font-family: $font-family;
-
-    font-style: normal;
-    font-weight: 600;
-    line-height: px-to-rem(24);
+.head {
+    @include media-sm-min {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    @include media-xs {
+        > * {
+            + * {
+                margin-top: px-to-rem(18);
+            }
+        }
+    }
 
     @include media-lg-min {
         margin: 0 0 px-to-rem(24);
@@ -13,6 +21,15 @@
     @include media-md-max {
         margin: 0 0 px-to-rem(18);
     }
+}
+
+.heading {
+    margin: 0;
+    font-family: $font-family;
+
+    font-style: normal;
+    font-weight: 600;
+    line-height: px-to-rem(24);
 
     @include media-sm-min {
         font-size: px-to-rem(18);
@@ -20,4 +37,8 @@
     @include media-xs {
         font-size: px-to-rem(16);
     }
+}
+
+.nav {
+    flex-shrink: 0;
 }

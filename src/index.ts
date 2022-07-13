@@ -41,6 +41,7 @@ import { ConnectUserProps } from './components/connect/user/types';
 import { StoreProps, StoreData } from './store/types';
 import { FormSelect, FormSelectOptionProps } from './components/form/select';
 import { BoxDirOverlayHover } from './components/box/dir-overlay-hover';
+import { PreviewCoin, PreviewCoinProps } from './components/preview/coin';
 
 export {
     StoreProps, StoreData,
@@ -63,6 +64,7 @@ export {
 
     PreviewDiscount, PreviewDiscountProps,
     PreviewNetworkLabel, PreviewNetworkLabelProps,
+    PreviewCoin, PreviewCoinProps,
 
     LinksSocialIcons, LinksSocialIconsProps,
     LinksSocialMenu, LinksSocialMenuProps,

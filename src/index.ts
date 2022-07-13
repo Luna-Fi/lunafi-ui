@@ -39,6 +39,7 @@ import { CoinLFIProps } from './components/coin/lfi/types';
 import { ConnectUser } from './components/connect/user';
 import { ConnectUserProps } from './components/connect/user/types';
 import { StoreProps, StoreData } from './store/types';
+import { FormSelect, FormSelectOptionProps } from './components/form/select';
 
 export {
     StoreProps, StoreData,
@@ -86,6 +87,7 @@ export {
 
     FormInput,
     FormInputNumber,
+    FormSelect, FormSelectOptionProps,
 
     FarmItem, FarmItemProps,
 

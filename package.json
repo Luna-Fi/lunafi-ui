@@ -69,6 +69,7 @@
     "rc-input-number": "^7.3.4",
     "react-portal": "^4.2.2",
     "recharts": "^2.1.12",
+    "swiper": "^8.3.1",
     "ts-essentials": "^9.2.0"
   }
 }

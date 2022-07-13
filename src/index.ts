@@ -42,6 +42,7 @@ import { StoreProps, StoreData } from './store/types';
 import { FormSelect, FormSelectOptionProps } from './components/form/select';
 import { BoxDirOverlayHover } from './components/box/dir-overlay-hover';
 import { PreviewCoin, PreviewCoinProps } from './components/preview/coin';
+import { SliderSwiperScroll } from './components/slider/swiper-scroll';
 
 export {
     StoreProps, StoreData,
@@ -96,4 +97,6 @@ export {
     FarmItem, FarmItemProps,
 
     ChartLinear, ChartLinearProps,
+
+    SliderSwiperScroll,
 };

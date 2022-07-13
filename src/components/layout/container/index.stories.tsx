@@ -10,12 +10,35 @@ import { ConnectSubmit } from 'src/components/connect/submit';
 import { TooltipContent } from 'src/components/tooltip/content';
 import { Button } from 'src/components/button';
 import { CoinBuy } from 'src/components/coin/buy';
+import { PreviewCoin } from 'src/components/preview/coin';
+import { SliderSwiperScroll } from 'src/components/slider/swiper-scroll';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
 import { lorem as farmLorem } from '../../farm/item/lorem';
 
 type ComponentType = typeof LayoutContainer;
+
+const CoinSlide = () => (
+    <PreviewCoin
+        size="small"
+        img="/img/coin/btc.svg"
+        name="USDC"
+        value={4540630}
+        earning={{
+            percent: 1.6,
+            lfiPercent: 23.51,
+        }}
+        network={{
+            name: 'Network',
+            img: '/img/network-label/sx.svg',
+            color: '#579FFF',
+        }}
+        style={{
+            width: '225px',
+        }}
+    />
+);
 
 const Template: ComponentStory<ComponentType> = (args) => (
     <LayoutContainer
@@ -63,6 +86,18 @@ const Template: ComponentStory<ComponentType> = (args) => (
                 )}
             />
         </div>
+        <br />
+
+        <SliderSwiperScroll>
+            <CoinSlide />
+            <CoinSlide />
+            <CoinSlide />
+            <CoinSlide />
+            <CoinSlide />
+            <CoinSlide />
+            <CoinSlide />
+        </SliderSwiperScroll>
+
         <br />
 
         <BoxHeading

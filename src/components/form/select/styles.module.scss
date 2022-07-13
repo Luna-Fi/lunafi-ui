@@ -142,6 +142,7 @@
 
     &__img {
         flex-shrink: 0;
+        margin-left: px-to-rem(8);
         display: block;
         width: px-to-rem(24);
         height: px-to-rem(24);

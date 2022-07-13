@@ -30,7 +30,7 @@ export interface Props extends PreviewCoinProps {
      */
     size?: 'large' | 'medium' | 'small';
     /**
-     * @default true
+     * @default false
      */
     useOverlayHover?: boolean;
     style?: HTMLAttributes<HTMLDivElement>['style'];
@@ -47,7 +47,7 @@ export const PreviewCoin: FC<Props> = ({
     earning,
     onDepositClick,
     size = 'medium',
-    useOverlayHover = true,
+    useOverlayHover = false,
     ...tagProps
 }) => {
     const domRef = useRef<HTMLDivElement>(null);

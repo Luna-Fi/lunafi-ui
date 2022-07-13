@@ -23,7 +23,7 @@ const defaultArgs: Props = {
     appearAnimation: false,
     appearAnimationOn: false,
     size: 'medium',
-    useOverlayHover: true,
+    useOverlayHover: false,
 
     img: '/img/coin/btc.svg',
     name: 'USDC',

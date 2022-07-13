@@ -18,6 +18,7 @@ Matic.args = {
     name: 'Matic',
     img: '/img/network-label/matic.svg',
     color: '#A26FF8',
+    size: 'medium',
 };
 
 export const SX = Template.bind({});
@@ -25,4 +26,5 @@ SX.args = {
     name: 'Network',
     img: '/img/network-label/sx.svg',
     color: '#579FFF',
+    size: 'medium',
 };

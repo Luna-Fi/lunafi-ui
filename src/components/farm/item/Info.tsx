@@ -53,6 +53,7 @@ export const FarmItemInfo: FC<FarmItemInfoProps> = ({
                     {network && (
                         <PreviewNetworkLabel
                             {...network}
+                            size="large"
                             className={styles.pool__network}
                         />
                     )}

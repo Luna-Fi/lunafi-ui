@@ -40,6 +40,7 @@ import { ConnectUser } from './components/connect/user';
 import { ConnectUserProps } from './components/connect/user/types';
 import { StoreProps, StoreData } from './store/types';
 import { FormSelect, FormSelectOptionProps } from './components/form/select';
+import { BoxDirOverlayHover } from './components/box/dir-overlay-hover';
 
 export {
     StoreProps, StoreData,
@@ -58,6 +59,7 @@ export {
     BoxBanner, BoxBannerProps,
     BoxOutline, BoxOutlineProps,
     BoxHeading,
+    BoxDirOverlayHover,
 
     PreviewDiscount, PreviewDiscountProps,
     PreviewNetworkLabel, PreviewNetworkLabelProps,

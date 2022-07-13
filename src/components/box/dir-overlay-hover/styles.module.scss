@@ -1,0 +1,20 @@
+@import '@/styles/base';
+
+.box_dir_overlay_hover {
+    position: relative;
+    overflow: hidden;
+    border-radius: px-to-rem(8);
+}
+
+.overlay {
+    @include absolute-fullsize;
+    z-index: 0;
+    background: rgba(var(--color-white--rgb), 0.1);
+    transform: translate(-105%, -105%);
+    border-radius: px-to-rem(8);
+}
+
+.children {
+    position: relative;
+    z-index: 1;
+}

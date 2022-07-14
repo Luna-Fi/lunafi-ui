@@ -5,7 +5,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-radius: px-to-rem(4);
     background-color: var(--color-black);
 
     font-weight: 500;
@@ -17,6 +16,7 @@
     }
 
     &.large {
+        border-radius: px-to-rem(4);
         padding: px-to-rem(2) px-to-rem(6);
         font-size: px-to-rem(12);
         line-height: px-to-rem(20);
@@ -33,6 +33,7 @@
     }
 
     &.medium {
+        border-radius: px-to-rem(4);
         padding: px-to-rem(4) px-to-rem(5);
         font-size: px-to-rem(8);
         line-height: px-to-rem(9);
@@ -49,8 +50,9 @@
     }
 
     &.small {
-        padding: px-to-rem(3) px-to-rem(3);
-        font-size: px-to-rem(6);
+        border-radius: px-to-rem(2);
+        padding: px-to-rem(4) px-to-rem(3);
+        font-size: px-to-rem(8);
         line-height: px-to-rem(6);
 
         > * {
@@ -60,7 +62,7 @@
         }
 
         img {
-            height: px-to-rem(6);
+            height: px-to-rem(7);
         }
     }
 

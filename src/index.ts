@@ -43,6 +43,7 @@ import { FormSelect, FormSelectOptionProps } from './components/form/select';
 import { BoxDirOverlayHover } from './components/box/dir-overlay-hover';
 import { PreviewCoin, PreviewCoinProps } from './components/preview/coin';
 import { SliderSwiperScroll } from './components/slider/swiper-scroll';
+import { PoolsListBox } from './components/pool/list-box';
 
 export {
     StoreProps, StoreData,
@@ -99,4 +100,6 @@ export {
     ChartLinear, ChartLinearProps,
 
     SliderSwiperScroll,
+
+    PoolsListBox,
 };

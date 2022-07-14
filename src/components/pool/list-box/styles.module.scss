@@ -1,0 +1,26 @@
+@import '@/styles/base';
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+        @include media-sm-min {
+            width: px-to-rem(160);
+
+            + * {
+                margin-left: px-to-rem(16);
+            }
+        }
+
+        @include media-xs {
+            width: calc(50% - #{px-to-rem(4)});
+
+            + * {
+                margin-left: px-to-rem(8);
+            }
+        }
+    }
+}

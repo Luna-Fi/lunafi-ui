@@ -12,6 +12,7 @@ import { Button } from 'src/components/button';
 import { CoinBuy } from 'src/components/coin/buy';
 import { PreviewCoin } from 'src/components/preview/coin';
 import { SliderSwiperScroll } from 'src/components/slider/swiper-scroll';
+import { PoolsListBox } from 'src/components/pool/list-box';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
@@ -100,25 +101,40 @@ const Template: ComponentStory<ComponentType> = (args) => (
 
         <br />
 
-        <BoxHeading
+        <PoolsListBox
             heading="All Pools"
-            nav={(
-                <FormSelect
-                    label="Network"
-                    options={[
-                        {
-                            value: '1', name: 'SX Network', img: '/img/network/sx_preview.svg',
-                        },
-                        {
-                            value: '2', name: 'Matic', img: '/img/network/polygon_preview.svg',
-                        },
-                    ]}
-                />
+            filters={(
+                <>
+                    <FormSelect
+                        label="Network"
+                        multiple
+                        options={[
+                            {
+                                value: '1', name: 'SX Network', img: '/img/network/sx_preview.svg',
+                            },
+                            {
+                                value: '2', name: 'Matic', img: '/img/network/polygon_preview.svg',
+                            },
+                        ]}
+                    />
+                    <FormSelect
+                        label="Tokens"
+                        multiple
+                        options={[
+                            {
+                                value: '1', name: 'LFI',
+                            },
+                            {
+                                value: '2', name: 'BTC',
+                            },
+                        ]}
+                    />
+                </>
             )}
         >
             <hr />
             Content
-        </BoxHeading>
+        </PoolsListBox>
 
         <br />
         <br />

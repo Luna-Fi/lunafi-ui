@@ -87,7 +87,7 @@
     transition: transform 0.5s, filter 0.25s;
 
     &.is_disabled {
-        transform: translate(0, 100%);
+        transform: translate(0, 105%);
     }
 
     &::before,

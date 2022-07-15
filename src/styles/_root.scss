@@ -44,6 +44,11 @@ $colors: (
     font-family: $font-family;
 }
 
+html,
+body {
+    @include reset-scroll-bars;
+}
+
 button,
 input {
     font-family: $font-family;

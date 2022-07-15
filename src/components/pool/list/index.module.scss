@@ -1,0 +1,70 @@
+@import '@/styles/base';
+@import './global.scss';
+
+.pools_list {
+    box-sizing: border-box;
+
+    @include media-sm-min {
+        background: var(--color-black);
+        border: 1px solid var(--color-grey-800);
+        border-radius: px-to-rem(8);
+        padding: px-to-rem(10) px-to-rem(16);
+    }
+
+}
+
+.head {
+    font-weight: 500;
+    color: rgba(var(--color-white--rgb), 0.48);
+
+    @include media-sm-min {
+        min-height: px-to-rem(42);
+        font-size: px-to-rem(14);
+        line-height: px-to-rem(24);
+        letter-spacing: -0.01em;
+    }
+    @include media-xs {
+        min-height: px-to-rem(32);
+        font-size: px-to-rem(10);
+        line-height: px-to-rem(18);
+    }
+
+    .col {
+        &_pool {
+            @include media-lg-min {
+                padding-left: px-to-rem(74);
+            }
+            @include media-md {
+                padding-left: px-to-rem(54);
+            }
+            @include media-sm {
+                padding-left: px-to-rem(50);
+            }
+            @include media-xs {
+                padding-left: px-to-rem(48);
+            }
+        }
+    }
+
+}
+
+.body {
+    @include media-sm-min {
+        margin-top: px-to-rem(14);
+    }
+    @include media-xs {
+        margin-top: px-to-rem(12);
+    }
+
+    > * {
+        + * {
+            @include media-sm-min {
+                margin-top: px-to-rem(12);
+            }
+            @include media-xs {
+                margin-top: px-to-rem(4);
+            }
+        }
+    }
+
+}

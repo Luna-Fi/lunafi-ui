@@ -8,6 +8,7 @@ export const vevetApp = (() => {
         } else {
             app = new Application({
                 viewportResizeTimeout: 100,
+                sayHi: false,
             });
         }
     }

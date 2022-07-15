@@ -8,7 +8,7 @@
     "static"
   ],
   "scripts": {
-    "release": "npm run lint && npm run build && git add ./dist && git commit -m \"Build\" && npm version patch",
+    "release": "npm run lint && npm run build && git add ./dist && git commit -m \"Build\" && npm version patch && git push origin --tags",
     "build": "webpack",
     "lint": "npm run lint:js",
     "lint:js": "eslint . --ext .ts,.tsx,.js,.jsx",

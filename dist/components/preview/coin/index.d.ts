@@ -24,5 +24,7 @@ export interface Props extends PreviewCoinProps {
     useOverlayHover?: boolean;
     style?: HTMLAttributes<HTMLDivElement>['style'];
     className?: HTMLAttributes<HTMLDivElement>['className'];
+    disabled?: boolean;
+    depositButtonText?: string;
 }
 export declare const PreviewCoin: FC<Props>;

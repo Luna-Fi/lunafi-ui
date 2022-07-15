@@ -1,5 +1,5 @@
-import { FC, PropsWithChildren } from 'react';
-export interface Props {
+import { FC, HTMLAttributes, PropsWithChildren } from 'react';
+export interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     /**
      * @defaul true

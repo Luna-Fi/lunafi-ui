@@ -44,6 +44,8 @@ import { BoxDirOverlayHover } from './components/box/dir-overlay-hover';
 import { PreviewCoin, PreviewCoinProps } from './components/preview/coin';
 import { SliderSwiperScroll } from './components/slider/swiper-scroll';
 import { PoolsListBox } from './components/pool/list-box';
+import { PoolsList } from './components/pool/list';
+import { PoolsListItem, PoolsListItemProps } from './components/pool/list/Item';
 
 export {
     StoreProps, StoreData,
@@ -102,4 +104,6 @@ export {
     SliderSwiperScroll,
 
     PoolsListBox,
+    PoolsList,
+    PoolsListItem, PoolsListItemProps,
 };

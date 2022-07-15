@@ -1,8 +1,4 @@
-import React from 'react';
-export interface ModalHandle {
-    show: () => void;
-    hide: () => void;
-}
+import { FC, PropsWithChildren } from 'react';
 export interface Props {
     className?: string;
     /**
@@ -13,7 +9,7 @@ export interface Props {
      * @defaul true
      */
     hasCloseButton?: boolean;
+    show: boolean;
+    onRequestClose: () => void;
 }
-export declare const Modal: React.ForwardRefExoticComponent<Props & {
-    children?: React.ReactNode;
-} & React.RefAttributes<ModalHandle>>;
+export declare const Modal: FC<PropsWithChildren<Props>>;

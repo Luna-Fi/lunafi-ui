@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NumberFormatterOptions } from 'src/utils/number';
+import { NumberFormatterOptions } from '../../../utils/number';
 export interface NumberCounterProps extends NumberFormatterOptions {
     value: number;
     animation?: boolean;

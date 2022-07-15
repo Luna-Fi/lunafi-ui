@@ -5,4 +5,3 @@ declare type ComponentType = typeof ConnectGrid;
 declare const component: ComponentMeta<ComponentType>;
 export default component;
 export declare const Default: ComponentStory<React.FC<import(".").Props>>;
-export declare const Logged: ComponentStory<React.FC<import(".").Props>>;

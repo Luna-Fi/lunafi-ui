@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { PreviewNetworkLabelProps } from 'src/components/preview/network-label';
+import { PreviewNetworkLabelProps } from '../../preview/network-label';
 export interface FarmItemInfoProps {
     icon: string;
     name: string;

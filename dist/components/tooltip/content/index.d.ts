@@ -13,6 +13,10 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
     /**
      * @default true
      */
+    usePadding?: boolean;
+    /**
+     * @default true
+     */
     useMargin?: boolean;
     pos?: TooltipPos;
 }

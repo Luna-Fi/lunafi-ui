@@ -13,6 +13,8 @@ import { CoinBuy } from 'src/components/coin/buy';
 import { PreviewCoin } from 'src/components/preview/coin';
 import { SliderSwiperScroll } from 'src/components/slider/swiper-scroll';
 import { PoolsListBox } from 'src/components/pool/list-box';
+import { lorem as poolsListLorem } from 'src/components/pool/list/lorem';
+import { PoolsList } from 'src/components/pool/list';
 import { LayoutContainer } from '.';
 import { lorem } from './lorem';
 import { lorem as discountPreviewLorem } from '../../preview/discount/lorem';
@@ -110,30 +112,39 @@ const Template: ComponentStory<ComponentType> = (args) => (
                         multiple
                         options={[
                             {
-                                value: '1', name: 'SX Network', img: '/img/network/sx_preview.svg',
+                                value: 'sx', name: 'SX Network', img: '/img/network/sx_preview.svg',
                             },
                             {
-                                value: '2', name: 'Matic', img: '/img/network/polygon_preview.svg',
+                                value: 'matic', name: 'Matic', img: '/img/network/polygon_preview.svg',
                             },
                         ]}
+                        onChange={(val) => {
+                            // eslint-disable-next-line no-console
+                            console.log(val);
+                        }}
                     />
                     <FormSelect
                         label="Tokens"
                         multiple
                         options={[
                             {
-                                value: '1', name: 'LFI',
+                                value: 'lfi', name: 'LFI',
                             },
                             {
-                                value: '2', name: 'BTC',
+                                value: 'btc', name: 'BTC',
                             },
                         ]}
+                        onChange={(val) => {
+                            // eslint-disable-next-line no-console
+                            console.log(val);
+                        }}
                     />
                 </>
             )}
         >
-            <hr />
-            Content
+            <PoolsList
+                {...poolsListLorem}
+            />
         </PoolsListBox>
 
         <br />

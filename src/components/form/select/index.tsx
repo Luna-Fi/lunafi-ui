@@ -163,8 +163,7 @@ export const FormSelect = <T extends boolean = false>({
             </select>
 
             {/* needle */}
-            <button
-                type="button"
+            <div
                 className={[
                     styles.needle,
                     sharedClassName,
@@ -177,6 +176,12 @@ export const FormSelect = <T extends boolean = false>({
                 onClick={() => {
                     setIsExpanded((val) => !val);
                 }}
+                onKeyDown={(evt) => {
+                    if (evt.keyCode === 13) {
+                        setIsExpanded((val) => !val);
+                    }
+                }}
+                tabIndex={0}
             >
                 <span className={styles.needle__label}>{name || label}</span>
                 <span className={styles.needle__helper}>
@@ -188,7 +193,7 @@ export const FormSelect = <T extends boolean = false>({
                         <path d="M2.5 12.7885L6 16.2885L9.5 12.7885" stroke="#A0A6B1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </span>
-            </button>
+            </div>
 
             {/* options */}
             <ul

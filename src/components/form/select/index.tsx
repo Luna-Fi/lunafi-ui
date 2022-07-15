@@ -183,7 +183,7 @@ export const FormSelect = <T extends boolean = false>({
                     {noneSelected && (
                         <span className={styles.needle__all}>All</span>
                     )}
-                    <svg className={styles.needle__arrow} width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className={styles.needle__arrow} width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                         <path d="M2.5 7.78845L6 4.28845L9.5 7.78845" stroke="#A0A6B1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M2.5 12.7885L6 16.2885L9.5 12.7885" stroke="#A0A6B1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -249,6 +249,7 @@ export const FormSelect = <T extends boolean = false>({
                                     className={styles.option__img}
                                     src={option.img}
                                     alt={option.name}
+                                    aria-hidden
                                 />
                             )}
                         </li>

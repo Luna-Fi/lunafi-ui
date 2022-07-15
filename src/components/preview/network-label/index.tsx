@@ -44,8 +44,9 @@ Props
                 ...tagProps.style,
                 backgroundColor: color,
             }}
+            aria-label="Network"
         >
-            {img && <img src={img} alt={name} className={classNames} />}
+            {img && <img src={img} alt={name} className={classNames} aria-hidden />}
             <span>
                 {name}
             </span>

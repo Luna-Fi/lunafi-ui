@@ -135,7 +135,7 @@ export const LayoutContainer: FC<PropsWithChildren<Props>> = ({
                                 storeProps.addToMetamaskCallback?.();
                             }}
                         >
-                            <IconMetamask className={styles.metamask_button__icon} />
+                            <IconMetamask className={styles.metamask_button__icon} aria-hidden />
                             <span>Add LFI to Metamask</span>
                         </ButtonSvgOutline>
                     </div>

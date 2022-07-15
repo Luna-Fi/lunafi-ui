@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import React, {
     cloneElement, forwardRef, HTMLAttributes, ReactNode,
     useCallback,
-    useEffect, useImperativeHandle, useRef, useState,
+    useEffect, useId, useImperativeHandle, useRef, useState,
 } from 'react';
 import { vevetApp } from 'src/utils/vevet';
 import { addEventListener, childOf } from 'vevet-dom';
@@ -44,6 +44,9 @@ Props
     children,
     ...tagProps
 }, ref) => {
+    const dynamicID = useId();
+    const id = tagProps.id || dynamicID;
+
     // elements
     const parentRef = useRef<HTMLDivElement>(null);
     const [modalRef, setModalRef] = useState<HTMLDivElement | null>(null);
@@ -160,6 +163,8 @@ Props
                 setIsActive((val) => !val);
             }
         },
+        id: `${id}-trigger`,
+        'aria-controls': `${id}-content`,
     });
 
     return (
@@ -175,6 +180,7 @@ Props
                 <div
                     ref={setModalRef}
                     {...tagProps}
+                    id={`${id}-content`}
                     className={[
                         styles.modal,
                         tagProps.className,
@@ -184,6 +190,9 @@ Props
                         !usePadding ? styles.no_padding : '',
                         useMargin ? styles.use_margin : '',
                     ].join(' ')}
+                    role="dialog"
+                    aria-hidden={!isActive}
+                    aria-labelledby={`${id}-trigger`}
                 >
                     {children}
                 </div>

@@ -85,6 +85,7 @@ export const NavigationMenuLink: FC<Props> = ({
             onMouseLeave={() => {
                 setIsHovered(false);
             }}
+            role="menuitem"
         >
             <span
                 className={[
@@ -97,6 +98,7 @@ export const NavigationMenuLink: FC<Props> = ({
                         src={iconSrc}
                         alt={name}
                         className={styles.img_static}
+                        aria-hidden
                     />
                 )}
                 {iconActiveSrc && (
@@ -104,6 +106,7 @@ export const NavigationMenuLink: FC<Props> = ({
                         src={iconActiveSrc}
                         alt={name}
                         className={styles.img_active}
+                        aria-hidden
                     />
                 )}
             </span>

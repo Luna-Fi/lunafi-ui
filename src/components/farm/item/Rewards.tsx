@@ -19,7 +19,7 @@ export const FarmItemRewards: FC<FarmItemRewardsProps> = ({
     onRemoveLiquidity,
     onClaimRewards,
 }) => (
-    <div>
+    <div aria-label="Rewards">
 
         <div className={styles.head}>
             <Button

@@ -18,6 +18,8 @@ export const CoinLFI: FC<Props> = ({
     appearAnimation,
     appearAnimationOn,
 }) => {
+    const id = 'myid';
+
     const [useTooltip, setUseTooltip] = useState(false);
     const [showModal, setShowModal] = useState(false);
 
@@ -32,6 +34,8 @@ export const CoinLFI: FC<Props> = ({
             onClick={() => {
                 setShowModal(true);
             }}
+            id={`${id}-button`}
+            aria-controls={`${id}-modal`}
         />
     ), [appearAnimation, appearAnimationOn]);
 
@@ -41,6 +45,7 @@ export const CoinLFI: FC<Props> = ({
                 className={styles.tooltip}
                 useBackground={false}
                 trigger={button}
+                id={id}
             >
                 <CoinLFIInfo />
             </TooltipContent>
@@ -51,6 +56,7 @@ export const CoinLFI: FC<Props> = ({
         <>
             {button}
             <Modal
+                id={`${id}-modal`}
                 show={showModal}
                 onRequestClose={() => {
                     setShowModal(false);

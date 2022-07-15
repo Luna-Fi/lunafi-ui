@@ -51,7 +51,7 @@ export const FarmItem: FC<FarmItemProps> = ({
             />
             <div className={styles.forms}>
 
-                <div className={styles.form}>
+                <div className={styles.form} aria-label="Approve">
                     <FarmItemForm
                         ref={approveFormRef}
                         label={label}
@@ -74,7 +74,7 @@ export const FarmItem: FC<FarmItemProps> = ({
                     />
                 </div>
 
-                <div className={styles.form}>
+                <div className={styles.form} aria-label="Withdraw">
                     <FarmItemForm
                         ref={withdrawFormRef}
                         label={label}

@@ -1,14 +1,15 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import gsap from 'gsap';
 import React, {
-    FC, PropsWithChildren, useCallback, useEffect, useRef, useState,
+    FC, HTMLAttributes, PropsWithChildren, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'react-portal';
 import { addEventListener, childOf } from 'vevet-dom';
 import styles from './styles.module.scss';
 
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     /**
      * @defaul true
@@ -29,6 +30,7 @@ export const Modal: FC<PropsWithChildren<Props>> = ({
     show,
     onRequestClose,
     children,
+    ...tagProps
 }) => {
     // elements
     const parentRef = useRef<HTMLDivElement>(null);
@@ -100,6 +102,7 @@ export const Modal: FC<PropsWithChildren<Props>> = ({
             <Portal>
                 <div
                     ref={parentRef}
+                    {...tagProps}
                     className={[
                         styles.modal,
                         className,
@@ -109,6 +112,9 @@ export const Modal: FC<PropsWithChildren<Props>> = ({
                             requestHide();
                         }
                     }}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-hidden={!show}
                 >
                     <div
                         className={[

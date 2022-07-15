@@ -25,11 +25,12 @@ export const CoinLFIInfo: FC = () => {
                     <div className={styles.token}>
                         <IconLunaFi
                             className={styles.token__img}
+                            aria-hidden
                         />
                         <div className={styles.token__info}>
                             <div>
-                                <div className={styles.token__name}>LFI</div>
-                                <div className={styles.token__price}>
+                                <div className={styles.token__name} aria-hidden>LFI</div>
+                                <div className={styles.token__price} aria-label="Price">
                                     <NumberFormat value={priceValue} prefix="$" />
                                 </div>
                             </div>
@@ -59,7 +60,10 @@ export const CoinLFIInfo: FC = () => {
                                     addToMetamaskCallback?.();
                                 }}
                             >
-                                <IconMetamask className={styles.add_to_metamask__icon} />
+                                <IconMetamask
+                                    className={styles.add_to_metamask__icon}
+                                    aria-hidden
+                                />
                                 Add LFI
                             </ButtonSvgCircleFill>
                         )}
@@ -72,6 +76,7 @@ export const CoinLFIInfo: FC = () => {
                             <div
                                 key={item.key}
                                 className={styles.info__item}
+                                aria-label={item.name}
                             >
                                 {item.name}
                                 <span>

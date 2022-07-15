@@ -7,7 +7,7 @@ export const CoinBuy: FC = () => {
     const { buy } = useContext(Context);
 
     return (
-        <ul className={styles.coin_buy}>
+        <ul className={styles.coin_buy} aria-label="Buy LFI">
             {buy.items.map((item) => (
                 <li
                     key={item.name}

@@ -36,9 +36,10 @@ Props
             style={{
                 backgroundColor: color || '',
             }}
+            aria-label="Choose Network"
         >
             <span className={styles.icon}>
-                {iconSrc && <img src={iconSrc} alt="Network" />}
+                {iconSrc && <img src={iconSrc} alt="Network" aria-hidden />}
             </span>
         </button>
     );

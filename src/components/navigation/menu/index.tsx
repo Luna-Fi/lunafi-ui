@@ -41,6 +41,8 @@ export const NavigationMenu: FC<Props> = ({
             onMouseLeave={() => {
                 setIsHovered(false);
             }}
+            role="navigation"
+            aria-label="Navigation"
         >
             {links.map((link, index) => (
                 <li
@@ -49,6 +51,7 @@ export const NavigationMenu: FC<Props> = ({
                     style={{
                         transitionDelay: `${appearAnimation && appearAnimationOn ? index * 0.1 : 0}s`,
                     }}
+                    role="presentation"
                 >
                     <NavigationMenuLink
                         {...link}

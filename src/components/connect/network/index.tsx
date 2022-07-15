@@ -57,6 +57,7 @@ export const ConnectNetwork: FC<Props> = ({
                                     <img
                                         src={network.previewSrc}
                                         alt={network.name}
+                                        aria-hidden
                                     />
                                 )}
                             </span>

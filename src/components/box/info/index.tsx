@@ -10,7 +10,7 @@ export const BoxInfo: FC<Props> = ({
     text,
     button,
 }) => (
-    <div className={styles.box_info}>
+    <div className={styles.box_info} role="region" aria-label={text}>
         <div className={styles.info}>
             <span className={styles.text}>
                 {text}

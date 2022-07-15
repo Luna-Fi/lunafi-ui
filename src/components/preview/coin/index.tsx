@@ -35,6 +35,8 @@ export interface Props extends PreviewCoinProps {
     useOverlayHover?: boolean;
     style?: HTMLAttributes<HTMLDivElement>['style'];
     className?: HTMLAttributes<HTMLDivElement>['className'];
+    disabled?: boolean;
+    depositButtonText?: string;
 }
 
 export const PreviewCoin: FC<Props> = ({
@@ -48,6 +50,8 @@ export const PreviewCoin: FC<Props> = ({
     onDepositClick,
     size = 'medium',
     useOverlayHover = false,
+    disabled,
+    depositButtonText,
     ...tagProps
 }) => {
     const domRef = useRef<HTMLDivElement>(null);
@@ -58,6 +62,7 @@ export const PreviewCoin: FC<Props> = ({
     // classnames
     const classNames = [
         appearAnimation ? styles.has_appear_animation : '',
+        disabled ? styles.disabled : '',
         appearAnimationOn ? styles.show : '',
         size === 'large' ? styles.large : '',
         size === 'medium' ? styles.medium : '',
@@ -74,7 +79,7 @@ export const PreviewCoin: FC<Props> = ({
                 classNames,
             ].join(' ')}
             {...tagProps}
-            onMouseEnter={() => !vevetApp.isMobile && setIsHovered(true)}
+            onMouseEnter={() => !vevetApp.isMobile && !disabled && setIsHovered(true)}
             onMouseLeave={() => !vevetApp.isMobile && setIsHovered(false)}
         >
             <BoxDirOverlayHover
@@ -177,10 +182,14 @@ export const PreviewCoin: FC<Props> = ({
                             forceHover={isHovered}
                             colorVariant="gradient"
                             hasStaticFill={false}
-                            onClick={onDepositClick}
+                            onClick={() => {
+                                if (!disabled) {
+                                    onDepositClick();
+                                }
+                            }}
                             size={size === 'small' ? 'small' : 'medium'}
                         >
-                            Deposit
+                            {depositButtonText || 'Deposit'}
                         </ButtonSvgCircleFill>
                     </div>
                 )}

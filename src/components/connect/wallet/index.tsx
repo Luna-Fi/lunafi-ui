@@ -26,8 +26,9 @@ export const ConnectWallet: FC<Props> = ({
     useEffect(() => {
         if (selectedWallet) {
             onSelect(selectedWallet);
+            setShown(false);
         }
-    }, [onSelect, selectedWallet]);
+    }, [onSelect, selectedWallet, setShown]);
 
     return (
         <Modal

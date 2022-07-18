@@ -16,7 +16,7 @@ export const PoolHeader: FC<PoolHeaderProps> = ({
         {img && (
             <img src={img} className={styles.img} alt={name} />
         )}
-        <span className={styles.name}>{name}</span>
+        <h2 className={styles.name}>{name}</h2>
         {label && (
             <span className={styles.label}>{label}</span>
         )}

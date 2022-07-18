@@ -28,6 +28,8 @@
 }
 
 .name {
+    margin: 0;
+    
     @include media-sm-min {
         font-weight: 600;
         font-size: px-to-rem(28);

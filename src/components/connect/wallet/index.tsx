@@ -15,6 +15,7 @@ export const ConnectWallet: FC<Props> = ({
 }) => {
     const ctx = useContext(Context);
     const { wallets, onSelect } = ctx.connectWallet;
+    const { links } = ctx;
     const { shown, setShown } = ctx.system.connectWallet;
     const id = useId();
 
@@ -44,7 +45,7 @@ export const ConnectWallet: FC<Props> = ({
                         Accept the
                         {' '}
                         <a
-                            href="https://google.com/"
+                            href={links.terms}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -54,7 +55,7 @@ export const ConnectWallet: FC<Props> = ({
                         and
                         {' '}
                         <a
-                            href="https://google.com/"
+                            href={links.privacy}
                             target="_blank"
                             rel="noopener noreferrer"
                         >

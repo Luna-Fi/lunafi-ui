@@ -16,4 +16,8 @@ export const storeLorem: StoreProps = {
         // eslint-disable-next-line no-alert
         alert('Add to Metamask');
     },
+    links: {
+        privacy: 'https://google.com/privacy',
+        terms: 'https://google.com/terms',
+    },
 };

@@ -12,6 +12,10 @@ export interface StoreProps {
     buy: CoinBuyProps;
     user: ConnectUserProps;
     addToMetamaskCallback: () => void;
+    links: {
+        privacy: string;
+        terms: string;
+    };
 }
 
 export interface StoreData extends StoreProps {

@@ -29,6 +29,10 @@ const defaultState: StoreData = {
         disconnectCallback: () => {},
     },
     addToMetamaskCallback: () => {},
+    links: {
+        privacy: '',
+        terms: '',
+    },
     system: {
         connectWallet: {
             shown: false,

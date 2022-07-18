@@ -3,9 +3,11 @@ import { FarmItemInfoProps } from './Info';
 import { FarmItemRewardsProps } from './Rewards';
 export interface FarmItemProps extends FarmItemInfoProps {
     balance: number;
-    approve: {
+    form: {
         max: number;
-        onApprove: (amount: number | undefined) => void;
+        onSubmit: (amount: number | undefined) => void;
+        disabled: boolean;
+        submitText: string;
     };
     withdraw: {
         max: number;

@@ -14,12 +14,14 @@ export const lorem: FarmItemProps = {
     dailyRewards: 9000,
     apy: 80.5,
     balance: 1.57,
-    approve: {
+    form: {
         max: 100.79,
-        onApprove: (arg) => {
+        onSubmit: (arg) => {
             // eslint-disable-next-line no-alert
             alert(arg);
         },
+        disabled: false,
+        submitText: 'Approve',
     },
     withdraw: {
         max: 50.68,

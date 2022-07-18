@@ -8,9 +8,11 @@ import styles from './index.module.scss';
 
 export interface FarmItemProps extends FarmItemInfoProps {
     balance: number;
-    approve: {
+    form: {
         max: number;
-        onApprove: (amount: number | undefined) => void;
+        onSubmit: (amount: number | undefined) => void;
+        disabled: boolean;
+        submitText: string;
     };
     withdraw: {
         max: number;
@@ -30,11 +32,11 @@ export const FarmItem: FC<FarmItemProps> = ({
     dailyRewards,
     apy,
     balance,
-    approve,
+    form,
     withdraw,
     rewards,
 }) => {
-    const approveFormRef = useRef<FarmItemFormHandle>(null);
+    const formFormRef = useRef<FarmItemFormHandle>(null);
     const withdrawFormRef = useRef<FarmItemFormHandle>(null);
 
     return (
@@ -51,12 +53,12 @@ export const FarmItem: FC<FarmItemProps> = ({
             />
             <div className={styles.forms}>
 
-                <div className={styles.form} aria-label="Approve">
+                <div className={styles.form} aria-label={form.submitText}>
                     <FarmItemForm
-                        ref={approveFormRef}
+                        ref={formFormRef}
                         label={label}
                         balance={balance}
-                        max={approve.max}
+                        max={form.max}
                         icon={icon}
                         renderButton={(val) => (
                             <Button
@@ -64,11 +66,11 @@ export const FarmItem: FC<FarmItemProps> = ({
                                 variant="primary"
                                 size="large"
                                 onClick={() => {
-                                    approve.onApprove(val);
+                                    form.onSubmit(val);
                                 }}
-                                disabled={!val}
+                                disabled={form.disabled}
                             >
-                                Approve
+                                {form.submitText}
                             </Button>
                         )}
                     />

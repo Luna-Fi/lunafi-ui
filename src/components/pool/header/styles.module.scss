@@ -1,0 +1,56 @@
+@import '@/styles/base';
+
+.pool_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @include media-sm-min {
+        gap: px-to-rem(20);
+    }
+    @include media-xs {
+        gap: px-to-rem(18);
+    }
+
+}
+
+.img {
+    @include media-sm-min {
+        width: px-to-rem(44);
+        height: px-to-rem(44);
+    }
+    @include media-xs {
+        width: px-to-rem(36);
+        height: px-to-rem(36);
+    }
+}
+
+.name {
+    @include media-sm-min {
+        font-weight: 600;
+        font-size: px-to-rem(28);
+        line-height: px-to-rem(42);
+    }
+    @include media-xs {
+        font-weight: 500;
+        font-size: px-to-rem(18);
+        line-height: px-to-rem(24);
+    }
+}
+
+.label {
+    color: var(--color-grey-600);
+
+    @include media-sm-min {
+        font-weight: 600;
+        font-size: px-to-rem(20);
+        line-height: px-to-rem(22);
+    }
+    @include media-xs {
+        font-weight: 400;
+        font-size: px-to-rem(14);
+        line-height: px-to-rem(16);
+    }
+}

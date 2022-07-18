@@ -46,6 +46,7 @@ import { SliderSwiperScroll } from './components/slider/swiper-scroll';
 import { PoolsListBox } from './components/pool/list-box';
 import { PoolsList } from './components/pool/list';
 import { PoolsListItem, PoolsListItemProps } from './components/pool/list/Item';
+import { PoolHeader, PoolHeaderProps } from './components/pool/header';
 
 export {
     StoreProps, StoreData,
@@ -106,4 +107,6 @@ export {
     PoolsListBox,
     PoolsList,
     PoolsListItem, PoolsListItemProps,
+
+    PoolHeader, PoolHeaderProps,
 };

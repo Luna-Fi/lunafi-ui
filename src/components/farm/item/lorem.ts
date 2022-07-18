@@ -13,8 +13,8 @@ export const lorem: FarmItemProps = {
     tvl: 6000000,
     dailyRewards: 9000,
     apy: 80.5,
-    balance: 1.57,
     form: {
+        balance: 1.57,
         max: 100.79,
         onSubmit: (arg) => {
             // eslint-disable-next-line no-alert
@@ -24,6 +24,7 @@ export const lorem: FarmItemProps = {
         submitText: 'Approve',
     },
     withdraw: {
+        balance: 2.57,
         max: 50.68,
         onWithdraw: (arg) => {
             // eslint-disable-next-line no-alert

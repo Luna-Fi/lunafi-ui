@@ -7,14 +7,15 @@ import { FarmItemRewards, FarmItemRewardsProps } from './Rewards';
 import styles from './index.module.scss';
 
 export interface FarmItemProps extends FarmItemInfoProps {
-    balance: number;
     form: {
+        balance: number;
         max: number;
         onSubmit: (amount: number | undefined) => void;
         disabled: boolean;
         submitText: string;
     };
     withdraw: {
+        balance: number;
         max: number;
         onWithdraw: (amount: number | undefined) => void;
         onWithdrawAll: () => void;
@@ -31,7 +32,6 @@ export const FarmItem: FC<FarmItemProps> = ({
     tvl,
     dailyRewards,
     apy,
-    balance,
     form,
     withdraw,
     rewards,
@@ -57,7 +57,7 @@ export const FarmItem: FC<FarmItemProps> = ({
                     <FarmItemForm
                         ref={formFormRef}
                         label={label}
-                        balance={balance}
+                        balance={form.balance}
                         max={form.max}
                         icon={icon}
                         renderButton={(val) => (
@@ -80,7 +80,7 @@ export const FarmItem: FC<FarmItemProps> = ({
                     <FarmItemForm
                         ref={withdrawFormRef}
                         label={label}
-                        balance={balance}
+                        balance={withdraw.balance}
                         max={withdraw.max}
                         icon={icon}
                         renderButton={(val) => (

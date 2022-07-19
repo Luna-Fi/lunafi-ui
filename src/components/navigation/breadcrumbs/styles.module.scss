@@ -1,0 +1,66 @@
+@import '@/styles/base';
+
+.list {
+    @include reset-ul;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: px-to-rem(8);
+
+    font-weight: 700;
+    line-height: px-to-rem(20);
+    color: var(--color-grey-50);
+
+    @include media-sm-min {
+        font-size: px-to-rem(16);
+    }
+    @include media-xs {
+        font-size: px-to-rem(10);
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &:not(.current) {
+        &:after {
+            content: '';
+            display: block;
+            margin-left: px-to-rem(8);
+            background-image: url('./arrow.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            @include media-sm-min {
+                width: px-to-rem(24);
+                height: px-to-rem(24);
+            }
+            @include media-xs {
+                width: px-to-rem(20);
+                height: px-to-rem(20);
+            }
+        }
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-grey-50);
+    transition: color 0.25s;
+
+    &.current {
+        color: var(--color-blue);
+    }
+
+    @include non-mobile-hover(true) {
+        &:hover {
+            color: var(--color-blue);
+        }
+    }
+}

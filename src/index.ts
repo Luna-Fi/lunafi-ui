@@ -47,6 +47,7 @@ import { PoolsListBox } from './components/pool/list-box';
 import { PoolsList } from './components/pool/list';
 import { PoolsListItem, PoolsListItemProps } from './components/pool/list/Item';
 import { PoolHeader, PoolHeaderProps } from './components/pool/header';
+import { NavigationBreadcrumbs, NavigationBreadcrumbsProps } from './components/navigation/breadcrumbs';
 
 export {
     StoreProps, StoreData,
@@ -58,6 +59,7 @@ export {
     NavigationMenu, NavigationMenuProps,
     NavigationMenuLink, NavigationMenuLinkProps,
     NavigationModal, NavigationModalProps,
+    NavigationBreadcrumbs, NavigationBreadcrumbsProps,
 
     NumberFormat, NumberFormatProps,
     NumberCounter, NumberCounterProps,

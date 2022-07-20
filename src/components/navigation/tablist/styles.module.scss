@@ -16,15 +16,25 @@
     @include reset-button;
     
     user-select: none;
-    min-width: 54px;
-    padding: 6px;
-    border-radius: 6px;
+    border-radius: px-to-rem(6);
+    box-sizing: border-box;
 
     font-weight: 500;
-    font-size: px-to-rem(16);
-    line-height: px-to-rem(24);
     text-transform: capitalize;
     text-align: center;
+
+    @include media-lg-min {
+        padding: px-to-rem(6);
+        min-width: px-to-rem(54);
+        font-size: px-to-rem(16);
+        line-height: px-to-rem(24);
+    }
+    @include media-md-max {
+        padding: px-to-rem(4);
+        min-width: px-to-rem(44);
+        font-size: px-to-rem(12);
+        line-height: px-to-rem(24);
+    }
 
     color: var(--color-grey-500);
     transition: color 0.35s, background 0.35s;

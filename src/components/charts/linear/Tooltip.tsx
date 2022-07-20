@@ -6,7 +6,7 @@ import styles from './Tooltip.module.scss';
 import { ChartLinearData } from './types';
 
 interface Props extends TooltipProps<ValueType, NameType> {
-    tooltipText: string;
+    tooltipText?: string;
     tooltipColor: string;
     onActive: (data: any) => void;
 }
@@ -40,9 +40,7 @@ export const ChartLinearTooltip: FC<Props> = ({
                         }}
                     />
                     <span>
-                        {tooltipText}
-                        :
-                        {' '}
+                        {tooltipText && (`${tooltipText}: `)}
                         <NumberFormat value={data.value} prefix="$" />
                     </span>
                 </span>

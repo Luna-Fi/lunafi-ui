@@ -20,7 +20,7 @@ type MultiColor = {
 
 export interface ChartLinearProps<Data extends ChartLinearData = ChartLinearData> {
     data: Data[];
-    tooltipText: string;
+    tooltipText?: string;
     onActive?: (data: ChartLinearData | null) => void;
     grid?: {
         x: boolean;
@@ -59,13 +59,13 @@ export const ChartLinear: FC<Props> = ({
         colorStart: '#00FFF4',
         colorStartAlpha: 1,
         colorEnd: '#00FFF4',
-        colorAlpha: 0.1,
+        colorEndAlpha: 0.1,
     },
     line = {
         colorStart: '#00FFF4',
         colorStartAlpha: 1,
         colorEnd: '#00FFF4',
-        colorAlpha: 1,
+        colorEndAlpha: 1,
     },
     dot = {
         r: 6,
@@ -273,31 +273,29 @@ export const ChartLinear: FC<Props> = ({
                             setIsInteractive(true);
                         }}
                     />
-                    {tooltipText && (
-                        <Tooltip
-                            animationDuration={100}
-                            cursor={false}
-                            wrapperStyle={{
-                                left: '-1px',
-                                width: '2px',
-                            }}
-                            labelStyle={{
-                                fill: '#f0f',
-                            }}
-                            offset={0}
-                            content={(
-                                <ChartLinearTooltip
-                                    tooltipText={tooltipText}
-                                    tooltipColor={dot.fill}
-                                    onActive={(dataItem) => {
-                                        if (onActive) {
-                                            onActive(dataItem);
-                                        }
-                                    }}
-                                />
-                            )}
-                        />
-                    )}
+                    <Tooltip
+                        animationDuration={100}
+                        cursor={false}
+                        wrapperStyle={{
+                            left: '-1px',
+                            width: '2px',
+                        }}
+                        labelStyle={{
+                            fill: '#f0f',
+                        }}
+                        offset={0}
+                        content={(
+                            <ChartLinearTooltip
+                                tooltipText={tooltipText}
+                                tooltipColor={dot.fill}
+                                onActive={(dataItem) => {
+                                    if (onActive) {
+                                        onActive(dataItem);
+                                    }
+                                }}
+                            />
+                        )}
+                    />
                     {axis && (
                         <>
                             {axis.x && (

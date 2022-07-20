@@ -276,13 +276,6 @@ export const ChartLinear: FC<Props> = ({
                     <Tooltip
                         animationDuration={100}
                         cursor={false}
-                        wrapperStyle={{
-                            left: '-1px',
-                            width: '2px',
-                        }}
-                        labelStyle={{
-                            fill: '#f0f',
-                        }}
                         offset={0}
                         content={(
                             <ChartLinearTooltip

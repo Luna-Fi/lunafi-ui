@@ -1,0 +1,66 @@
+@import '@/styles/base';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: px-to-rem(8);
+
+    @include media-sm-min {
+        padding: px-to-rem(26) px-to-rem(30) 0;
+    }
+    @include media-xs {
+        padding: px-to-rem(22) px-to-rem(16) 0;
+    }
+
+    .value {
+        font-weight: 600;
+        color: var(--color-white);
+
+        @include media-sm-min {
+            font-size: px-to-rem(36);
+            line-height: px-to-rem(48);
+        }
+        @include media-xs {
+            font-size: px-to-rem(20);
+            line-height: px-to-rem(28);
+        }
+
+    }
+
+    .title {
+        width: 100%;
+        font-weight: 600;
+        line-height: px-to-rem(24);
+        color: var(--color-grey-600); 
+
+        @include media-sm-min {
+            font-size: px-to-rem(16);
+        }
+        @include media-xs {
+            font-size: px-to-rem(12);
+        }
+    }
+
+}
+
+.chart {
+    position: relative;
+    width: 100%;
+    height: px-to-rem(246);
+}

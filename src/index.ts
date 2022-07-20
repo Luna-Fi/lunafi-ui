@@ -49,6 +49,7 @@ import { PoolsListItem, PoolsListItemProps } from './components/pool/list/Item';
 import { PoolHeader, PoolHeaderProps } from './components/pool/header';
 import { NavigationBreadcrumbs, NavigationBreadcrumbsProps } from './components/navigation/breadcrumbs';
 import { NavigationTablist, NavigationTablistProps, NavigationTablistItem } from './components/navigation/tablist';
+import { PoolChartPeriods, PoolChartPeriodsProps } from './components/pool/chart/periods';
 
 export {
     StoreProps, StoreData,
@@ -113,4 +114,5 @@ export {
     PoolsListItem, PoolsListItemProps,
 
     PoolHeader, PoolHeaderProps,
+    PoolChartPeriods, PoolChartPeriodsProps,
 };

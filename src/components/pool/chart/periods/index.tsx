@@ -49,7 +49,7 @@ export const PoolChartPeriods: FC<Props> = ({
                             />
                         </div>
                     )}
-                    {periods && (
+                    {periods && periods.length > 1 && (
                         <NavigationTablist
                             tablist={periods}
                             selectedKey={tabKey}

@@ -11,10 +11,10 @@ export interface NavigationTablistItem {
 
 export interface NavigationTablistProps {
     tablist: NavigationTablistItem[];
-    onChange?: (key: string | number) => void;
+    onSelect?: (key: string | number) => void;
 }
 
-export interface Props extends NavigationTablistProps, Omit<HTMLAttributes<HTMLElement>, 'onChange'> {
+export interface Props extends NavigationTablistProps, Omit<HTMLAttributes<HTMLElement>, 'onSelect'> {
     styles?: any;
     selectedKey?: string | number;
 }
@@ -22,7 +22,7 @@ export interface Props extends NavigationTablistProps, Omit<HTMLAttributes<HTMLE
 export const NavigationTablist: FC<Props> = ({
     styles: customStyles,
     tablist,
-    onChange,
+    onSelect,
     selectedKey,
     className,
     ...tagProps
@@ -61,7 +61,7 @@ export const NavigationTablist: FC<Props> = ({
                             if (typeof selectedKey === 'undefined') {
                                 setSelected(key);
                             }
-                            onChange?.(key);
+                            onSelect?.(key);
                         }
                     }}
                 >

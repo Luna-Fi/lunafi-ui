@@ -18,7 +18,7 @@ const DefaultTemplate: ComponentStory<ComponentType> = (args) => (
             { key: 0, name: 'Tab 0' },
             { key: 1, name: 'Tab 1' },
         ]}
-        onChange={(key) => alert(key)}
+        onSelect={(key) => alert(key)}
     />
 );
 export const Default = DefaultTemplate.bind({});
@@ -35,7 +35,7 @@ const ControlledTemplate: ComponentStory<ComponentType> = (args) => {
             {...args}
             tablist={tablist}
             selectedKey={selected}
-            onChange={(key) => {
+            onSelect={(key) => {
                 setSelected(key);
                 alert(key);
             }}

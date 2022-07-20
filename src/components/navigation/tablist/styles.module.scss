@@ -1,0 +1,42 @@
+@import '@/styles/base';
+
+.tablist {
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;    
+    background-color: var(--color-grey-900);
+    padding: px-to-rem(4);
+    border-radius: px-to-rem(8);
+    gap: px-to-rem(4);
+}
+
+.tab {
+    @include reset-button;
+    
+    user-select: none;
+    min-width: 54px;
+    padding: 6px;
+    border-radius: 6px;
+
+    font-weight: 500;
+    font-size: px-to-rem(16);
+    line-height: px-to-rem(24);
+    text-transform: capitalize;
+    text-align: center;
+
+    color: var(--color-grey-500);
+    transition: color 0.35s, background 0.35s;
+
+    @include non-mobile-hover(true) {
+        &:not(.selected) {
+            color: var(--color-white);
+        }
+    }
+
+    &.selected {
+        color: var(--color-white);
+        background: var(--color-grey-1100);
+    }
+}

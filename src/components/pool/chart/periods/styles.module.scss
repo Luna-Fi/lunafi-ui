@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .content {
@@ -62,5 +63,6 @@
 .chart {
     position: relative;
     width: 100%;
-    height: px-to-rem(246);
+    min-height: px-to-rem(246);
+    height: 100%;
 }

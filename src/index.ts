@@ -21,7 +21,8 @@ import { ConnectGrid } from './components/connect/grid';
 import { CoinBuy } from './components/coin/buy';
 import { CoinBuyProps, CoinBuyItem } from './components/coin/buy/types';
 import { LinksSocialMenu, LinksSocialMenuProps } from './components/links/social-menu';
-import { TooltipContent } from './components/tooltip/content';
+import { TooltipContainer, TooltipContainerHandle, TooltipContainerProps } from './components/tooltip/container';
+import { TooltipContent, TooltipContentProps } from './components/tooltip/content';
 import { Modal } from './components/modal';
 import { ConnectSubmit } from './components/connect/submit';
 import { LinkExplore } from './components/links/explore';
@@ -95,7 +96,8 @@ export {
     ButtonCopyToClipboard,
     ButtonOutline,
 
-    TooltipContent,
+    TooltipContainer, TooltipContainerHandle, TooltipContainerProps,
+    TooltipContent, TooltipContentProps,
 
     Modal,
 

@@ -2,9 +2,9 @@ import React, {
     FC, useMemo, useState,
 } from 'react';
 import { Modal } from 'src/components/modal';
-import { TooltipContent } from 'src/components/tooltip/content';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
+import { TooltipContent } from 'src/components/tooltip/content';
 import { CoinLFIButton } from './Button';
 import { CoinLFIInfo } from './Info';
 import styles from './index.module.scss';
@@ -43,9 +43,10 @@ export const CoinLFI: FC<Props> = ({
         return (
             <TooltipContent
                 className={styles.tooltip}
-                useBackground={false}
                 trigger={button}
                 id={id}
+                usePadding={false}
+                useBackground={false}
             >
                 <CoinLFIInfo />
             </TooltipContent>

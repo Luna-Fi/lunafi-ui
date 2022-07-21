@@ -1,30 +1,36 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { TooltipContent } from '.';
+import { TooltipContainer } from '.';
 
-type ComponentType = typeof TooltipContent;
+type ComponentType = typeof TooltipContainer;
 
 const Template: ComponentStory<ComponentType> = (args) => (
-    <TooltipContent
+    <TooltipContainer
         {...args}
         trigger={<button type="button">Show tooltip</button>}
         style={{
             width: '240px',
+            background: '#666',
         }}
     >
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </TooltipContent>
+    </TooltipContainer>
 );
 
 const components: ComponentMeta<ComponentType> = {
-    title: 'Tooltip/Content',
-    component: TooltipContent,
+    title: 'Tooltip/Container',
+    component: TooltipContainer,
 };
 export default components;
 
-export const Default = Template.bind({});
-Default.parameters = {
+const parameters = {
     controls: {
         exclude: ['trigger'],
     },
 };
+
+export const PositionAuto = Template.bind({});
+PositionAuto.args = {
+    pos: undefined,
+};
+PositionAuto.parameters = parameters;

@@ -30,6 +30,7 @@ export const LinksSocialMenu: FC<Props> = ({
                 <span className={styles.icon} />
             </ButtonSvgCircleFill>
         )}
+        usePadding={false}
         className={styles.tooltip}
     >
         <ul className={styles.links}>

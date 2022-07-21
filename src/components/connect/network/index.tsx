@@ -1,7 +1,8 @@
 import React, {
     FC, useContext, useEffect, useId, useRef, useState,
 } from 'react';
-import { TooltipContent, TooltipContentHandle } from 'src/components/tooltip/content';
+import { TooltipContainerHandle } from 'src/components/tooltip/container';
+import { TooltipContent } from 'src/components/tooltip/content';
 import { Context } from 'src/store/context';
 import { ConnectNetworkButton } from './Button';
 import styles from './styles.module.scss';
@@ -19,7 +20,7 @@ export const ConnectNetwork: FC<Props> = ({
     const { items, selectedKey, onSelect } = useContext(Context).connectNetwork;
 
     const id = useId();
-    const tooltipRef = useRef<TooltipContentHandle>(null);
+    const tooltipRef = useRef<TooltipContainerHandle>(null);
 
     const [activeNetwork, setActiveNetwork] = useState<ConnectNetworkItem | undefined>();
     useEffect(() => {

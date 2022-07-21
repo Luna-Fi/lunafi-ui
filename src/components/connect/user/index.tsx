@@ -40,6 +40,7 @@ export const ConnectUser: FC<Props> = ({
             <TooltipContent
                 className={styles.tooltip}
                 useBackground={false}
+                usePadding={false}
                 trigger={button}
             >
                 <ConnectUserInfo />

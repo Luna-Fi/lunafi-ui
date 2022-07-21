@@ -9,43 +9,8 @@
     position: absolute;
     box-sizing: border-box;
     padding: 0;
+    width: max-content;
     
-    transform: translateY(40px);
     opacity: 0;
-
-    &:global(.top_left) {
-        top: 100%;
-        left: 0;
-
-        &.use_margin {
-            margin-top: px-to-rem(10);
-        }
-    }
-
-    &:global(.top_right) {
-        top: 100%;
-        right: 0;
-
-        &.use_margin {
-            margin-top: px-to-rem(10);
-        }
-    }
-
-    &:global(.bottom_left) {
-        bottom: 100%;
-        left: 0;
-
-        &.use_margin {
-            margin-bottom: px-to-rem(10);
-        }
-    }
-
-    &:global(.bottom_right) {
-        bottom: 100%;
-        right: 0;
-
-        &.use_margin {
-            margin-bottom: px-to-rem(10);
-        }
-    }
+    visibility: hidden;
 }

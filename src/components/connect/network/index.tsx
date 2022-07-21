@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import { TooltipContainerHandle } from 'src/components/tooltip/container';
 import { TooltipContent } from 'src/components/tooltip/content';
+import { TooltipPosEnum } from 'src/components/tooltip/general';
 import { Context } from 'src/store/context';
 import { ConnectNetworkButton } from './Button';
 import styles from './styles.module.scss';
@@ -39,6 +40,7 @@ export const ConnectNetwork: FC<Props> = ({
                 />
             )}
             className={styles.tooltip}
+            pos={TooltipPosEnum.Left}
         >
             <div className={styles.title}>Swap Network</div>
             <div className={styles.list}>

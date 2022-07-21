@@ -5,16 +5,26 @@ import { TooltipContainer } from '.';
 type ComponentType = typeof TooltipContainer;
 
 const Template: ComponentStory<ComponentType> = (args) => (
-    <TooltipContainer
-        {...args}
-        trigger={<button type="button">Show tooltip</button>}
-        style={{
-            width: '240px',
-            background: '#666',
-        }}
-    >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </TooltipContainer>
+    <>
+        <br />
+        <br />
+        <br />
+        <TooltipContainer
+            {...args}
+            trigger={(
+                <button type="button">
+                    Show tooltip
+                </button>
+            )}
+            style={{ background: '#666' }}
+            overflowMargin={10}
+        >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </TooltipContainer>
+    </>
 );
 
 const components: ComponentMeta<ComponentType> = {

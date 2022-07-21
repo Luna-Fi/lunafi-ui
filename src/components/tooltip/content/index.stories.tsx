@@ -8,9 +8,7 @@ const Template: ComponentStory<ComponentType> = (args) => (
     <TooltipContent
         {...args}
         trigger={<button type="button">Show tooltip</button>}
-        style={{
-            width: '240px',
-        }}
+        overflowMargin={10}
     >
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </TooltipContent>

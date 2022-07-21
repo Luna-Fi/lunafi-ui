@@ -4,9 +4,10 @@ import React, {
     useCallback,
     useEffect, useId, useImperativeHandle, useRef, useState,
 } from 'react';
-import { vevetApp } from 'src/utils/vevet';
 import { addEventListener, childOf } from 'vevet-dom';
-import { TooltipPos } from '../types';
+import {
+    getTooltipNormalizedPos, getTooltipProgressStyles, TooltipPosEnum, TooltipPosStrictEnum,
+} from '../general';
 import styles from './styles.module.scss';
 
 export interface TooltipContainerHandle {
@@ -20,7 +21,8 @@ export interface TooltipContainerProps extends HTMLAttributes<HTMLDivElement> {
      * @default true
      */
     useMargin?: boolean;
-    pos?: TooltipPos;
+    overflowMargin?: number | 'auto';
+    pos?: TooltipPosEnum;
 }
 
 export const TooltipContainer = forwardRef<
@@ -30,6 +32,7 @@ TooltipContainerProps
     trigger,
     forceShow,
     useMargin = true,
+    overflowMargin = 'auto',
     pos,
     children,
     ...tagProps
@@ -43,8 +46,11 @@ TooltipContainerProps
 
     // states
     const [allowRender, setAllowRender] = useState(false);
-    const [position, setPosition] = useState<TooltipPos | null>(null);
     const [isActive, setIsActive] = useState<boolean | undefined>(undefined);
+    const maxWidth = useRef<number | undefined>(undefined);
+    const showProgress = useRef(0);
+    const curentPosition = useRef<TooltipPosStrictEnum | undefined>(undefined);
+    const [positionClassName, setPositionClassName] = useState<TooltipPosStrictEnum | null>(null);
 
     // pass ref
     useImperativeHandle(ref, () => ({
@@ -84,67 +90,67 @@ TooltipContainerProps
     }, [isActive, forceShow]);
 
     /**
-     * Get modal position
+     * Render the modal
      */
-    const getPosition = useCallback(() => {
-        if (pos) {
-            return pos;
-        }
-        if (!parentRef.current || !modalRef) {
-            return null;
+    const render = useCallback((
+        position: TooltipPosStrictEnum,
+        progress: number,
+        direction: boolean,
+    ) => {
+        if (!modalRef || !position) {
+            return;
         }
 
-        // get modal bounding
-        modalRef.style.left = '0';
-        modalRef.style.right = 'auto';
-        const modalBounding = modalRef.getBoundingClientRect();
-        modalRef.style.left = '';
-        modalRef.style.right = '';
-
-        // get parent bounding
-        const parentBounding = parentRef.current.getBoundingClientRect();
-        const parentCenterY = parentBounding.top + parentBounding.height / 2;
-
-        // get position
-        const isLeft = modalBounding.left < vevetApp.viewport.width - modalBounding.width;
-        const isTop = parentCenterY < vevetApp.viewport.height / 2;
-
-        if (isTop) {
-            if (isLeft) {
-                return TooltipPos.TopLeft;
-            }
-            return TooltipPos.TopRight;
+        // calculate position
+        const margin = useMargin ? 10 : 0;
+        const tooltipStyles = getTooltipProgressStyles({
+            progress,
+            position,
+            parent: parentRef.current!,
+            tooltip: modalRef,
+            margin,
+            overflowMargin,
+        });
+        if (direction && !!tooltipStyles.maxWidth) {
+            maxWidth.current = tooltipStyles.maxWidth;
         }
-        if (isLeft) {
-            return TooltipPos.BottomLeft;
-        }
-        return TooltipPos.BottomRight;
-    }, [pos, modalRef]);
+
+        // set position
+        modalRef.style.opacity = `${tooltipStyles.opacity}`;
+        modalRef.style.visibility = tooltipStyles.visibility;
+        modalRef.style.top = tooltipStyles.top !== null ? `${tooltipStyles.top}px` : 'auto';
+        modalRef.style.right = tooltipStyles.right !== null ? `${tooltipStyles.right}px` : 'auto';
+        modalRef.style.bottom = tooltipStyles.bottom !== null ? `${tooltipStyles.bottom}px` : 'auto';
+        modalRef.style.left = tooltipStyles.left !== null ? `${tooltipStyles.left}px` : 'auto';
+        modalRef.style.transform = `translate(${tooltipStyles.x}px, ${tooltipStyles.y}px)`;
+        modalRef.style.maxWidth = `${maxWidth.current}px`;
+    }, [modalRef, overflowMargin, useMargin]);
 
     // animate modal
     useEffect(() => {
         if (typeof isActive === 'undefined' || !modalRef) {
-            return;
+            return undefined;
         }
         const toBeShown = isActive;
-        const currentPos = getPosition();
-        const ySpace = currentPos === TooltipPos.TopLeft || currentPos === TooltipPos.TopRight
-            ? 40 : -40;
-        gsap.to(modalRef, {
+        if (toBeShown) {
+            curentPosition.current = getTooltipNormalizedPos({
+                position: pos,
+                parent: parentRef.current!,
+            });
+            setPositionClassName(curentPosition.current);
+        }
+        const tm = gsap.to(showProgress, {
+            current: toBeShown ? 1 : 0,
             duration: 0.35,
-            opacity: toBeShown ? 1 : 0,
-            y: toBeShown ? 0 : ySpace,
-            onStart: () => {
-                modalRef.style.visibility = 'visible';
-            },
-            onComplete: () => {
-                modalRef.style.visibility = toBeShown ? 'visible' : 'hidden';
+            onUpdate: () => {
+                const progress = showProgress.current;
+                render(curentPosition.current!, progress, toBeShown);
             },
         });
-        if (isActive) {
-            setPosition(currentPos);
-        }
-    }, [isActive, getPosition, modalRef]);
+        return () => {
+            tm.pause();
+        };
+    }, [isActive, modalRef, pos, render]);
 
     // copy trigger
     const triggerChild = cloneElement(trigger as any, {
@@ -174,7 +180,7 @@ TooltipContainerProps
                     className={[
                         styles.modal,
                         tagProps.className,
-                        position,
+                        positionClassName,
                         isActive ? styles.active : '',
                         useMargin ? styles.use_margin : '',
                     ].join(' ')}

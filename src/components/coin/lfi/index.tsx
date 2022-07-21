@@ -5,6 +5,7 @@ import { Modal } from 'src/components/modal';
 import { useOnResize } from 'src/utils/resize';
 import { vevetApp } from 'src/utils/vevet';
 import { TooltipContent } from 'src/components/tooltip/content';
+import { TooltipPosEnum } from 'src/components/tooltip/general';
 import { CoinLFIButton } from './Button';
 import { CoinLFIInfo } from './Info';
 import styles from './index.module.scss';
@@ -47,6 +48,7 @@ export const CoinLFI: FC<Props> = ({
                 id={id}
                 usePadding={false}
                 useBackground={false}
+                pos={TooltipPosEnum.BottomLeft}
             >
                 <CoinLFIInfo />
             </TooltipContent>

@@ -51,7 +51,7 @@ import { PoolHeader, PoolHeaderProps } from './components/pool/header';
 import { NavigationBreadcrumbs, NavigationBreadcrumbsProps } from './components/navigation/breadcrumbs';
 import { NavigationTablist, NavigationTablistProps, NavigationTablistItem } from './components/navigation/tablist';
 import { PoolChartPeriods, PoolChartPeriodsProps } from './components/pool/chart/periods';
-import { TooltipPos } from './components/tooltip/types';
+import { TooltipPosEnum } from './components/tooltip/general';
 
 export {
     StoreProps, StoreData,
@@ -97,7 +97,7 @@ export {
     ButtonCopyToClipboard,
     ButtonOutline,
 
-    TooltipPos,
+    TooltipPosEnum,
     TooltipContainer, TooltipContainerHandle, TooltipContainerProps,
     TooltipContent, TooltipContentProps,
 

@@ -1,12 +1,7 @@
 @import '@/styles/base';
 
 .tooltip {
-    @include media-sm-min {
-        width: px-to-rem(280);
-    }
-    @include media-xs {
-        width: px-to-rem(225);
-    }
+    width: 100vw;
 }
 
 .title {

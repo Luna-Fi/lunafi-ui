@@ -4,7 +4,7 @@ import React, {
     useCallback,
     useEffect, useId, useImperativeHandle, useRef, useState,
 } from 'react';
-import { addEventListener, childOf } from 'vevet-dom';
+import { addEventListener, childOf, IAddEventListener } from 'vevet-dom';
 import {
     getTooltipNormalizedPos, getTooltipProgressStyles, TooltipPosEnum, TooltipPosStrictEnum,
 } from '../general';
@@ -26,6 +26,10 @@ export interface TooltipContainerProps extends HTMLAttributes<HTMLDivElement> {
      */
     useMaxWidth?: boolean;
     overflowMargin?: number | 'auto';
+    /**
+     * @default 'click'
+     */
+    showEvent?: 'hover' | 'click';
     pos?: TooltipPosEnum;
 }
 
@@ -38,6 +42,7 @@ TooltipContainerProps
     useMargin = true,
     useMaxWidth = true,
     overflowMargin = 'auto',
+    showEvent = 'click',
     pos,
     children,
     ...tagProps
@@ -47,6 +52,7 @@ TooltipContainerProps
 
     // elements
     const parentRef = useRef<HTMLDivElement>(null);
+    const [triggerRef, setTriggerRef] = useState<HTMLElement | null>(null);
     const [modalRef, setModalRef] = useState<HTMLDivElement | null>(null);
 
     // states
@@ -78,21 +84,57 @@ TooltipContainerProps
 
     // set outslide click
     useEffect(() => {
-        if (!isActive) {
+        if (!triggerRef) {
             return undefined;
         }
-        const outsiteClick = addEventListener(window, 'click', (e) => {
-            if (childOf(e.target as any, parentRef.current!)) {
-                return;
-            }
-            if (!forceShow) {
-                setIsActive(false);
-            }
-        });
+        const listeners: IAddEventListener[] = [];
+
+        if (showEvent === 'click') {
+            listeners.push(addEventListener(window, 'click', (e) => {
+                if (!isActive) {
+                    return;
+                }
+                if (childOf(e.target as any, parentRef.current!)) {
+                    return;
+                }
+                if (!forceShow) {
+                    setIsActive(false);
+                }
+            }));
+            listeners.push(addEventListener(triggerRef, 'click', () => {
+                if (!forceShow) {
+                    setIsActive((val) => !val);
+                }
+            }));
+        }
+
+        if (showEvent === 'hover') {
+            listeners.push(addEventListener(triggerRef, 'mouseenter', () => {
+                if (!forceShow) {
+                    setIsActive(true);
+                }
+            }));
+            listeners.push(addEventListener(triggerRef, 'focus', () => {
+                if (!forceShow) {
+                    setIsActive(true);
+                }
+            }));
+            listeners.push(addEventListener(triggerRef, 'mouseleave', () => {
+                if (!forceShow) {
+                    setIsActive(false);
+                }
+            }));
+            listeners.push(addEventListener(triggerRef, 'blur', () => {
+                if (!forceShow) {
+                    setIsActive(false);
+                }
+            }));
+        }
+
         return () => {
-            outsiteClick.remove();
+            listeners.forEach((listener) => listener.remove());
         };
-    }, [isActive, forceShow]);
+    }, [isActive, forceShow, showEvent, triggerRef]);
 
     /**
      * Render the modal
@@ -159,11 +201,7 @@ TooltipContainerProps
 
     // copy trigger
     const triggerChild = cloneElement(trigger as any, {
-        onClick: () => {
-            if (!forceShow) {
-                setIsActive((val) => !val);
-            }
-        },
+        ref: setTriggerRef,
         id: `${id}-trigger`,
         'aria-controls': `${id}-content`,
     });

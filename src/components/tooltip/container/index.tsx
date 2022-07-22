@@ -21,6 +21,10 @@ export interface TooltipContainerProps extends HTMLAttributes<HTMLDivElement> {
      * @default true
      */
     useMargin?: boolean;
+    /**
+     * @default true
+     */
+    useMaxWidth?: boolean;
     overflowMargin?: number | 'auto';
     pos?: TooltipPosEnum;
 }
@@ -32,6 +36,7 @@ TooltipContainerProps
     trigger,
     forceShow,
     useMargin = true,
+    useMaxWidth = true,
     overflowMargin = 'auto',
     pos,
     children,
@@ -123,8 +128,8 @@ TooltipContainerProps
         modalRef.style.bottom = tooltipStyles.bottom !== null ? `${tooltipStyles.bottom}px` : 'auto';
         modalRef.style.left = tooltipStyles.left !== null ? `${tooltipStyles.left}px` : 'auto';
         modalRef.style.transform = `translate(${tooltipStyles.x}px, ${tooltipStyles.y}px)`;
-        modalRef.style.maxWidth = `${maxWidth.current}px`;
-    }, [modalRef, overflowMargin, useMargin]);
+        modalRef.style.maxWidth = useMaxWidth ? `${maxWidth.current}px` : '';
+    }, [modalRef, overflowMargin, useMargin, useMaxWidth]);
 
     // animate modal
     useEffect(() => {

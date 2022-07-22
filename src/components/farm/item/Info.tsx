@@ -62,7 +62,7 @@ export const FarmItemInfo: FC<FarmItemInfoProps> = ({
 
             <div className={`${styles.col} ${styles.col_deposited}`} aria-label="Deposited">
                 <div className={styles.title}>Deposited</div>
-                {deposited ? <NumberFormat value={deposited} prefix="$" /> : '-'}
+                {deposited ? <NumberFormat value={deposited} /> : '-'}
             </div>
 
             <div className={`${styles.col} ${styles.col_tvl}`} aria-label="TVL">

@@ -1,0 +1,27 @@
+@import '@/styles/base';
+
+.info {
+    @include reset-button;
+    display: block;
+    width: px-to-rem(15);
+    height: px-to-rem(15);
+
+    svg {
+        @include absolute-fullsize;
+    }
+
+    path {
+        fill: var(--color-grey-600);
+        transition: fill 0.25s;
+    }
+
+    @at-root :global(.tooltip_active) & {
+        path {
+            fill: var(--color-blue);
+        }
+    }
+}
+
+.tooltip {
+    max-width: calc(100vw - 16px);
+}

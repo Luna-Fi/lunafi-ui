@@ -52,6 +52,7 @@ import { NavigationBreadcrumbs, NavigationBreadcrumbsProps } from './components/
 import { NavigationTablist, NavigationTablistProps, NavigationTablistItem } from './components/navigation/tablist';
 import { PoolChartPeriods, PoolChartPeriodsProps } from './components/pool/chart/periods';
 import { TooltipPosEnum } from './components/tooltip/general';
+import { TooltipArrow, TooltipArrowProps } from './components/tooltip/arrow';
 
 export {
     StoreProps, StoreData,
@@ -100,6 +101,7 @@ export {
     TooltipPosEnum,
     TooltipContainer, TooltipContainerHandle, TooltipContainerProps,
     TooltipContent, TooltipContentProps,
+    TooltipArrow, TooltipArrowProps,
 
     Modal,
 

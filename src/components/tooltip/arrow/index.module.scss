@@ -1,0 +1,110 @@
+@import '@/styles/base';
+
+.tooltip_arrow {
+    --bg-color: #EEF0F3;
+
+    background: var(--bg-color);
+    filter: drop-shadow(0px 0px 1px rgba(170, 170, 170, 0.25));
+    backdrop-filter: blur(4px);
+    border-radius: px-to-rem(12);
+    padding: px-to-rem(12) px-to-rem(16);
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+    }
+
+    &:global([class*="bottom"]) {
+        &::before {
+            bottom: calc(100% - 1px);
+            border-top: 0;
+            border-bottom: 8px solid var(--bg-color);
+        }
+
+        &:global(.bottom_left) {
+            &::before {
+                left: px-to-rem(12);
+            }
+        }
+
+        &:global(.bottom_right) {
+            &::before {
+                right: px-to-rem(12);
+            }
+        }
+
+        &:global(.bottom_center) {
+            &::before {
+                left: 50%;
+                margin-left: -8px;
+            }
+        }
+    }
+
+    &:global([class*="top"]) {
+        &::before {
+            top: calc(100% - 1px);
+            border-bottom: 0;
+            border-top: 8px solid var(--bg-color);
+        }
+
+        &:global(.top_left) {
+            &::before {
+                left: px-to-rem(12);
+            }
+        }
+
+        &:global(.top_right) {
+            &::before {
+                right: px-to-rem(12);
+            }
+        }
+
+        &:global(.top_center) {
+            &::before {
+                left: 50%;
+                margin-left: -8px;
+            }
+        }
+    }
+}
+
+.content {
+    font-weight: 500;
+    font-size: px-to-rem(14);
+    line-height: px-to-rem(24);
+    color: #000;
+    white-space: nowrap;
+
+    * {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    mark {
+        display: block;
+        background: none;
+        color: #000;
+        font-weight: 700;
+        font-size: px-to-rem(16);
+    }
+
+    i {
+        color: #00CDC4;
+        font-style: normal;
+    }
+
+    > * {
+        margin: px-to-rem(4) 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
